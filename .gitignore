@@ -48,3 +48,6 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+*.classpath
+*.prefs
+Projet/HarmonixEJB/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml
