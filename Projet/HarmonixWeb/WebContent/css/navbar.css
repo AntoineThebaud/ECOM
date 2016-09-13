@@ -1,0 +1,11 @@
+.ctm-nav {
+	border-color: #333;
+	background-color:#333;
+	margin-bottom: 0px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFFFFF;
+    font-size: 12px;
+    border-right: 1px solid;
+    border-color: #FFFFFF;
+}

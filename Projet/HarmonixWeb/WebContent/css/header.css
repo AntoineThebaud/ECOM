@@ -1,0 +1,29 @@
+.ctm-logo {
+    max-width: 275px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.ctm-header-row {
+	border: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.ctm-header-col {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.ctm-form {
+	margin-top: 5px;
+	position: absolute;
+	right: 0px;
+}
+.ctm-form > p {
+		display: inline;
+		color: #FFFFFF;
+}
+.ctm-btn-w {
+	min-width: 100px;
+}
+.ctm-btn-h {
+	min-height: 73px;
+}
