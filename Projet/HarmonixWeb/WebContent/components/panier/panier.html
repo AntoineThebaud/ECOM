@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+  <header>
+    <meta charset="utf-8">
+    <title>Home</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/panier.css" />
+
+    <script src="../../js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+    <script src="panier.js"></script>
+  </header>
+  <body ng-app="app">
+  
+  		<!-- header -->
+  		<div ng-include="'../../shared/header/header.htm'"></div>
+  
+		<!--menu (ruban)-->
+		<div ng-include="'../../shared/navbar/navbar.htm'"></div>
+
+		<!-- main content -->
+		<div class="container">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                	<h2 id="resultTitle">Votre panier</h2>
+
+                    <table class="table" id="table">
+                    <thead style="background-color:#F0F0F0">
+                      <tr>
+                        <th><!--bouton delete--></th>
+                        <th>Article</th>
+                        <th>Quantité</th>
+                        <th>Prix</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    	<tr>
+                    		<td>X</td>
+                    		<td><img src="../../img/FenderSquier.png" class="ctm-img">Fender Squier Stratocaster</td>
+                    		<td>1</td>
+                    		<td>119.00€</td>
+                    	</tr>
+                    	<tr>
+                    		<td>X</td>
+                    		<td><img src="../../img/FenderSquier.png" class="ctm-img">Fender Squier Stratocaster</td>
+                    		<td>1</td>
+                    		<td>119.00€</td>
+                    	</tr>
+                    	<tr>
+                    		<td>X</td>
+                    		<td><img src="../../img/FenderSquier.png" class="ctm-img">Fender Squier Stratocaster</td>
+                    		<td>1</td>
+                    		<td>119.00€</td>
+                    	</tr>
+                    	<tr>
+                    		<td>X</td>
+                    		<td><img src="../../img/FenderSquier.png" class="ctm-img">Fender Squier Stratocaster</td>
+                    		<td>1</td>
+                    		<td>119.00€</td>
+                    	</tr>
+                    	<tr>
+                    		<td class="highrow"></td>
+                    		<td class="highrow"></td>
+                    		<td class="highrow"></td>
+                    		<td class="highrow"></td>
+                    	</tr>
+                    	<tr>
+                    		<td class="emptyrow"></td>
+                    		<td class="emptyrow"></td>
+                    		<td class="emptyrow">TOTAL</td>
+                    		<td class="emptyrow">476.00€</td>
+                    	</tr>
+                    	<tr>
+                    		<td class="emptyrow"></td>
+                    		<td class="emptyrow"></td>
+                    		<td class="emptyrow" colspan="2"><a href="#" class="btn btn-success btn-block">Passer commande</a></td>
+                    	</tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+		
+		<!-- application module definition -->
+		<script src="panier.js"></script>
+		<!-- controler -->
+		<script src="panierCtrl.js"></script>
+		
+		<!-- jquery --> <!-- todelete ??? -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- bootstrap -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
