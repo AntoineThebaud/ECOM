@@ -83,53 +83,19 @@
 
 				<!-- catégorie 2 -->
 
-				<div class="panel-body">
-	            	<h2>Guitares électriques</h2>
-					<div class="row row-prod">
-					   	<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>		    	
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>			      	
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>		    	
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>			      	
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>		    	
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>			      	
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>		    	
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>			      	
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>		    	
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>			      	
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>		    	
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>			      	
-						</div>
-					</div>
-			</div>
+				<div ng-controller="instrumentsListController as instruments">
+					<div class="col-md-4 ctm-prod" ng-repeat="i in instruments">
+			        	<h4>Fender Squier Stratocaster</h4>
+				      	<div class="thumbnail">
+				        	<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+				        </div>		    	
+				         <p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>	
+			        </div>
+			        
+			        <div ng-click="ajout()">
+			        	<button>Ajouter</button>
+			        </div>
+				</div>
 		</div>
 		
 		<!-- application module definition -->
