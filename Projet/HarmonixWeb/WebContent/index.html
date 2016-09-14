@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <html>
-  <header>
+  <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Page d'accueil</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<!-- css for header -->
@@ -17,8 +17,15 @@
 
     <script src="http://localhost:8080/HarmonixWeb/js/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
     <script src="app.module.js"></script>
-  </header>
+    <!-- controller -->
+	<script src="indexCtrl.js"></script>
+	<!-- jquery --> <!-- todelete ??? -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
   <body ng-app="app">
   
   		<!-- header -->
@@ -97,15 +104,5 @@
 			        </div>
 				</div>
 		</div>
-		
-		<!-- application module definition -->
-		<script src="app.module.js"></script>
-		<!-- controler -->
-		<script src="indexCtrl.js"></script>
-		
-		<!-- jquery --> <!-- todelete ??? -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<!-- bootstrap -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
