@@ -2,8 +2,6 @@
 	"use strict";
 	angular.module('app').controller('instrumentController', instrumentCtrl);
 	
-	  //TODO
-	
 	function instrumentCtrl($scope, Instrument) {
 		$scope.instruments = [];
 		$scope.c = 0;
