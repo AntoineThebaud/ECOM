@@ -16,25 +16,34 @@ public class Instrument {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idInstrument")
 	private long idInstrument;
+	
 	@Column(name = "nom")
 	private String nom;
+	
 	@Column(name = "type")
 	private String type;
+	
 	@Column(name = "fabricant")
 	private String fabricant;
+	
 	@Column(name = "poids")
 	private float poids;
+	
 	@Column(name = "prix")
 	private float prix;
+	
 	@Column(name = "promo")
 	private int promo;
+	
 	@Column(name = "bestSeller")
 	private Boolean bestSeller;
+	
 	@Column(name = "categorie")
 	private int categorie;
 	
 	@OneToMany(mappedBy = "instrument")
 	private Collection<Avis> avis;
+	
 	@OneToMany(mappedBy = "instrument")
 	private Collection<Caracteristique> Caracteristique;
 

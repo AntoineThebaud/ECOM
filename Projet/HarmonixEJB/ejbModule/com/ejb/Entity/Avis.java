@@ -20,11 +20,16 @@ public class Avis {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long IdAvis;
+	
 	private int note;
+	
 	private String titre;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
+	
 	private String texte;
+	
 	@ManyToOne
 	@JoinColumn(name="idUtilisateur")
 	private Utilisateur utilisateur;

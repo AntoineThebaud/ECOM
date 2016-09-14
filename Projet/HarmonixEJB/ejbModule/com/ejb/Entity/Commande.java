@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Commande {
@@ -17,8 +19,11 @@ public class Commande {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idCommande;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
-	private int état;
+	
+	private int etat;
 	@OneToMany(mappedBy = "commande")
 	private Collection<LigneCommande> ligneCommande;
 	@ManyToOne
@@ -34,12 +39,12 @@ public class Commande {
 	}
 
 
-	public Commande( Date date, int état, Collection<LigneCommande> ligneCommande,
+	public Commande( Date date, int etat, Collection<LigneCommande> ligneCommande,
 			Utilisateur utilisateur) {
 		super();
 		
 		this.date = date;
-		this.état = état;
+		this.etat = etat;
 		this.ligneCommande = ligneCommande;
 		this.utilisateur = utilisateur;
 	}
@@ -73,11 +78,11 @@ public class Commande {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public int getÉtat() {
-		return état;
+	public int getEtat() {
+		return etat;
 	}
-	public void setÉtat(int état) {
-		this.état = état;
+	public void setEtat(int etat) {
+		this.etat = etat;
 	}
 	
 }
