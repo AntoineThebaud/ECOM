@@ -1,1 +1,1 @@
-angular.module('app', ['ngRoute','ngResource']);
+angular.module('app', ['ui-router','ngResource']);
