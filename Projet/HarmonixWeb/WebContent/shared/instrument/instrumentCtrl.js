@@ -5,11 +5,11 @@
 	  //TODO
 	
 	function instrumentCtrl($scope, Instrument) {
-		$scope.instruments = [];
-		$scope.c = 0;
+		// ng-route à inclure dans le module mais dans lequel :O ?
+		$scope.idInstrument = $routeParams.idInstrument;
 		
-		//get all instruments
-		var getinstru = Instrument.query(function() {
+		// Récupère l'instrument en question
+		var getInstru = Instrument.query(function() {
 			 $scope.instruments = getinstru;
 		});
 	}
