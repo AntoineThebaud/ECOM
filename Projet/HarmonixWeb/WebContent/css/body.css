@@ -12,3 +12,6 @@ body {
 .ctm-subtitle {
 	font-size: 20px;
 }
+.panel {
+    border-radius: 0px;
+}
