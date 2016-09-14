@@ -12,10 +12,12 @@ public class Caracteristique {
 	
 	@Id
 	private String nom;
+	
 	@ManyToOne
 	@JoinColumn(name="idInstrument")
 	@Id
 	private Instrument instrument;
+	
 	private String valeur;
 	
 	

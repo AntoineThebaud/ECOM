@@ -12,6 +12,7 @@ public class CaracteristiquePK implements Serializable {
 
 	@Column(name = "nom")
 	private String nom;
+	
 	@ManyToOne
 	@JoinColumn(name="idInstrument")
 	private Instrument instrument;

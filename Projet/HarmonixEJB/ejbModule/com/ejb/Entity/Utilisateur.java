@@ -18,10 +18,15 @@ public class Utilisateur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idUtilisateur;
+	
 	private String nom;
+	
 	private String prenom;
+	
 	private int age;
+	
 	private String adresse;
+	
 	private String mail;
 	
 	@OneToMany(mappedBy = "utilisateur")	
@@ -29,9 +34,6 @@ public class Utilisateur {
 	@OneToMany(mappedBy = "utilisateur")
 	private Collection<Commande> commandes;
 
-	
-	
-	
 	public Utilisateur(String nom, String prenom, int age, String adresse, String mail,
 			Collection<Avis> avis, Collection<Commande> commandes) {
 		
