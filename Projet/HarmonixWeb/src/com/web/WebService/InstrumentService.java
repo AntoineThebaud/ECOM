@@ -2,7 +2,9 @@ package com.web.WebService;
 
 import java.util.List;
 
+import javax.annotation.ManagedBean;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -16,27 +18,27 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.ejb.Entity.Instrument;
+import com.ejb.SessionBean.InstrumentResource;
 
+@ManagedBean
 @RequestScoped
 @Path("/instruments")
-@Produces("application/json")
-@Consumes("application/json")
 public class InstrumentService {
+	
+	@Inject
+	InstrumentResource ir;
 
 	@POST
-	public Response create(final Instrument instrument) {
-		//TODO: process the given instrument 
-		//you may want to use the following return statement, assuming that Instrument#getId() or a similar method 
-		//would provide the identifier to retrieve the created Instrument resource:
-		//return Response.created(UriBuilder.fromResource(InstrumentResource.class).path(String.valueOf(instrument.getId())).build()).build();
-		return Response.created(null).build();
+	@Consumes("application/json")
+	public Instrument create(final Instrument instrument) {
+		return ir.create(instrument);
 	}
 
 	@GET
 	@Path("/{id:[0-9][0-9]*}")
+	@Produces("application/json")
 	public Response findById(@PathParam("id") final Long id) {
-		//TODO: retrieve the instrument 
-		Instrument instrument = null;
+		Instrument instrument = ir.getById(id);
 		if (instrument == null) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
@@ -44,25 +46,44 @@ public class InstrumentService {
 	}
 
 	@GET
+	@Produces("application/json")
 	public List<Instrument> listAll(@QueryParam("start") final Integer startPosition,
 			@QueryParam("max") final Integer maxResult) {
-		//TODO: retrieve the instruments 
-		final List<Instrument> instruments = null;
+		final List<Instrument> instruments = ir.getAllInstruments();
 		return instruments;
 	}
 
 	@PUT
 	@Path("/{id:[0-9][0-9]*}")
+	@Consumes("application/json")
+	@Produces("application/json")
 	public Response update(@PathParam("id") Long id, final Instrument instrument) {
-		//TODO: process the given instrument 
-		return Response.noContent().build();
+		Response r = null;
+		try{
+			ir.updateInstrument(instrument);
+			r = Response.ok("OK").build();
+		}
+		catch(Exception e){
+			System.out.println("exception in create "+e);
+			r = Response.ok("error").build();
+		}
+		return r;
 	}
 
 	@DELETE
 	@Path("/{id:[0-9][0-9]*}")
+	@Produces("application/json")
 	public Response deleteById(@PathParam("id") final Long id) {
-		//TODO: process the instrument matching by the given id 
-		return Response.noContent().build();
+		Response r = null;
+		try{
+			ir.removeInstrument(id);
+			r = Response.ok("OK").build();
+		}
+		catch(Exception e){
+			System.out.println("exception in create "+e);
+			r = Response.ok("error").build();
+		}
+		return r;
 	}
 
 }
