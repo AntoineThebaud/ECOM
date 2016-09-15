@@ -3,20 +3,23 @@
 	
 	var module = angular.module("app");//retrieve the module named "app"
 	
-	module.controller('instrumentController', function($routeParams) {
-//		this.idInstrument = $routeParams.idInstrument;
+	module.controller('instrumentController', function(Instrument, $routeParams) {
+		//console.log($routeParams);
 		var vm = this;
 		vm.id = $routeParams.ID;
-		vm.name = "Super guitare de ouf";
-		vm.marque = "GraveReuch";
-		vm.image = "FenderSquier.png";
-		vm.note = "6/5";
-		vm.prix = "999.00";
-		vm.specs = {
-			"Produit":"Squier Bullet Strat with Tremolo HSS",
-			"Référence Squier":"031-0005-506",
-			"Catégorie":"Guitare Electrique Solid Body"				
-		}
+
+		var product = Instrument.get({"id": $routeParams.ID}, function() {
+			vm.modele = product.nom;			
+			vm.marque = product.fabricant;
+			vm.image = product.images;
+			vm.prix = product.prix;			
+			vm.specs = {
+				"Poids": product.poids,
+				"Type": product.type,
+				"Catégorie": product.categorie
+			}
+			//ajouter la note !
+		});
 	});
 })();
 

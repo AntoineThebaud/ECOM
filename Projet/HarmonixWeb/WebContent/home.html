@@ -8,7 +8,7 @@
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
 		        	<h4>
-		        		<a ng-href="#ficheInstru/{{ i.id }}">
+		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 		        			{{ i.fabricant }} : {{ i.nom }}
 		        		</a>
 		        	</h4>
