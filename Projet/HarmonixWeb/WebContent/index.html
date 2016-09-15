@@ -17,10 +17,10 @@
 
     <script src="http://localhost:8080/HarmonixWeb/js/angular.min.js"></script>
     <script src="http://localhost:8080/HarmonixWeb/js/angular-resource.min.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script>
+<!-- 	<script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script> -->
 	<script src="http://localhost:8080/HarmonixWeb/js/jquery-3.1.0.min.js"></script>
     <script src="app.module.js"></script>
-    <script src="route.config.js"></script>
+<!--     <script src="route.config.js"></script> -->
     <!-- controller -->
 	<script src="indexCtrl.js"></script>
 	<!-- factory for instruments -->
@@ -31,15 +31,84 @@
   <body ng-app="app">
 
   		<!-- header -->
-<!--   		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/header/header.htm'"></div> -->
-  		<div ui-view="header"></div>
+  		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/header/header.htm'"></div>
+<!--   		<div ui-view="header"></div> -->
 
 		<!--menu (ruban)-->
-<!-- 		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/navbar/navbar.htm'"></div> -->
-		<div ui-view="menu"></div>
+		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/navbar/navbar.htm'"></div>
+<!-- 		<div ui-view="menu"></div> -->
 
 		<!-- main content -->
-		<div ui-view="container" class="container">
+		<div class="container">
+		<div class="panel panel-default">
+
+				<!-- catégorie 1 -->
+
+	            <div class="panel-body">
+	            	<h2>Guitares électriques</h2>
+					<div class="row row-prod">
+					   	<div class="col-md-4 ctm-prod">
+				      		<h4>Fender Squier Stratocaster</h4>
+				      		<div class="thumbnail">
+				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+				        	</div>
+				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
+						</div>
+						<div class="col-md-4 ctm-prod">
+				      		<h4>Fender Squier Stratocaster</h4>
+				      		<div class="thumbnail">
+				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+				        	</div>
+				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
+						</div>
+						<div class="col-md-4 ctm-prod">
+				      		<h4>Fender Squier Stratocaster</h4>
+				      		<div class="thumbnail">
+				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+				        	</div>
+				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
+						</div>
+						<div class="col-md-4 ctm-prod">
+				      		<h4>Fender Squier Stratocaster</h4>
+				      		<div class="thumbnail">
+				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+				        	</div>
+				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
+						</div>
+						<div class="col-md-4 ctm-prod">
+				      		<h4>Fender Squier Stratocaster</h4>
+				      		<div class="thumbnail">
+				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+				        	</div>
+				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
+						</div>
+						<div class="col-md-4 ctm-prod">
+				      		<h4>Fender Squier Stratocaster</h4>
+				      		<div class="thumbnail">
+				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+				        	</div>
+				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- catégorie 2 -->
+				
+				<div class="panel-body">
+	            	<h2>Guitares électriques</h2>
+					<div class="row row-prod">
+						<div ng-controller="instrumentsListController as ctrl">
+							<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
+					        	<h4>{{ i.name }}</h4>
+						      	<div class="thumbnail">
+						        	<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+						        </div>
+						         <p>- {{ i.carac1 }}<br>- {{ i.carac2 }}<br>- {{ i.carac3 }}</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
