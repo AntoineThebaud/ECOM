@@ -3,9 +3,10 @@
 	
 	var module = angular.module("app");//retrieve the module named "app"
 	
-	module.controller('instrumentController', function() {
+	module.controller('instrumentController', function($routeParams) {
 //		this.idInstrument = $routeParams.idInstrument;
 		var vm = this;
+		vm.id = $routeParams.ID;
 		vm.name = "Super guitare de ouf";
 		vm.marque = "GraveReuch";
 		vm.image = "FenderSquier.png";

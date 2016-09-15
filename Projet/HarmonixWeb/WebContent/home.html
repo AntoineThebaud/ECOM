@@ -1,0 +1,71 @@
+<div class="panel panel-default">
+
+				<!-- Promotions -->
+				
+				<div class="panel-body">
+	            	<h2>Promotions</h2>
+					<div class="row row-prod">
+						<div ng-controller="instrumentsListController as ctrl">
+							<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
+					        	<h4>
+					        		<a ng-href="#ficheInstru/{{ i.id }}">
+					        			{{ i.name }}
+					        		</a>
+					        	</h4>
+						      	<div class="thumbnail">
+						        	<a ng-href="#ficheInstru/{{ i.id }}">
+						        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.image }}" alt="Generic placeholder thumbnail">
+						        	</a>
+						        </div>
+						         <p>- {{ i.carac1 }}<br>- {{ i.carac2 }}<br>- {{ i.carac3 }}</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Nouveautés -->
+				
+				<div class="panel-body">
+	            	<h2>Nouveautés</h2>
+					<div class="row row-prod">
+						<div ng-controller="instrumentsListController as ctrl">
+							<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
+					        	<h4>
+					        		<a ng-href="#ficheInstru/{{ i.id }}">
+					        			{{ i.name }}
+					        		</a>
+					        	</h4>
+						      	<div class="thumbnail">
+						        	<a ng-href="#ficheInstru/{{ i.id }}">
+						        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.image }}" alt="Generic placeholder thumbnail">
+						        	</a>
+						        </div>
+						         <p>- {{ i.carac1 }}<br>- {{ i.carac2 }}<br>- {{ i.carac3 }}</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Meilleures ventes -->
+				
+				<div class="panel-body">
+	            	<h2>Meilleures ventes</h2>
+					<div class="row row-prod">
+						<div ng-controller="instrumentsListController as ctrl">
+							<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
+					        	<h4>
+					        		<a ng-href="#ficheInstru/{{ i.id }}">
+					        			{{ i.name }}
+					        		</a>
+					        	</h4>
+						      	<div class="thumbnail">
+						        	<a ng-href="#ficheInstru/{{ i.id }}">
+						        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.image }}" alt="Generic placeholder thumbnail">
+						        	</a>
+						        </div>
+						         <p>- {{ i.carac1 }}<br>- {{ i.carac2 }}<br>- {{ i.carac3 }}</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+			</div>
