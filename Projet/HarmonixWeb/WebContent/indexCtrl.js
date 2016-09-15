@@ -3,11 +3,7 @@
 
 	var module = angular.module("app");//retrieve the module named "app"
 	
-	module.controller('instrumentsListController', function(Instrument) {
+	module.controller('instrumentsListController', function() {
 		this.instruments = [];
-		
-		var allInstruments = Instrument.query(function() {
-			$scope.instruments = allInstruments;
-		});
 	});
 })();

@@ -17,8 +17,10 @@
 
     <script src="http://localhost:8080/HarmonixWeb/js/angular.min.js"></script>
     <script src="http://localhost:8080/HarmonixWeb/js/angular-resource.min.js"></script>
-<!--     <script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script> -->
+	<script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script>
+	<script src="http://localhost:8080/HarmonixWeb/js/jquery-3.1.0.min.js"></script>
     <script src="app.module.js"></script>
+    <script src="route.config.js"></script>
     <!-- controller -->
 	<script src="indexCtrl.js"></script>
 	<!-- bootstrap -->
@@ -27,13 +29,15 @@
   <body ng-app="app">
 
   		<!-- header -->
-  		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/header/header.htm'"></div>
+<!--   		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/header/header.htm'"></div> -->
+  		<div ui-view="header"></div>
 
 		<!--menu (ruban)-->
-		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/navbar/navbar.htm'"></div>
+<!-- 		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/navbar/navbar.htm'"></div> -->
+		<div ui-view="menu"></div>
 
 		<!-- main content -->
-		<div class="container">
+		<div id="container" class="container">
 			<div class="panel panel-default">
 
 				<!-- catégorie 1 -->
