@@ -40,68 +40,70 @@
 
 		<!-- main content -->
 		<div class="container">
-		<div class="panel panel-default">
+			<div class="panel panel-default">
 
-				<!-- catégorie 1 -->
-
-	            <div class="panel-body">
-	            	<h2>Guitares électriques</h2>
-					<div class="row row-prod">
-					   	<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
-						</div>
-						<div class="col-md-4 ctm-prod">
-				      		<h4>Fender Squier Stratocaster</h4>
-				      		<div class="thumbnail">
-				        		<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
-				        	</div>
-				         	<p>- Corps en aulne<br>- Manche en érable<br>- Touche érable</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- catégorie 2 -->
+				<!-- Promotions -->
 				
 				<div class="panel-body">
-	            	<h2>Guitares électriques</h2>
+	            	<h2>Promotions</h2>
 					<div class="row row-prod">
 						<div ng-controller="instrumentsListController as ctrl">
 							<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-					        	<h4>{{ i.name }}</h4>
+					        	<h4>
+					        		<a href="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstru.html">
+					        			{{ i.name }}
+					        		</a>
+					        	</h4>
 						      	<div class="thumbnail">
-						        	<img src="img/FenderSquier.png" alt="Generic placeholder thumbnail">
+						        	<a href="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstru.html">
+						        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.image }}" alt="Generic placeholder thumbnail">
+						        	</a>
+						        </div>
+						         <p>- {{ i.carac1 }}<br>- {{ i.carac2 }}<br>- {{ i.carac3 }}</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Nouveautés -->
+				
+				<div class="panel-body">
+	            	<h2>Nouveautés</h2>
+					<div class="row row-prod">
+						<div ng-controller="instrumentsListController as ctrl">
+							<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
+					        	<h4>
+					        		<a href="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstru.html">
+					        			{{ i.name }}
+					        		</a>
+					        	</h4>
+						      	<div class="thumbnail">
+						        	<a href="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstru.html">
+						        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.image }}" alt="Generic placeholder thumbnail">
+						        	</a>
+						        </div>
+						         <p>- {{ i.carac1 }}<br>- {{ i.carac2 }}<br>- {{ i.carac3 }}</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Meilleures ventes -->
+				
+				<div class="panel-body">
+	            	<h2>Meilleures ventes</h2>
+					<div class="row row-prod">
+						<div ng-controller="instrumentsListController as ctrl">
+							<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
+					        	<h4>
+					        		<a href="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstru.html">
+					        			{{ i.name }}
+					        		</a>
+					        	</h4>
+						      	<div class="thumbnail">
+						        	<a href="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstru.html">
+						        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.image }}" alt="Generic placeholder thumbnail">
+						        	</a>
 						        </div>
 						         <p>- {{ i.carac1 }}<br>- {{ i.carac2 }}<br>- {{ i.carac3 }}</p>
 					        </div>
