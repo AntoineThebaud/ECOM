@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Page d'accueil</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- css for header -->
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/header.css" />
+	<!-- css for navbar -->
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/navbar.css" />
+	<!-- css for body  -->
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/body.css" />
+    <!-- css for current page -->
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/index.css" />
+
+    <script src="http://localhost:8080/HarmonixWeb/js/angular.min.js"></script>
+    <script src="http://localhost:8080/HarmonixWeb/js/angular-resource.min.js"></script>
+<!--     <script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script> -->
+    <script src="app.module.js"></script>
+    <!-- controller -->
+    <script src="instrumentFact.js"></script>
+	<script src="ajoutCtrl.js"></script>
+	<!-- bootstrap -->
+	<script src="http://localhost:8080/HarmonixWeb/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body ng-app="app">
+		<div ng-controller="ajoutController as cont">
+			<form class="form-horizontal" role="form" ng-submit="ajoutInstrument()">
+				<div class="form-group">
+				  <label for="title" class="col-sm-2 control-label">Nom</label>
+				  <div class="col-sm-10">
+				    <input type="text" ng-model="instru.nom" class="form-control" id="nom" placeholder="Nom de l'instrument"/>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label for="year" class="col-sm-2 control-label">Type</label>
+				  <div class="col-sm-10">
+				    <input type="text" ng-model="instru.type" class="form-control" id="type" placeholder="Type"/>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label for="director" class="col-sm-2 control-label">Fabricant</label>
+				  <div class="col-sm-10">
+				    <input type="text" ng-model="instru.fabricant" class="form-control" id="fabricant" placeholder="Frabicant"/>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label for="plot" class="col-sm-2 control-label">Poids</label>
+				  <div class="col-sm-10">
+				    <input type="text" ng-model="instru.poids" class="form-control" id="poids" placeholder="Poids"/>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label for="plot" class="col-sm-2 control-label">Prix</label>
+				  <div class="col-sm-10">
+				    <input type="text" ng-model="instru.prix" class="form-control" id="prix" placeholder="Prix"/>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label for="plot" class="col-sm-2 control-label">Promo</label>
+				  <div class="col-sm-10">
+				    <input type="text" ng-model="instru.promo" class="form-control" id="promo" placeholder="Promo"/>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label for="plot" class="col-sm-2 control-label">Images</label>
+				  <div class="col-sm-10">
+				    <input type="text" ng-model="instru.images" class="form-control" id="images" placeholder="Images"/>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <div class="col-sm-offset-2 col-sm-10">
+				    <button type="submit" class="btn btn-primary">Ajouter</button>
+				  </div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

@@ -27,7 +27,7 @@ public class InstrumentResource {
     }
 
     public Instrument create(Instrument instrument){
-    	em.persist( instrument);
+    	em.persist(instrument);
     	return instrument;
     }
     public Instrument getById(long id){
