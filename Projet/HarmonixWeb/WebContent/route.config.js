@@ -27,33 +27,33 @@
 	        	url: '/',
 	        	views: {
 	        		'container': {
-	        			templateUrl: 'index.html',
-//	        			controller: 'indexCtrl',
-//	        			controllerAs: 'index'
+	        			templateUrl: 'home.htm',
+	        			controller: 'instrumentsListController',
+	        			controllerAs: 'instrumentsList'
 	        		},
 	        		'header': headerState,
 	        		'menu': menuState
 	        	}
 	        })
 	        .state('instrument', {
-	        	url:'/instrument/:id_instrument',
+	        	url:'/ficheInstru/ficheInstru.html',
 	        	views: {
 	        		'container': {
 	        			templateUrl: 'components/ficheInstru/ficheInstru.html',
-//	        			controller: 'ficheInstruCtrl',
-//	        			controllerAs: 'ficheInstru'
+	        			controller: 'ficheInstruCtrl',
+	        			controllerAs: 'ficheInstru'
 	        		}
 	        	},
 	        	'header': headerState,
 	        	'menu': menuState
 	        })
 	        .state('panier', {
-	        	url: '/panier/:id_panier',
+	        	url: '/panier/panier.html',
 	        	views: {
 	        		'container': {
 	        			templateUrl: '/components/panier/panier.html',
-//	        			controller: 'panierCtrl',
-//	        			controllerAs: 'panier'
+	        			controller: 'panierCtrl',
+	        			controllerAs: 'panier'
 	        		},
 	        		'header': headerState,
 	        		'menu': menuState
