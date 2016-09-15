@@ -10,11 +10,11 @@
 		$scope.instru.fabricant = 'Gibson';
 		$scope.instru.poids = 2.5;
 		$scope.instru.prix = 990;
-		$scope.instru.caracteristiques = [
- 		    {nom: "Bois", valeur:"Acajou"},
- 		    {nom:"Largeur du sillet", valeur:"46 mm"},
- 		    {nom:"Profil du manche", valeur:"Slim Taper"}
- 		];
+//		$scope.instru.caracteristiques = [
+// 		    {nom: "Bois", valeur:"Acajou"},
+// 		    {nom:"Largeur du sillet", valeur:"46 mm"},
+// 		    {nom:"Profil du manche", valeur:"Slim Taper"}
+// 		];
 		
 	    $scope.instru.$save(function() {
 	    	console.log('ajout réussi');

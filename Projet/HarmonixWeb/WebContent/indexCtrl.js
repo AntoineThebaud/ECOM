@@ -3,56 +3,40 @@
 
 	var module = angular.module("app");//retrieve the module named "app"
 
-	module.controller('instrumentsListController', function(/*Instrument*/) {
+	module.controller('instrumentsListController', function(Instrument) {
 		var vm = this;
 		vm.instruments = [];
-		// valeur exemple :
-		vm.instruments = [
-		{
-			id:	1,
-			name: "Fender Squier Stratocaster",
-			image: "FenderSquier.png",
-			carac1: "manche en titane",
-			carac2: "corps en papier crépon",
-			carac3: "micros double bobinage"
-		},
-		{
-			id:	2,
-			name: "Ibanez HX820",
-			image: "FenderSquier.png",
-		    carac1: "manche en barbaque",
-		    carac2: "corps en deulamek",
-		    carac3: "micros ondes"
-		},
-		{
-			id:	3,
-			name: "LAG B400",
-			image: "FenderSquier.png",
-		    carac1: "manche en barbaque",
-		    carac2: "corps en deulamek",
-		    carac3: "micros ondes"
-		}
-		];
 
-//		var getInstruments = Instrument.query(function() {
-//			vm.instruments = getInstruments;
-//		});
+		var getInstruments = Instrument.query(function() {
+			vm.instruments = getInstruments;
+			console.log(vm.instruments);
+		});
 	});
 })();
 
 // valeur exemple :
-//
 //vm.instruments = [
 //{
-//	name: "Fender Trolol SuperBatard",
+//	id:	1,
+//	name: "Fender Squier Stratocaster",
+//	image: "FenderSquier.png",
 //	carac1: "manche en titane",
 //	carac2: "corps en papier crépon",
 //	carac3: "micros double bobinage"
 //},
 //{
-//	name: "Ibanez Merguez",
+//	id:	2,
+//	name: "Ibanez HX820",
+//	image: "FenderSquier.png",
+//    carac1: "manche en barbaque",
+//    carac2: "corps en deulamek",
+//    carac3: "micros ondes"
+//},
+//{
+//	id:	3,
+//	name: "LAG B400",
+//	image: "FenderSquier.png",
 //    carac1: "manche en barbaque",
 //    carac2: "corps en deulamek",
 //    carac3: "micros ondes"
 //}
-//];
