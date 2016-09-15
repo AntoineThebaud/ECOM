@@ -1,12 +1,10 @@
 (function () {
-  "use strict";
+	"use strict";
 
-  angular
-   .module('app')
-   .factory('Instrument', instrumentFact);
-
-  function instrumentFact($resource) {
-    return $resource('http://localhost:8080/TODO');
-  }
-
+	var module = angular.module("app");//retrieve the module named "app"
+	
+	module.factory('Instrument', function ($resource) {
+		return $resource('http://localhost:8080/TODO');
+//		return $resource('/users/:userId', {userId:'@id'});
+	});
 })();
