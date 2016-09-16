@@ -15,3 +15,11 @@ body {
 .panel {
     border-radius: 0px;
 }
+.ctm-price {
+	 text-align: right;
+	 color: #38761D;
+	 font-weight: bold;
+}
+.ctm-ul {
+	padding-left: 0px;
+}
