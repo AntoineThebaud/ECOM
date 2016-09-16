@@ -6,13 +6,16 @@
 	  $routeProvider
 	  	.when('/ficheInstru/:ID', {
 	  		templateUrl: './components/ficheInstru/ficheInstru.html',
-		  controller: 'instrumentController'
-	  })
+	  		controller: 'instrumentController'
+	  	})
 	  	.when('/', {
 	  		templateUrl: 'home.html',
 	  		controller: 'instrumentsListController'
 	  	})
-	  	
+	  	.when('/categorie/:TYPE', {
+	  		templateUrl: './components/categorie/categorie.htm',
+	  		controller: 'categorieController'
+	  	})
 	  	.otherwise({
 	  		redirectTo: '/'
 	  	})
