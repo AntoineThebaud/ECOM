@@ -3,7 +3,7 @@
 	<!-- Promotions -->
 	
 	<div class="panel-body">
-          	<h2>Promotions</h2>
+       	<h2>Promotions</h2>
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
@@ -18,10 +18,14 @@
 			        	</a>
 			        </div>
 			        <div class="col-md-6">
-			        	<p>- type : {{ i.type }}<br>- poids : {{ i.poids }}<br>- id : {{ i.idInstrument }}</p>
+			        	<ul class="ctm-ul">
+							<li>type : {{ i.type }}</li>
+							<li>poids : {{ i.poids }}</li>
+							<li>id : {{ i.idInstrument }}</li>
+						</ul>
 			        </div>
 			        <div class="col-md-6">
-			        	<h3 style="text-align:right">{{ i.prix }} �</h3>
+			        	<h3 class="ctm-price">{{ i.prix }} &#8364</h3>
 			        </div>			         
 		        </div>
 			</div>
@@ -31,12 +35,12 @@
 	<!-- Nouveautés -->
 	
 	<div class="panel-body">
-          	<h2>Nouveautés</h2>
+        <h2>Nouveautés</h2>
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
 		        	<h4>
-		        		<a ng-href="#ficheInstru/{{ i.id }}">
+		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 		        			{{ i.fabricant }} : {{ i.nom }}
 		        		</a>
 		        	</h4>
@@ -45,7 +49,12 @@
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.images }}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
-			         <p>- prix : {{ i.prix }}<br>- poids : {{ i.poids }}<br>- id : {{ i.idInstrument }}</p>
+			        <div class="col-md-6">
+			        	<p>type : {{ i.type }}<br>poids : {{ i.poids }}<br>id : {{ i.idInstrument }}</p>
+			        </div>
+			        <div class="col-md-6">
+			        	<h3 class="ctm-price">{{ i.prix }} &#8364</h3>
+			        </div>			         
 		        </div>
 			</div>
 		</div>
@@ -54,12 +63,12 @@
 	<!-- Meilleures ventes -->
 	
 	<div class="panel-body">
-          	<h2>Meilleures ventes</h2>
+        <h2>Meilleures ventes</h2>
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
 		        	<h4>
-		        		<a ng-href="#ficheInstru/{{ i.id }}">
+		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 		        			{{ i.fabricant }} : {{ i.nom }}
 		        		</a>
 		        	</h4>
@@ -68,7 +77,12 @@
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.images }}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
-			         <p>- prix : {{ i.prix }}<br>- poids : {{ i.poids }}<br>- id : {{ i.idInstrument }}</p>
+			        <div class="col-md-6">
+			        	<p>type : {{ i.type }}<br>poids : {{ i.poids }}<br>id : {{ i.idInstrument }}</p>
+			        </div>
+					<div class="col-md-6">
+			        	<h3 class="ctm-price">{{ i.prix }} &#8364</h3>
+			        </div>				         
 		        </div>
 			</div>
 		</div>
