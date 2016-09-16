@@ -13,6 +13,7 @@
 	  		controller: 'instrumentsListController'
 	  	})
 	  	
+	  	
 	  	.otherwise({
 	  		redirectTo: '/'
 	  	})
