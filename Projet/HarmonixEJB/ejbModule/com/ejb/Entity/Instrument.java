@@ -1,7 +1,7 @@
 package com.ejb.Entity;
 
-import java.util.Collection;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
@@ -22,43 +23,36 @@ public class Instrument {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idInstrument")
+	@Column(name = "id_instrument")
 	private long idInstrument;
 
-	@Column(name = "nom")
 	private String nom;
 
-	@Column(name = "type")
 	private String type;
 
-	@Column(name = "images")
 	private String images;
 
-	@Column(name = "fabricant")
 	private String fabricant;
 
-	@Column(name = "poids")
 	private float poids;
 
-	@Column(name = "prix")
 	private float prix;
 
-	@Column(name = "promo")
 	private int promo;
 
-	@Column(name = "bestSeller")
+	@Column(name = "best_seller")
 	private Boolean bestSeller;
 
-	@Column(name = "categorie")
 	private int categorie;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "instrument", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "instrument", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@Fetch(value = FetchMode.SUBSELECT)
-	private Set<Avis> avis;
+	private List<Avis> avis;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "instrument", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_instrument", referencedColumnName = "id_instrument")
 	@Fetch(value = FetchMode.SUBSELECT)
-	private Set<Caracteristique> caracteristiques;
+	private List<Caracteristique> caracteristiques;
 
 	public Instrument() {
 		super();
@@ -66,8 +60,7 @@ public class Instrument {
 	}
 
 	public Instrument(String nom, String type, String images, String fabricant, float poids, float prix, int promo,
-			Boolean bestSeller, int categorie, Set<Avis> avis,
-			Set<Caracteristique> caracteristiques) {
+			Boolean bestSeller, int categorie, List<Avis> avis, List<Caracteristique> caracteristiques) {
 
 		this.nom = nom;
 		this.type = type;
@@ -90,20 +83,29 @@ public class Instrument {
 		this.images = images;
 	}
 
-	public Collection<Avis> getAvis() {
+	public List<Avis> getAvis() {
 		return avis;
 	}
 
-	public void setAvis(Set<Avis> avis) {
+	public void setAvis(List<Avis> avis) {
 		this.avis = avis;
 	}
 
-	public Set<Caracteristique> getCaracteristiques() {
+	public List<Caracteristique> getCaracteristiques() {
 		return this.caracteristiques;
 	}
 
-	public void setCaracteristiques(Set<Caracteristique> caracteristiques) {
+	public void setCaracteristiques(List<Caracteristique> caracteristiques) {
 		this.caracteristiques = caracteristiques;
+	}
+
+	public void addCaracteristique(Caracteristique c) {
+		if (c != null) {
+			if (caracteristiques == null) {
+				caracteristiques = new ArrayList<Caracteristique>();
+			}
+			caracteristiques.add(c);
+		}
 	}
 
 	public long getIdInstrument() {

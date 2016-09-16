@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import com.ejb.Entity.Caracteristique;
 import com.ejb.Entity.Instrument;
 
 /**

@@ -1,31 +1,21 @@
 package com.ejb.Entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 
 @Entity
 public class Caracteristique {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_caracteristique")
 	private long idCaracteristique;
 
-	@ManyToOne
-	@JoinColumn(name = "idInstrument")
-	private Instrument instrument;
-
 	private String nom;
+
 	private String valeur;
 
 	public Caracteristique() {
@@ -33,18 +23,17 @@ public class Caracteristique {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Caracteristique(Instrument instrument, String nom, String valeur) {
-		this.instrument = instrument;
+	public Caracteristique(String nom, String valeur) {
 		this.nom = nom;
 		this.valeur = valeur;
 	}
 
-	public Instrument getInstrument() {
-		return instrument;
+	public long getIdCaracteristique() {
+		return idCaracteristique;
 	}
 
-	public void setInstrument(Instrument instrument) {
-		this.instrument = instrument;
+	public void setIdCaracteristique(long idCaracteristique) {
+		this.idCaracteristique = idCaracteristique;
 	}
 
 	public String getNom() {

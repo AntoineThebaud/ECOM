@@ -2,6 +2,7 @@ package com.ejb.Entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,43 +12,37 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
-
 @Entity
 public class Avis {
-	
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_avis")
 	private long IdAvis;
-	
+
 	private int note;
-	
+
 	private String titre;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
-	
+
 	private String texte;
-	
+
 	@ManyToOne
-	@JoinColumn(name="idUtilisateur")
+	@JoinColumn(name = "id_utilisateur")
 	private Utilisateur utilisateur;
-	
+
 	@ManyToOne
-	@JoinColumn(name="idInstrument")
+	@JoinColumn(name = "id_instrument")
 	private Instrument instrument;
-	
-	
-	
+
 	public Avis() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Avis(int note, String titre, Date date, String texte, Utilisateur utilisateur,
-			Instrument instrument) {
+	public Avis(int note, String titre, Date date, String texte, Utilisateur utilisateur, Instrument instrument) {
 		this.note = note;
 		this.titre = titre;
 		this.date = date;
@@ -56,26 +51,21 @@ public class Avis {
 		this.instrument = instrument;
 	}
 
-
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
 	}
-
 
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
 
-
 	public Instrument getInstrument() {
 		return instrument;
 	}
 
-
 	public void setInstrument(Instrument instrument) {
 		this.instrument = instrument;
 	}
-
 
 	public long getIdAvis() {
 		return IdAvis;
@@ -113,11 +103,4 @@ public class Avis {
 		this.texte = texte;
 	}
 
-	
-	
-	
-	
-	
-	
-	
 }

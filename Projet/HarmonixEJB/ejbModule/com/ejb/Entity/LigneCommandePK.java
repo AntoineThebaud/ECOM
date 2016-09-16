@@ -4,32 +4,26 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.IdClass;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 
 @Embeddable
 public class LigneCommandePK implements Serializable {
 
+	@Column(name = "id_instrument")
+	private long idInstrument;
 	
-	@Column(name = "idInstrument")
-	private long idInstrument ;
-	@Column(name = "idCommande")
+	@Column(name = "id_commande")
 	private long idCommande;
-	
+
 	public LigneCommandePK() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	public LigneCommandePK(long idInstrument, long idCommande) {
 		super();
 		this.idInstrument = idInstrument;
 		this.idCommande = idCommande;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -39,7 +33,6 @@ public class LigneCommandePK implements Serializable {
 		result = prime * result + (int) (idInstrument ^ (idInstrument >>> 32));
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -57,12 +50,4 @@ public class LigneCommandePK implements Serializable {
 		return true;
 	}
 
-
-	
-	
-	
-	
-	
-	
-	
 }
