@@ -7,13 +7,13 @@
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-		        	<h4>
+		        	<h4 class="ctm-pname">
 		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 		        			{{ i.fabricant }} : {{ i.nom }}
 		        		</a>
 		        	</h4>
-			      	<div class="thumbnail">
-			        	<a ng-href="#ficheInstru/{{ i.id }}">
+			      	<div class="thumbnail ctm-img">
+			        	<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.images }}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
@@ -39,13 +39,13 @@
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-		        	<h4>
+		        	<h4 class="ctm-pname">
 		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 		        			{{ i.fabricant }} : {{ i.nom }}
 		        		</a>
 		        	</h4>
-			      	<div class="thumbnail">
-			        	<a ng-href="#ficheInstru/{{ i.id }}">
+			      	<div class="thumbnail ctm-img">
+			        	<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.images }}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
@@ -67,13 +67,13 @@
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-		        	<h4>
+		        	<h4 class="ctm-pname">
 		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 		        			{{ i.fabricant }} : {{ i.nom }}
 		        		</a>
 		        	</h4>
-			      	<div class="thumbnail">
-			        	<a ng-href="#ficheInstru/{{ i.id }}">
+			      	<div class="thumbnail ctm-img">
+			        	<a ng-href="#ficheInstru/{{ i.idInstrument }}">
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.images }}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>

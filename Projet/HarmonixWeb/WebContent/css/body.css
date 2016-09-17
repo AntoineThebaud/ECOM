@@ -23,3 +23,9 @@ body {
 .ctm-ul {
 	padding-left: 0px;
 }
+.ctm-pname {
+	min-height: 40px;
+}
+.ctm-img {
+	min-height: 110px;
+}
