@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Page d'accueil</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
@@ -18,32 +18,33 @@
     <script src="http://localhost:8080/HarmonixWeb/js/angular.min.js"></script>
     <script src="http://localhost:8080/HarmonixWeb/js/angular-resource.min.js"></script>
     <script src="http://localhost:8080/HarmonixWeb/js/ui-bootstrap.min.js"></script>
-<!-- 	<script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script> -->
+<!--<script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script> -->
 	<script src="http://localhost:8080/HarmonixWeb/js/jquery-3.1.0.min.js"></script>
 	<script src="http://localhost:8080/HarmonixWeb/js/angular-route.min.js"></script>
+	<script src="http://localhost:8080/HarmonixWeb/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- module -->
     <script src="app.module.js"></script>
-<!--     <script src="route.config.js"></script> -->
-    <!-- controller -->
-	<script src="indexCtrl.js"></script>
+    <!-- routeur (disabled) -->
+    <!--<script src="route.config.js"></script> -->
 	<!-- factory for instruments -->
 	<script src="shared/instrument/instrumentFact.js"></script>
 	
-	<!-- test controller guitar -->
-	<script src="http://localhost:8080/HarmonixWeb/components/categorie/categorieCtrl.js"></script>	
-	
-	<script src="components/ficheInstru/ficheInstruCtrl.js"></script>
-	<!-- bootstrap -->
-	<script src="http://localhost:8080/HarmonixWeb/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!--  controllers for partials -->
+	<script src="http://localhost:8080/HarmonixWeb/components/home/homeCtrl.js"></script>
+	<script src="http://localhost:8080/HarmonixWeb/components/categorie/categorieCtrl.js"></script>
+	<script src="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstruCtrl.js"></script>
+	<script src="http://localhost:8080/HarmonixWeb/components/panier/panierCtrl.js"></script>
   </head>
   <body ng-app="app">
 
   		<!-- header -->
   		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/header/header.htm'"></div>
-<!--   		<div ui-view="header"></div> -->
+<!--   	<div ui-view="header"></div> -->
 
 		<!--menu (ruban)-->
 		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/navbar/navbar.htm'"></div>
-<!-- 		<div ui-view="menu"></div> -->
+<!-- 	<div ui-view="menu"></div> -->
 
 		<!-- main content -->
 		<div ng-view class="container">

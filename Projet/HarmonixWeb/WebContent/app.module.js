@@ -5,16 +5,20 @@
   .config(function ($routeProvider){
 	  $routeProvider
 	  	.when('/', {
-	  		templateUrl: 'home.html',
+	  		templateUrl: './components/home/home.htm',
 	  		controller: 'instrumentsListController'
 	  	})
 	  	.when('/ficheInstru/:ID', {
-	  		templateUrl: './components/ficheInstru/ficheInstru.html',
+	  		templateUrl: './components/ficheInstru/ficheInstru.htm',
 	  		controller: 'instrumentController'
 	  	})
 	  	.when('/categorie/:TYPE', {
 	  		templateUrl: './components/categorie/categorie.htm',
 	  		controller: 'categorieController'
+	  	})
+	  	.when('/panier', {
+	  		templateUrl: './components/panier/panier.htm',
+	  		controller: 'panierController'
 	  	})
 	  	.otherwise({
 	  		redirectTo: '/'

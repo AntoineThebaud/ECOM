@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div ng-controller="instrumentController as ctrl">
+			<div class="col-md-8">
+				<h2><b>{{ ctrl.marque }}</b> {{ ctrl.modele }}</h2>
+			</div>
+			<div class="col-md-3">						
+				<h2 class="ctm-price">{{ ctrl.prix }} €</h2>
+			</div>
+			<div class="col-md-1">
+				<h2>
+					<button class="btn btn-default">
+						<span class="glyphicon glyphicon-shopping-cart"></span>
+					</button>
+				</h2>
+			</div>
+			<div class="col-md-12">		
+				<div class="thumbnail">
+		        	<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ ctrl.image }}" alt="Generic placeholder thumbnail">
+		   		</div>
+		   		<h3>Spécifications</h3>
+		   		<ul>
+				    <li ng-repeat="(key, value) in ctrl.specs"> <!--  ng-bind-html-unsafe="opt.text"  -->
+				        {{ key }} : {{ value }}
+				    </li>
+			    </ul>
+		   	</div>
+	   		
+		</div>
+	</div>		
+</div>
