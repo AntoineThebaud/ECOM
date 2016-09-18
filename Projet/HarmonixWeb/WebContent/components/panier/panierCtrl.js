@@ -5,6 +5,8 @@
 	
 	module.controller('panierController', function() {
 		var vm = this;
+		
+		//valeurs exemples :
 		vm.articles = {
 			"Fender Beurre": {
 				image: "FenderSquier.png",
@@ -29,7 +31,7 @@
 			for (var key in vm.articles) {
 				total += (vm.articles[key].prix_u * vm.articles[key].quantity);
 			}
-		    console.log("total="+total);
+//		    console.log("total="+total);
 		    return total;
 		};
 	});

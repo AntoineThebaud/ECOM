@@ -1,0 +1,21 @@
+/*borders*/
+.ctm-prod {
+	border: 1px solid;
+}
+.row-prod {
+	border: 1px solid;
+}
+.ctm-price {
+	 text-align: right;
+	 color: #38761D;
+	 font-weight: bold;
+}
+.ctm-pname {
+	min-height: 40px;
+}
+.ctm-ul {
+	padding-left: 0px;
+}
+.ctm-img {
+	min-height: 110px;
+}
