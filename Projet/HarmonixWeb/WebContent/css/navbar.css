@@ -1,17 +1,16 @@
+
 .navbar-inverse {
 	border-color: #333;
-	background-color:#333;
+	background-color: #333;
 	margin-bottom: 0px;
 }
 .navbar-inverse .navbar-nav > li {
-    width: 90px;
     min-height: 30px;
 	height: 30px;
 }
 .navbar-inverse .navbar-nav > li > a {
     color: #FFFFFF;
     font-size: 12px;
-    text-align: center;
     border-right: 1px solid;
     border-color: #FFFFFF;
     min-height: 30px;
@@ -26,4 +25,26 @@
 	min-height: 30px;
 	height: 30px;
 	border: none;
+}
+
+
+.ctm-menu-li {
+	width: 90px;
+}
+.ctm-menu-a {
+	text-align: center;
+}
+
+
+.ctm-submenu-li {
+	background-color: #333;
+	text-align: left;
+	padding: 0px;
+	width: 200px;
+	border-top: 1px solid;
+    border-color: #666;
+}
+.ctm-submenu-a {
+	text-align: left;
+	margin-left: 15px;
 }

@@ -1,21 +1,16 @@
 <div class="container ctm-nav-cont">
     <div class="navbar navbar-inverse ctm-nav">
-        <ul class="nav navbar-nav">
-            <li><a href="#categorie/Guitare"><b>Guitares</b></a></li>
-            <li class="dropdown">
-	          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Basses <span class="caret"></span></a>
-	          <ul class="dropdown-menu" role="menu">
-	            <li><a href="/PIA/ServiceClient/ListeClients/index.php">Basses 1</a></li>
-	            <li><a href="/PIA/ServiceClient/Historique/index.php">Basses 1</a></li>
-	            <li><a href="/PIA/ServiceClient/FacturerService/index.php">Basses 3</a></li>
-	          </ul>
-	        </li>
-            <li><a href="#"><b>Batteries</b></a></li>
-            <li><a href="#"><b>Claviers</b></a></li>
-            <li><a href="#"><b>DJ</b></a></li>
-            <li><a href="#"><b>Vents</b></a></li>
-            <li><a href="#"><b>Violons</b></a></li>
-            <li><a href="#"><b>Instr. Trad.</b></a></li>
-        </ul>
+    	<div ng-controller="navbarController as ctrl">
+	        <ul class="nav navbar-nav">
+		        <li class="ctm-menu-li" ng-repeat="item in ctrl.items" ng-mouseenter="ctrl.displayChilds($index)" ng-mouseleave="ctrl.displayChilds($index)">
+		            <a class="ctm-menu-a"href="#categorie/Guitare"><b>{{item.name}}</b></a>
+		            <ul class="nav navbar-nav">
+		                <li class="ctm-submenu-li" ng-repeat="subItem in item.subItems" ng-show="item.active">
+		                    <a class="ctm-submenu-a" href="#categorie/Guitare"><b>{{subItem.name}}</b></a>
+		                </li>
+		            </ul>
+		        </li>
+		    </ul>
+		</div>
     </div>
 </div>
