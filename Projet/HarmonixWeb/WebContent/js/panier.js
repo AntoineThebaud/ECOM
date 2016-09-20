@@ -33,10 +33,16 @@ panier.prototype.addArticle = function(nom, prix, image, id) {
 //supprime un article du panier
 panier.prototype.delArticle = function(nom) {
 	delete this.articles[nom];
-	//sauvegarde le panier dans le localstorage
+	//met à jour le panier dans le localstorage
 	this.save();
 }
 
+//modifie la quantité d'un produit
+panier.prototype.modifyQty = function(nom, qty) {
+	this.articles[nom].quantity = qty;
+	//met à jour le panier dans le localstorage
+	this.save();
+}
 
 //calcule le coût total du panier
 panier.prototype.getTotal = function() {
