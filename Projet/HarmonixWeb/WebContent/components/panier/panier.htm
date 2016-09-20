@@ -6,15 +6,15 @@
 					<th><!--bouton delete--></th>
 					<th>Article</th>
 					<th>Quantité</th>
-					<th>Total</th>
+					<th>Prix</th>
 				</tr>
 			</thead>
 			<tbody ng-controller="panierController as ctrl">
-				<tr ng-repeat="(nom, attributs) in ctrl.panier.articles">
+				<tr ng-repeat="(nom, attributs) in ctrl.articles">
 					<td><button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></td>
 					<td><img ng-src="http://localhost:8080/HarmonixWeb/img/{{ attributs.image }}" class="ctm-img" alt="[image]">{{ nom }}</td>
 					<td><input type="text" ng-value="{{ attributs.quantity }}"></td>
-					<td>{{ attributs.quantity * attributs.prix }} €</td>	                    	
+					<td>{{ attributs.quantity * attributs.prix_u }} €</td>	                    	
 				</tr>
 				<tr>
 					<td class="highrow"></td>
@@ -26,7 +26,7 @@
 					<td class="emptyrow"></td>
 					<td class="emptyrow"></td>
 					<td class="emptyrow">TOTAL</td>
-					<td class="emptyrow">{{ ctrl.panier.getTotal() }} €</td>
+					<td class="emptyrow">{{ ctrl.prixTotal() }} €</td>
 				</tr>
 				<tr>
 					<td class="emptyrow" colspan="1"><a href="#" class="btn btn-danger btn-block">Retour</a></td>
