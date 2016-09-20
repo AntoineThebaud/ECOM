@@ -3,3 +3,16 @@
 	 color: #38761D;
 	 font-weight: bold;
 }
+
+.ctm-table {
+	width: 300px;
+	margin-left: 20px;
+}
+
+.ctm-table > tbody > tr > td {
+	border: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 5px;
+}

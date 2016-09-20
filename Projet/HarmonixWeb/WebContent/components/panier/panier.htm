@@ -6,6 +6,7 @@
 					<th><!--bouton delete--></th>
 					<th>Article</th>
 					<th>Quantité</th>
+					<th>Prix unitaire</th>
 					<th>Total</th>
 				</tr>
 			</thead>
@@ -18,8 +19,9 @@
 					</td>
 					<td><img ng-src="http://localhost:8080/HarmonixWeb/img/{{ attributs.image }}" class="ctm-img" alt="[image]">{{ nom }}</td>
 					<td>
-						<input type="number" ng-value="{{ attributs.quantity }}" ng-model="maycouy" ng-change="ctrl.panier.modifyQty(nom, maycouy)" >
+						<input type="number" class="ctm-size" ng-value="{{ attributs.quantity }}" ng-model="maycouy" ng-change="ctrl.panier.modifyQty(nom, maycouy)" >
 					</td>
+					<td>{{ attributs.prix }} €</td>
 					<td>{{ attributs.quantity * attributs.prix }} €</td>	                    	
 				</tr>
 				<tr>
@@ -27,15 +29,18 @@
 					<td class="highrow"></td>
 					<td class="highrow"></td>
 					<td class="highrow"></td>
+					<td class="highrow"></td>
 				</tr>
 				<tr>
 					<td class="emptyrow"></td>
 					<td class="emptyrow"></td>
-					<td class="emptyrow">TOTAL</td>
-					<td class="emptyrow">{{ ctrl.panier.getTotal() }} €</td>
+					<td class="emptyrow"></td>
+					<td class="emptyrow"><b>TOTAL</b></td>
+					<td class="emptyrow"><b>{{ ctrl.panier.getTotal() }} €</b></td>
 				</tr>
 				<tr>
-					<td class="emptyrow" colspan="1"><a href="#" class="btn btn-danger btn-block">Retour</a></td>
+					<td class="emptyrow"><a href="#" class="btn btn-danger btn-block">Retour</a></td>
+					<td class="emptyrow"></td>
 					<td class="emptyrow"></td>
 					<td class="emptyrow" colspan="2"><a href="#" class="btn btn-success btn-block">Passer commande</a></td>
 				</tr>

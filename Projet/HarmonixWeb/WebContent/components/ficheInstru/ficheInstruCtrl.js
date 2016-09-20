@@ -17,11 +17,7 @@
 			vm.marque = product.fabricant;
 			vm.image = product.images;
 			vm.prix = product.prix;			
-			vm.specs = {
-				"Poids": product.poids,
-				"Type": product.type,
-				"Catégorie": product.categorie
-			}
+			vm.specs = product.caracteristiques;
 			//ajouter la note !
 		});
 	});
