@@ -10,7 +10,7 @@
 		vm.id = $routeParams.ID;
 		
 		//récupère le panier
-		vm.monPanier = Panier.monPanier;
+		vm.panier = Panier.monPanier;
 		
 		var product = Instrument.get({"id": $routeParams.ID}, function() {
 			vm.modele = product.nom;			
