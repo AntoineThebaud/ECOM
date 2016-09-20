@@ -3,7 +3,8 @@
 
 	var module = angular.module("app");//retrieve the module named "app"
 
-	module.controller('instrumentsListController', function(Instrument) {
+	module.controller('instrumentsListController', function(Instrument, Panier) {
+		
 		var vm = this;
 		vm.instruments = [];
 

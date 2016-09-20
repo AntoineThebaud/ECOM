@@ -3,11 +3,15 @@
 	
 	var module = angular.module("app");//retrieve the module named "app"
 	
-	module.controller('instrumentController', function(Instrument, $routeParams) {
+	module.controller('instrumentController', function($routeParams, Instrument, Panier) {
+		
 		//console.log($routeParams);
 		var vm = this;
 		vm.id = $routeParams.ID;
-
+		
+		//récupère le panier
+		vm.monPanier = Panier.monPanier;
+		
 		var product = Instrument.get({"id": $routeParams.ID}, function() {
 			vm.modele = product.nom;			
 			vm.marque = product.fabricant;

@@ -1,8 +1,9 @@
 (function() {
-	
   'use strict';
-  angular.module('app', ['ngResource', 'ngRoute'])
-  .config(function ($routeProvider){
+  
+  var module = angular.module('app', ['ngResource', 'ngRoute']);
+  
+  module.config(function ($routeProvider){
 	  $routeProvider
 	  	.when('/', {
 	  		templateUrl: './components/home/home.htm',
@@ -22,8 +23,7 @@
 	  	})
 	  	.otherwise({
 	  		redirectTo: '/'
-	  	})
-	  	;
+	  	});
 	  
 	 // $locationProvider.html5Mode(true);
   })
