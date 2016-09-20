@@ -30,9 +30,3 @@
   
 //  angular.module('app', ['ui.router', 'ngResource']);
 })();
-
-// à rajouter :
-//	.when('/panier', {
-//  		templateUrl: './components/panier/panier.htm',
-//  		controller: 'panierController'
-//  	})

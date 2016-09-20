@@ -6,6 +6,7 @@ function panier() {
 	//			- méthodes load() et save() dans le localstorage
 }
 
+//ajoute un nouveau produit au panier
 panier.prototype.addArticle = function(nom, prix, image, id) {
 	
 	//article déjà dans le panier : on augmente la quantité de 1
@@ -23,6 +24,14 @@ panier.prototype.addArticle = function(nom, prix, image, id) {
 		};
 		this.articles[nom] = article;
 	}
-	console.log("updated panier");
-	console.log(this);
+}
+
+//calcule le coût total du panier
+panier.prototype.getTotal = function() {
+	var total = 0;
+	for(var key in this.articles) {
+		article = this.articles[key]
+		total += article.prix * article.quantity;
+	}
+	return total;
 }
