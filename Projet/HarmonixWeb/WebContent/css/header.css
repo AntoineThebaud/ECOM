@@ -17,13 +17,21 @@
 	position: absolute;
 	right: 0px;
 }
-.ctm-form > p {
-	display: inline;
+
+.ctm-p {
 	color: #FFFFFF;
 }
+.ctm-p-inline {
+	display: inline;
+}
+
 .ctm-btn-w {
 	min-width: 100px;
 }
 .ctm-btn-h {
 	min-height: 73px;
+}
+
+.ctm-centered {
+	text-align: center;
 }

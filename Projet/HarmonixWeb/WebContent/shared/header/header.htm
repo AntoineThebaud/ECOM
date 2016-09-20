@@ -1,27 +1,30 @@
 <div class="container">
 	<div class="row ctm-header-row">
-		<div class="col-md-4 ctm-header-col">
-			<a href="http://localhost:8080/HarmonixWeb/#/"><img src="http://localhost:8080/HarmonixWeb/img/Logo.png" class="ctm-logo"></a>
-		</div>
-		<div class="col-md-6 ctm-header-col">
-			<form class="form-inline ctm-form">
-				<input type="email" class="form-control" id="email">
-				<input type="email" class="form-control" id="email">
-				<input class="btn btn-default ctm-btn-w" value="Connexion" type="button">
-			</form>
-			<br><br>
-			<form class="form-inline ctm-form">
-				<p>Pas encore membre ?</p>
-				<input class="btn btn-default ctm-btn-w" value="Inscription" type="button">
-			</form>
-		</div>
-		<!-- bouton panier -->
-		<div class="col-md-2 ctm-header-col">
-			<form action="#panier/" class="ctm-form">
-				<button type="submit" class="btn btn-default ctm-btn-w ctm-btn-h">
-				    <span style="font-size:3.5em;" class="glyphicon glyphicon-shopping-cart"></span>
-				</button>
-			</form>
+		<div ng-controller="headerController as ctrl">
+			<div class="col-md-4 ctm-header-col">
+				<a href="http://localhost:8080/HarmonixWeb/#/"><img src="http://localhost:8080/HarmonixWeb/img/Logo.png" class="ctm-logo"></a>
+			</div>
+			<div class="col-md-6 ctm-header-col">
+				<form class="form-inline ctm-form">
+					<input type="email" class="form-control" id="email">
+					<input type="email" class="form-control" id="email">
+					<input class="btn btn-default ctm-btn-w" value="Connexion" type="button">
+				</form>
+				<br><br>
+				<form class="form-inline ctm-form">
+					<p class="ctm-p ctm-p-inline">Pas encore membre ?</p>
+					<input class="btn btn-default ctm-btn-w" value="Inscription" type="button">
+				</form>
+			</div>
+			<!-- bouton panier -->
+			<div class="col-md-2 ctm-header-col">
+				<form action="#panier/" class="ctm-form">
+					<button type="submit" class="btn btn-default ctm-btn-w ctm-btn-h">
+					    <span style="font-size:3.5em;" class="glyphicon glyphicon-shopping-cart"></span>
+					</button>
+					<p class="ctm-p ctm-centered">Total : {{ ctrl.panier.getTotal() }} €</p>
+				</form>				
+			</div>
 		</div>
 	</div>
 </div>
