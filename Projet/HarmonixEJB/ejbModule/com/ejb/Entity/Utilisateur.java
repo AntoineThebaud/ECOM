@@ -12,17 +12,16 @@ import javax.persistence.OneToMany;
 
 @Entity
 @NamedQuery(name = "allUtilisateur", query = "select OBJECT(i) from Utilisateur i")
+
 public class Utilisateur {
-
-	public Utilisateur() {
-
-		// TODO Auto-generated constructor stub
-	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_utilisateur")
 	private long idUtilisateur;
+
+	@Column(name = "mot_de_passe")
+	private String motDePasse;
 
 	private String nom;
 
@@ -32,6 +31,7 @@ public class Utilisateur {
 
 	private String adresse;
 
+	@Column(unique = true)
 	private String mail;
 
 	@OneToMany(mappedBy = "utilisateur")
@@ -39,6 +39,11 @@ public class Utilisateur {
 
 	@OneToMany(mappedBy = "utilisateur")
 	private Collection<Commande> commandes;
+
+	public Utilisateur() {
+
+		// TODO Auto-generated constructor stub
+	}
 
 	public Utilisateur(String nom, String prenom, int age, String adresse, String mail, Collection<Avis> avis,
 			Collection<Commande> commandes) {

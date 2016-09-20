@@ -6,6 +6,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -28,16 +29,25 @@ public class UtilisateurService {
 	@Inject
 	UtilisateurResource ur;
 	
-	
 	@POST
 	public Utilisateur create(final Utilisateur utilisateur) {
 		return ur.createUtilisateur(utilisateur);
+	}
+	
+	@POST
+	@Path("/auth")
+	public Response authenticate(@FormParam("username") String username, @FormParam("password") String password) {
+		Utilisateur u =ur.authentification(username, password);
+		if(u==null){
+			return Response.status(Response.Status.UNAUTHORIZED).build();
+		}
+		return Response.ok(u).build();
+		
 	}
 
 	@GET
 	@Path("/{id:[0-9][0-9]*}")
 	public Response findById(@PathParam("id") final Long id) {
-		//TODO: retrieve the utilisateur 
 		Utilisateur utilisateur = null;
 		if (utilisateur == null) {
 			return Response.status(Status.NOT_FOUND).build();

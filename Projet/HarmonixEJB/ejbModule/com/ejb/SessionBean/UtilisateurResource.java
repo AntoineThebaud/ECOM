@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -21,7 +22,9 @@ public class UtilisateurResource {
 	@PersistenceContext(unitName="mysql")
 	private EntityManager em;
 	private static final String SELECT_PAR_EMAIL = "SELECT u FROM Utilisateur u WHERE u.email=:email";
+	private static final String AUTHENTIFICATION = "SELECT u FROM Utilisateur u WHERE u.email=:email AND u.mdp=:mdp";
 	private static final String PARAM_EMAIL           = "email";
+	private static final String PARAM_MDP           = "mdp";
     /**
      * Default constructor. 
      */
@@ -52,11 +55,27 @@ public class UtilisateurResource {
     	em.remove(em.find(Utilisateur.class, id));
     }
     
-    public Utilisateur findUtilisateur( String email ) {
+    public Utilisateur authentification(String email, String mdp ) {
+        Utilisateur utilisateur = null;
+        Query requete = em.createQuery( AUTHENTIFICATION );
+        requete.setParameter( PARAM_EMAIL, email );
+        requete.setParameter( PARAM_MDP, mdp );
+        try {
+            utilisateur = (Utilisateur) requete.getSingleResult();
+        } catch ( NoResultException e ) {
+            return null;
+        }
+        return utilisateur;
+    }
+    public Utilisateur findUtilisateur(String email) {
         Utilisateur utilisateur = null;
         Query requete = em.createQuery( SELECT_PAR_EMAIL );
         requete.setParameter( PARAM_EMAIL, email );
-        utilisateur = (Utilisateur) requete.getSingleResult();
+        try {
+            utilisateur = (Utilisateur) requete.getSingleResult();
+        } catch ( NoResultException e ) {
+            return null;
+        }
         return utilisateur;
     }
 }
