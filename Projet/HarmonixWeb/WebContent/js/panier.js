@@ -1,9 +1,11 @@
 /* Classe panier */
 
-function panier() {
+//constructeur
+function panier(nom) {
+	this.nom = nom;
 	this.articles = {};
-	//todo : 	- attribut nom pour la sauvegarde dans le localstorage
-	//			- méthodes load() et save() dans le localstorage
+	this.load();
+	//todo : - méthodes load() et save() dans le localstorage
 }
 
 //ajoute un nouveau produit au panier
@@ -24,6 +26,8 @@ panier.prototype.addArticle = function(nom, prix, image, id) {
 		};
 		this.articles[nom] = article;
 	}
+	//sauvegarde le panier dans le localstorage
+	this.save();
 }
 
 //calcule le coût total du panier
@@ -34,4 +38,19 @@ panier.prototype.getTotal = function() {
 		total += article.prix * article.quantity;
 	}
 	return total;
+}
+
+//récupère le panier sauvegardé dans le localstorage
+panier.prototype.load = function() {
+	if (localStorage[this.nom] != null) {
+		var saved = JSON.parse(localStorage[this.nom]);
+		for(article in saved) {
+			this.articles[article] = saved[article];
+		}
+	}
+}
+
+//enregistre le panier dans le localstorage
+panier.prototype.save = function() {
+	localStorage[this.nom] = JSON.stringify(this.articles);
 }
