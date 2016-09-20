@@ -1,3 +1,4 @@
+/* règles communes aux menus & submenus */
 
 .navbar-inverse {
 	border-color: #333;
@@ -27,6 +28,7 @@
 	border: none;
 }
 
+/* règles pour menus */
 
 .ctm-menu-li {
 	width: 90px;
@@ -35,6 +37,7 @@
 	text-align: center;
 }
 
+/* règles pour sub-menus */
 
 .ctm-submenu-li {
 	background-color: #333;

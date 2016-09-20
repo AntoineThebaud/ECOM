@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   
-  var module = angular.module('app', ['ngResource', 'ngRoute']);
+  var module = angular.module('app', ['ngResource', 'ngRoute']); //create a module named "app"
   
   module.config(function ($routeProvider){
 	  $routeProvider
