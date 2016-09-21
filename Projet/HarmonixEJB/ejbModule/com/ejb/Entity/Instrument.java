@@ -26,7 +26,7 @@ import org.hibernate.annotations.FetchMode;
 	@NamedQuery(name = "allInstrument", query = "SELECT OBJECT(i) FROM Instrument i"),
 	@NamedQuery(name = "allInstrumentPromotions", query = "SELECT OBJECT(i) FROM Instrument i WHERE i.promo <> 0 ORDER BY i.promo DESC"),
 	/*@NamedQuery(name = "allInstrumentMeilleuresVentes", query = "SELECT OBJECT(i) FROM Instrument i"),*/
-	@NamedQuery(name = "allInstrumentNouveautes", query = "SELECT OBJECT(i) FROM Instrument i ORDER BY i.dateAjout")
+	@NamedQuery(name = "allInstrumentNouveautes", query = "SELECT OBJECT(i) FROM Instrument i ORDER BY i.dateAjout DESC")
 })
 public class Instrument {
 
