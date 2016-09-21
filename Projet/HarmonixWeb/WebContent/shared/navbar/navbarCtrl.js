@@ -5,16 +5,26 @@
 	
 	module.controller('navbarController', function(Panier) {
 		var vm = this;
-		
+		vm.index = null;
 		vm.displayChilds = function(index) {
+			vm.index = index;
 	        vm.items[index].active = !vm.items[index].active;
+	    };
+	    
+	    vm.displayChildsOfChilds = function(index) {
+	    	vm.subItems[index].active = !vm.subItems[index].active;
 	    };
 	    
 	    vm.items = [
             {
                 name: "Guitares",
                 subItems: [
-                    {name: "Guitares acoustiques"},
+                    {name: "Guitares acoustiques",
+                    subSubItems: [
+                                  {name: "Guitares classiques"},
+                                  {name: "Guitares folk"}
+                    ]
+                    },
                     {name: "Guitares électriques"},
                     {name: "Guitares électro-acoustiques"}
                 ]
@@ -34,5 +44,14 @@
                 ]
             }
         ];
+	    
+	   vm.subItems = [
+          {name: "Guitares acoustiques",
+			subSubItems: [
+                  {name: "Guitares classiques"},
+                  {name: "Guitares folk"}
+              	]
+			}
+	    ]; 
 	});
 })();
