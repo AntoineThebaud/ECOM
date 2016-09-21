@@ -2,6 +2,28 @@
 	<div class="panel-body">
 		<div ng-controller="categorieController as ctrl">
 	        <h2>{{ ctrl.categorie }}</h2>
+	        <div class="row ctm-row-filters">
+		        <div class="col-md-4">
+		        	<select class="form-control ctm-select">
+						<option selected disabled hidden>Filtrer par prix</option>     	 
+						<option>Du moins cher au plus cher.</option>
+						<option>Du plus cher au moins cher.</option>
+					</select>
+		        </div>
+		        <div class="col-md-4">
+		        	<select class="form-control ctm-select">
+						<option selected disabled hidden>Filtrer par note</option>     	 
+						<option>Du mieux noté au moins bien noté.</option>
+						<option>Du moins bien noté au mieux noté.</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+		        	<select align="center" class="form-control ctm-select">
+						<option selected disabled hidden>Filtrer par marque</option>     	 
+						<option ng-repeat="marque in ctrl.marques">{{marque}}</option>
+					</select>
+				</div>
+			</div>
 			<div class="row row-prod">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
 		        	<h4 class="ctm-pname">

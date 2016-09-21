@@ -19,3 +19,26 @@
 .ctm-img {
 	min-height: 110px;
 }
+
+.ctm-filters {
+	align:center;
+}
+
+.ctm-select {
+	width: 100%;
+	margin-bottom: 10px;
+}
+.ctm-row-filters {
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-top: 10px;
+	margin-bottom: 20px;
+	border: 1px solid;
+	border-color: #CCC;
+	background-color: #DDD;
+	border-radius: 10px;
+}
+.ctm-seemore {
+	text-align: right;	
+	margin-top: 15px;
+}
