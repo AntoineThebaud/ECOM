@@ -1,6 +1,7 @@
 package com.ejb.Entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,14 +12,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 @Entity
-@NamedQuery(name = "allInstrument", query = "select OBJECT(i) from Instrument i")
+@NamedQueries(value = {
+	@NamedQuery(name = "allInstrument", query = "SELECT OBJECT(i) FROM Instrument i"),
+	@NamedQuery(name = "allInstrumentPromotions", query = "SELECT OBJECT(i) FROM Instrument i WHERE i.promo <> 0 ORDER BY i.promo DESC"),
+	/*@NamedQuery(name = "allInstrumentMeilleuresVentes", query = "SELECT OBJECT(i) FROM Instrument i"),*/
+	@NamedQuery(name = "allInstrumentNouveautes", query = "SELECT OBJECT(i) FROM Instrument i ORDER BY i.dateAjout")
+})
 public class Instrument {
 
 	@Id
@@ -28,7 +37,7 @@ public class Instrument {
 
 	private String nom;
 
-	private String type;
+	private String categorie;
 
 	private String images;
 
@@ -40,10 +49,9 @@ public class Instrument {
 
 	private int promo;
 
-	@Column(name = "best_seller")
-	private Boolean bestSeller;
-
-	private int categorie;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "date_ajout")
+	private Date dateAjout;
 
 	@OneToMany(mappedBy = "instrument", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@Fetch(value = FetchMode.SUBSELECT)
@@ -59,20 +67,23 @@ public class Instrument {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Instrument(String nom, String type, String images, String fabricant, float poids, float prix, int promo,
-			Boolean bestSeller, int categorie, List<Avis> avis, List<Caracteristique> caracteristiques) {
+	public Instrument(String nom, String categorie, String images, String fabricant, float poids, float prix, int promo,
+			Date dateAjout, List<Avis> avis, List<Caracteristique> caracteristiques) {
 
 		this.nom = nom;
-		this.type = type;
 		this.images = images;
 		this.fabricant = fabricant;
 		this.poids = poids;
 		this.prix = prix;
 		this.promo = promo;
-		this.bestSeller = bestSeller;
 		this.categorie = categorie;
+		this.dateAjout = dateAjout;
 		this.avis = avis;
 		this.caracteristiques = caracteristiques;
+	}
+	
+	public long getIdIstrument() {
+		return this.idInstrument;
 	}
 
 	public String getImages() {
@@ -120,14 +131,6 @@ public class Instrument {
 		this.nom = nom;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	public String getFabricant() {
 		return fabricant;
 	}
@@ -160,19 +163,19 @@ public class Instrument {
 		this.promo = promo;
 	}
 
-	public Boolean getBestSeller() {
-		return bestSeller;
+	public Date getDateAjout() {
+		return dateAjout;
 	}
 
-	public void setBestSeller(Boolean bestSeller) {
-		this.bestSeller = bestSeller;
+	public void setDateAjout(Date dateAjout) {
+		this.dateAjout = dateAjout;
 	}
 
-	public int getCategorie() {
+	public String getCategorie() {
 		return categorie;
 	}
 
-	public void setCategorie(int categorie) {
+	public void setCategorie(String categorie) {
 		this.categorie = categorie;
 	}
 
