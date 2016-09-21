@@ -2,14 +2,16 @@
     <div class=" ctm-nav">
     	<div ng-controller="navbarController as ctrl">
 	        <ul class="nav navbar-nav">
-		        <li class="ctm-menu-li" ng-repeat="item in ctrl.items" ng-mouseenter="ctrl.displayChilds($index)" ng-mouseleave="ctrl.displayChilds($index)">
+		        <li class="ctm-menu-li" ng-init="parentIndex = $index" ng-repeat="item in ctrl.items"
+		        ng-mouseenter="ctrl.displayChilds($index)" ng-mouseleave="ctrl.displayChilds($index)">
 		            <a class="ctm-menu-a"href="#categorie/Guitares"><b>{{item.name}}</b></a>
 		            <ul>
-		                <li ng-repeat="subItem in item.subItems" ng-show="item.active">
+		                <li ng-repeat="subItem in item.subItems" ng-show="item.active"
+		                ng-mouseenter="ctrl.displayChildsOfChilds($index, parentIndex)" ng-mouseleave="ctrl.displayChildsOfChilds($index, parentIndex)">
 		                    <a class="ctm-submenu-a" href="#categorie/Guitares"><b>{{subItem.name}}</b></a>
 		                    <ul>
 		                    	<li ng-repeat="subSubItem in subItem.subSubItems" ng-show="subItem.active" >
-		                    	<a href="#categorie/Guitares"><b>{{subSubItem.name}}</b></a>
+		                    		<a href="#categorie/Guitares"><b>{{subSubItem.name}}</b></a>
 		                    	</li>
 		                    </ul>
 		                </li>
