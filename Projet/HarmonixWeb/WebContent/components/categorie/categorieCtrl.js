@@ -7,6 +7,8 @@
 		var vm = this;
 		vm.categorie = $routeParams.TYPE;
 		vm.instruments = [];
+		
+		vm.marques = ["peugeot", "malabar", "la laitiere"];
 
 		var getInstruments = Instrument.query(function() {
 			vm.instruments = getInstruments;

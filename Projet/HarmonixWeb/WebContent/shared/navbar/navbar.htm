@@ -3,10 +3,10 @@
     	<div ng-controller="navbarController as ctrl">
 	        <ul class="nav navbar-nav">
 		        <li class="ctm-menu-li" ng-repeat="item in ctrl.items" ng-mouseenter="ctrl.displayChilds($index)" ng-mouseleave="ctrl.displayChilds($index)">
-		            <a class="ctm-menu-a"href="#categorie/Guitare"><b>{{item.name}}</b></a>
+		            <a class="ctm-menu-a"href="#categorie/Guitares"><b>{{item.name}}</b></a>
 		            <ul class="nav navbar-nav">
 		                <li class="ctm-submenu-li" ng-repeat="subItem in item.subItems" ng-show="item.active">
-		                    <a class="ctm-submenu-a" href="#categorie/Guitare"><b>{{subItem.name}}</b></a>
+		                    <a class="ctm-submenu-a" href="#categorie/Guitares"><b>{{subItem.name}}</b></a>
 		                </li>
 		            </ul>
 		        </li>

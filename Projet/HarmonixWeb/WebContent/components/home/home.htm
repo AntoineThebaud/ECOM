@@ -2,7 +2,14 @@
 
 	<!-- Promotions -->
 	<div class="panel-body">
-       	<h2>Promotions</h2>
+		<div class="row">
+			<div class="col-md-8">
+				<h2>Promotions</h2>
+			</div>
+			<div class="col-md-4 ctm-seemore">						
+				<button type="button" class="btn btn-success">Voir plus</button>
+			</div>	
+		</div>	
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
@@ -33,7 +40,14 @@
 
 	<!-- Nouveautés -->
 	<div class="panel-body">
-        <h2>Nouveautés</h2>
+		<div class="row">
+			<div class="col-md-8">
+				<h2>Nouveautés</h2>
+			</div>
+			<div class="col-md-4 ctm-seemore">						
+				<button type="button" class="btn btn-success">Voir plus</button>
+			</div>	
+		</div>
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
@@ -64,7 +78,14 @@
 
 	<!-- Meilleures ventes -->
 	<div class="panel-body">
-        <h2>Meilleures ventes</h2>
+        <div class="row">
+			<div class="col-md-8">
+				<h2>Meilleures ventes</h2>
+			</div>
+			<div class="col-md-4 ctm-seemore">						
+				<button type="button" class="btn btn-success">Voir plus</button>
+			</div>	
+		</div>
 		<div class="row row-prod">
 			<div ng-controller="instrumentsListController as ctrl">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
