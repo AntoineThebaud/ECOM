@@ -61,6 +61,15 @@ public class InstrumentService {
 		final List<Instrument> instruments = ir.getAllInstrumentsPromotions(startPosition, maxResult);
 		return instruments;
 	}
+	
+	@GET
+	@Path("nouveautes")
+	@Produces("application/json")
+	public List<Instrument> listAllNouveautes(@QueryParam("start") final Integer startPosition,
+			@QueryParam("max") final Integer maxResult) {
+		final List<Instrument> instruments = ir.getAllInstrumentsNouveautes(startPosition, maxResult);
+		return instruments;
+	}
 
 	@PUT
 	@Path("/{id:[0-9][0-9]*}")

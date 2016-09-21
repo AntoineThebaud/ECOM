@@ -83,6 +83,29 @@ public class InstrumentResource {
     	return ((List<Instrument>)q.getResultList());
     }
 	
+	@SuppressWarnings("unchecked")
+	public List<Instrument> getAllInstrumentsNouveautes(Integer startPosition, Integer maxResult) {
+    	Query q = em.createNamedQuery("allInstrumentNouveautes");
+    	
+    	if (startPosition != null) {
+    		try {
+    			q.setFirstResult(startPosition);
+    		} catch (IllegalArgumentException ex) {
+    			q.setFirstResult(0);
+    		}
+    	}
+    	
+    	if (maxResult != null) {
+    		try {
+    			q.setMaxResults(maxResult);
+    		} catch (IllegalArgumentException ex) {
+    			q.setMaxResults(0);
+    		}
+    	}
+    	
+    	return ((List<Instrument>)q.getResultList());
+    }
+	
 	public void updateInstrument (Instrument instrument){
 		em.merge(instrument);
 	}
