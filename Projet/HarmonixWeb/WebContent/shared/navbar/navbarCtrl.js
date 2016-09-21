@@ -42,10 +42,10 @@
                     {name: "Guitares Folk",
                     	subSubItems: [
                           {name: "Guitares Dreadnought"},
-                          {name: "Guitares Jumbo"},
-                          {name: "Guitares 000"},
                           {name: "Guitares Dreadnought électro-acoustiques"},
+                          {name: "Guitares Jumbo"},
                           {name: "Guitares Jumbo électro-acoustiques"},
+                          {name: "Guitares 000"},
                           {name: "Guitares 000 électro-acoustiques"}
                         ]
                     }
