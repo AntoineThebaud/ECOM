@@ -2,7 +2,7 @@
 	"use strict";
 
 	var module = angular.module("app").controller('ajoutController', function($scope, Instrument) {
-		$scope.instru1 = new Instrument();
+		/*$scope.instru1 = new Instrument();
 		
 		$scope.instru1.nom = 'Gibson LP Classic FB 2015';
 		$scope.instru1.categorie = 'guitare-electrique';
@@ -35,16 +35,19 @@
 		
 	    $scope.instru2.$save(function() {
 	    	console.log('ajout Fender réussi');
-	    });
+	    });*/
 		
-		/*var i = Instrument.get({ id: 1 }, function() {
-			console.log('récupération réussie');
+		var i = Instrument.get({ id: 2 });
+		i.$promise.then(function(result) {
+			i = result;
 		});
 		
-		i.categorie = 1;
+		i.categorie = "guitares-electriques";
+		console.log(i.nom);
+		console.log(JSON.stringify(i));
 		
-		i.$update({id:1},function() {
+		i.$update({id:2},function() {
 			console.log('maj réussi');
-		});*/
+		});
 	});
 })();
