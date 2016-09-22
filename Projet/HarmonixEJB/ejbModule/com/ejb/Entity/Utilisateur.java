@@ -57,6 +57,14 @@ public class Utilisateur {
 		this.commandes = commandes;
 	}
 
+	public String getMotDePasse() {
+		return motDePasse;
+	}
+
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
+	}
+
 	public long getIdUtilisateur() {
 		return idUtilisateur;
 	}

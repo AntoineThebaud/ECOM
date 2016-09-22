@@ -37,10 +37,11 @@ public class UtilisateurService {
 	@POST
 	@Path("/auth")
 	public Response authenticate(@FormParam("username") String username, @FormParam("password") String password) {
-		Utilisateur u =ur.authentification(username, password);
+		Utilisateur u =ur.authentification(username, password);	
 		if(u==null){
 			return Response.status(Response.Status.UNAUTHORIZED).build();
 		}
+		
 		return Response.ok(u).build();
 		
 	}

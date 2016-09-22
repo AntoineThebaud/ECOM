@@ -1,6 +1,8 @@
 package com.ejb.SessionBean;
 
+import java.security.SecureRandom;
 import java.util.List;
+import java.util.Random;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -9,7 +11,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import com.ejb.Entity.Instrument;
+
 import com.ejb.Entity.Utilisateur;
 
 /**
@@ -25,14 +27,19 @@ public class UtilisateurResource {
 	private static final String AUTHENTIFICATION = "SELECT u FROM Utilisateur u WHERE u.email=:email AND u.mdp=:mdp";
 	private static final String PARAM_EMAIL           = "email";
 	private static final String PARAM_MDP           = "mdp";
+	private byte[] r ;
+	private Random random ;
+	private String SALT ;
     /**
      * Default constructor. 
      */
     public UtilisateurResource() {
+    	r = new byte[32];
         // TODO Auto-generated constructor stub
     }
 
     public Utilisateur createUtilisateur(Utilisateur utilisateur){
+    	
     	em.persist(utilisateur);
     	return utilisateur;
     }

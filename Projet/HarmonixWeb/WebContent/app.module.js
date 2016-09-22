@@ -25,6 +25,10 @@
 	  		templateUrl: './components/panier/panier.htm',
 	  		controller: 'panierController'
 	  	})
+//	  	.when('/inscription', {
+//			templateUrl : './formulaire.html',
+//			controller : 'UtilisateurController'
+//		})
 	  	.otherwise({
 	  		redirectTo: '/'
 	  	});
