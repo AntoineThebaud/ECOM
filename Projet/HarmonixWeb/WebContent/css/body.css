@@ -29,11 +29,21 @@ input.star:checked ~ label.star:before {
   content: '\f005';
   color: #FD4;
   transition: all .25s;
+    text-shadow:
+#000 1px 1px 1px,
+#000 -1px 1px 1px,
+#000 -1px -1px 1px,
+#000 1px -1px 1px; 
 }
 
 input.star-5:checked ~ label.star:before {
   color: #FE7;
-  text-shadow: 0 0 20px #952;
+  text-shadow: 0 0 5px #000;
+  text-shadow:
+#000 1px 1px 1px,
+#000 -1px 1px 1px,
+#000 -1px -1px 1px,
+#000 1px -1px 1px; 
 }
 
 input.star-1:checked ~ label.star:before { color: #F62; }
