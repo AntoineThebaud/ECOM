@@ -9,6 +9,11 @@
 	 text-align: right;
 	 color: #38761D;
 	 font-weight: bold;
+	 margin-top: 0px;
+}
+.ctm-price-div {
+	 padding-left: 0px;
+	 padding-right: 0px;
 }
 .ctm-pname {
 	min-height: 40px;
@@ -41,4 +46,7 @@
 .ctm-seemore {
 	text-align: right;	
 	margin-top: 15px;
+}
+.ctm-specs {
+	padding-right: 0px;
 }

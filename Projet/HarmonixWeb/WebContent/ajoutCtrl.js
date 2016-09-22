@@ -30,6 +30,7 @@
 		$scope.instru2.promo = 25;
 		$scope.instru2.caracteristiques = [
  		    {nom:"Nombre de cordes", valeur:"4"},
+ 		    {nom:"Corps", valeur:"Aulne"},
  		    {nom:"Finition", valeur:"Olympic white"}
  		];
 	    $scope.instru2.$save(function() {
@@ -38,18 +39,17 @@
 	    
 	    //Instru 3
 	    $scope.instru3 = new Instrument();
-	    $scope.instru3.nom = 'Fender Precision Bass Special OWT';
+	    $scope.instru3.nom = 'Squier Bullet Strat HSS Black';
 		$scope.instru3.categorie = 'guitares-electriques';
 		$scope.instru3.images = 'squier-bullet-strat-hss-black.png';
 		$scope.instru3.fabricant = 'Squier';
 		$scope.instru3.prix = 125;
 		$scope.instru3.promo = 0;
 		$scope.instru3.caracteristiques = [
-			{nom:"Référence Squier", valeur:"031-0005-506"},
 			{nom:"Série", valeur:"Bullet"},
 			{nom:"Corps", valeur:"Tilleul"},
-			{nom:"Manche", valeur:"Vissé en érable, profil 'C'"},
 			{nom:"Touche", valeur:"Pallissandre"},
+			{nom:"Manche", valeur:"Vissé en érable, profil 'C'"},			
 			{nom:"Frettes", valeur:"21 Medium Jumbo"},
 			{nom:"Diapason", valeur:"25.5\" (648 mm)"},
 			{nom:"Radius", valeur:"9.5 (241 mm)"},

@@ -8,12 +8,12 @@
 		            <ul>
 		                <li ng-repeat="subItem in item.subItems" ng-show="item.active"
 		                ng-mouseenter="ctrl.displayChildsOfChilds($index, parentIndex)" ng-mouseleave="ctrl.displayChildsOfChilds($index, parentIndex)">
-		                    <a ng-href="#categorie/{{item.url}}/{{subItem.url}}">
+		                    <a ng-href="#categorie/{{subItem.url}}">
 		                    	{{subItem.name}}
 		                    </a>
 		                    <ul>
 		                    	<li ng-repeat="subSubItem in subItem.subSubItems" ng-show="subItem.active" >
-		                    		<a ng-href="#categorie/{{item.url}}/{{subItem.url}}/{{subSubItem.url}}">
+		                    		<a ng-href="#categorie/{{subSubItem.url}}">
 		                    			{{subSubItem.name}}
 		                    		</a>
 		                    	</li>
