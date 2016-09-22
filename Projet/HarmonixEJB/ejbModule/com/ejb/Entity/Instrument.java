@@ -21,11 +21,15 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.ejb.Views.View;
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @NamedQueries(value = {
 	@NamedQuery(name = "allInstrument", query = "SELECT OBJECT(i) FROM Instrument i"),
+	@NamedQuery(name = "allInstrumentCategorie", query = "SELECT OBJECT(i) FROM Instrument i WHERE i.categorie = :categorie"),
 	@NamedQuery(name = "allInstrumentPromotions", query = "SELECT OBJECT(i) FROM Instrument i WHERE i.promo <> 0 ORDER BY i.promo DESC"),
-	/*@NamedQuery(name = "allInstrumentMeilleuresVentes", query = "SELECT OBJECT(i) FROM Instrument i"),*/
+	/*@NamedQuery(name = "allInstrumentMeilleuresVentes", query = "SELECT sum(c.quantite) FROM LigneCommande c GROUP BY c.instrument"),*/
 	@NamedQuery(name = "allInstrumentNouveautes", query = "SELECT OBJECT(i) FROM Instrument i ORDER BY i.dateAjout DESC")
 })
 public class Instrument {
@@ -33,21 +37,29 @@ public class Instrument {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_instrument")
+	@JsonView(View.Resume.class)
 	private long idInstrument;
 
+	@JsonView(View.Resume.class)
 	private String nom;
 
+	@JsonView(View.Resume.class)
 	private String categorie;
 
+	@JsonView(View.Resume.class)
 	private String images;
 
+	@JsonView(View.Resume.class)
 	private String fabricant;
 
-	private float poids;
-
+	@JsonView(View.Resume.class)
 	private float prix;
-
+	
+	@JsonView(View.Resume.class)
 	private int promo;
+	
+	@JsonView(View.Resume.class)
+	private int note;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "date_ajout")
@@ -60,6 +72,7 @@ public class Instrument {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_instrument", referencedColumnName = "id_instrument")
 	@Fetch(value = FetchMode.SUBSELECT)
+	@JsonView(View.Resume.class)
 	private List<Caracteristique> caracteristiques;
 
 	public Instrument() {
@@ -67,23 +80,19 @@ public class Instrument {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Instrument(String nom, String categorie, String images, String fabricant, float poids, float prix, int promo,
-			Date dateAjout, List<Avis> avis, List<Caracteristique> caracteristiques) {
+	public Instrument(String nom, String categorie, String images, String fabricant, float prix, int promo,
+			int note, Date dateAjout, List<Avis> avis, List<Caracteristique> caracteristiques) {
 
 		this.nom = nom;
 		this.images = images;
 		this.fabricant = fabricant;
-		this.poids = poids;
 		this.prix = prix;
 		this.promo = promo;
 		this.categorie = categorie;
+		this.note = note;
 		this.dateAjout = dateAjout;
 		this.avis = avis;
 		this.caracteristiques = caracteristiques;
-	}
-	
-	public long getIdIstrument() {
-		return this.idInstrument;
 	}
 
 	public String getImages() {
@@ -139,14 +148,6 @@ public class Instrument {
 		this.fabricant = fabricant;
 	}
 
-	public float getPoids() {
-		return poids;
-	}
-
-	public void setPoids(float poids) {
-		this.poids = poids;
-	}
-
 	public float getPrix() {
 		return prix;
 	}
@@ -161,6 +162,14 @@ public class Instrument {
 
 	public void setPromo(int promo) {
 		this.promo = promo;
+	}
+
+	public int getNote() {
+		return note;
+	}
+
+	public void setNote(int note) {
+		this.note = note;
 	}
 
 	public Date getDateAjout() {

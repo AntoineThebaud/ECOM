@@ -19,6 +19,8 @@ import javax.ws.rs.core.Response.Status;
 
 import com.ejb.Entity.Instrument;
 import com.ejb.SessionBean.InstrumentResource;
+import com.ejb.Views.View;
+import com.fasterxml.jackson.annotation.JsonView;
 
 @ManagedBean
 @RequestScoped
@@ -47,15 +49,17 @@ public class InstrumentService {
 
 	@GET
 	@Produces("application/json")
+	@JsonView(View.Resume.class)
 	public List<Instrument> listAll(@QueryParam("start") final Integer startPosition,
-			@QueryParam("max") final Integer maxResult) {
-		final List<Instrument> instruments = ir.getAllInstruments(startPosition, maxResult);
+			@QueryParam("max") final Integer maxResult, @QueryParam("categorie") final String categorie) {
+		final List<Instrument> instruments = ir.getAllInstruments(startPosition, maxResult, categorie);
 		return instruments;
 	}
 	
 	@GET
 	@Path("promotions")
 	@Produces("application/json")
+	@JsonView(View.Resume.class)
 	public List<Instrument> listAllPromotions(@QueryParam("start") final Integer startPosition,
 			@QueryParam("max") final Integer maxResult) {
 		final List<Instrument> instruments = ir.getAllInstrumentsPromotions(startPosition, maxResult);
@@ -65,6 +69,7 @@ public class InstrumentService {
 	@GET
 	@Path("nouveautes")
 	@Produces("application/json")
+	@JsonView(View.Resume.class)
 	public List<Instrument> listAllNouveautes(@QueryParam("start") final Integer startPosition,
 			@QueryParam("max") final Integer maxResult) {
 		final List<Instrument> instruments = ir.getAllInstrumentsNouveautes(startPosition, maxResult);
@@ -74,10 +79,10 @@ public class InstrumentService {
 	@PUT
 	@Path("/{id:[0-9][0-9]*}")
 	@Consumes("application/json")
-	@Produces("application/json")
+	@Produces("text/plain")
 	public Response update(@PathParam("id") Long id, final Instrument instrument) {
 		Response r = null;
-		try{
+		try {
 			ir.updateInstrument(instrument);
 			r = Response.ok("OK").build();
 		}
@@ -93,7 +98,7 @@ public class InstrumentService {
 	@Produces("application/json")
 	public Response deleteById(@PathParam("id") final Long id) {
 		Response r = null;
-		try{
+		try {
 			ir.removeInstrument(id);
 			r = Response.ok("OK").build();
 		}
