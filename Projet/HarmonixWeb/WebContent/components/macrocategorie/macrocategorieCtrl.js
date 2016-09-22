@@ -5,7 +5,8 @@
 	
 	module.controller('macrocategorieController', function($routeParams) {
 		var vm = this;
-		vm.tab = { "guitares" : 0, "guitares-electriques" : 1, "guitares-classiques": 2, "guitares-folk": 3 };
+		vm.tab = { "guitares" : 0, "guitares-electriques" : 1, "guitares-classiques": 2, "guitares-folk" : 3,
+				"basses" : 4, "basses-acoustiques" : 5, "basses-electriques" : 6, "batteries" : 7};
 		
 	    vm.categories = [
             {
@@ -129,16 +130,85 @@
             
             {
                 name: "Basses",
-                subItems: [
-                    {name: "Basses acoustiques"},
-                    {name: "Basses électriques"},
+                urlImage: "category_gi.jpg",
+                url: "basses",
+                subCategories: [
+                    {
+                    	name: "Basses acoustiques",
+                    	url: "basses-acoustiques",
+                    	urlImage: "180201.jpg"
+                    },
+                    {
+                    	name: "Basses électriques",
+                    	url: "basses-electriques",
+                    	urlImage: "264956.jpg"
+                    },
                 ]
             },
             {
+                name: "Basses acoustiques",
+                urlImage: "category_gi.jpg",
+                url: "basses-acoustiques",
+                subCategories: [
+                    {
+                    	name: "Basses acoustiques 4 cordes",
+                    	urlImage: "165298.jpg"
+                    },
+                    {
+                    	name: "Basses acoustiques 5 cordes",
+                    	urlImage: "180199.jpg"
+                    },
+                    {
+                    	name: "Basses acoustiques Fretless",
+                    	urlImage: "180200.jpg"
+                    },
+                ]
+            },
+            {
+                name: "Basses électriques",
+                urlImage: "category_gi.jpg",
+                url: "basses-electriques",
+                subCategories: [
+                    {
+                    	name: "Basses Jazz 4 cordes",
+                    	urlImage: "140442.jpg"
+                    },
+                    {
+                    	name: "Basses Jazz 5 cordes",
+                    	urlImage: "268992.jpg"
+                    },
+                    {
+                    	name: "Basses Precision 4 cordes",
+                    	urlImage: "324036.jpg"
+                    },
+                    {
+                    	name: "Basses Precision 5 cordes",
+                    	urlImage: "182890.jpg"
+                    },
+                    {
+                    	name: "Basses Heavy 4 cordes",
+                    	urlImage: "274114.jpg"
+                    },
+                    {
+                    	name: "Basses Heavy 5 cordes",
+                    	urlImage: "315352.jpg"
+                    },
+                ]
+            },
+            
+            {
                 name: "Batteries",
+                urlImage: "category_dr.jpg",
+                url: "batteries",
                 subItems: [
-					{name: "Batteries acoustiques"},
-					{name: "Batteries électroniques"},
+					{
+						name: "Batteries acoustiques",
+						urlImage: "156270.jpg"
+					},
+					{
+						name: "Batteries électroniques",
+						urlImage: "244063.jpg"
+					},
                 ]
             }
         ];
