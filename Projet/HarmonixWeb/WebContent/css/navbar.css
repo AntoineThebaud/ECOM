@@ -80,3 +80,7 @@
 	border-right: 1px solid;
     border-color: #FFFFFF;
 }
+.ctm-topmenu {
+	text-align: center;
+	min-width: 85px;
+}

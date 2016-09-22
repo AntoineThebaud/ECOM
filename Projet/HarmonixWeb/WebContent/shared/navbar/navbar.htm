@@ -4,11 +4,11 @@
 	        <ul class="nav navbar-nav">
 		        <li ng-init="parentIndex = $index" ng-repeat="item in ctrl.items"
 		        ng-mouseenter="ctrl.displayChilds($index)" ng-mouseleave="ctrl.displayChilds($index)">
-		            <a ng-href="#categorie/{{item.url}}">{{item.name}}&nbsp</a>
-		            <ul>
+		            <a class="ctm-topmenu" ng-href="#macrocategorie/{{item.url}}">{{item.name}}&nbsp</a>
+		            <ul>		            	
 		                <li ng-repeat="subItem in item.subItems" ng-show="item.active"
 		                ng-mouseenter="ctrl.displayChildsOfChilds($index, parentIndex)" ng-mouseleave="ctrl.displayChildsOfChilds($index, parentIndex)">
-		                    <a ng-href="#categorie/{{subItem.url}}">
+		                    <a ng-href="#{{subItem.type}}/{{subItem.url}}">
 		                    	{{subItem.name}}
 		                    </a>
 		                    <ul>

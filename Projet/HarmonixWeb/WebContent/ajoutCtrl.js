@@ -6,7 +6,7 @@
 		//Instru 1
 		$scope.instru1 = new Instrument();
 		$scope.instru1.nom = 'Gibson LP Classic FB 2015';
-		$scope.instru1.categorie = 'guitares-electriques';
+		$scope.instru1.categorie = 'modeles-single-cut';
 		$scope.instru1.images = 'gibson_lp_classic_fb_2015.jpg';
 		$scope.instru1.fabricant = 'Gibson';
 		$scope.instru1.prix = 990;
@@ -40,7 +40,7 @@
 	    //Instru 3
 	    $scope.instru3 = new Instrument();
 	    $scope.instru3.nom = 'Squier Bullet Strat HSS Black';
-		$scope.instru3.categorie = 'guitares-electriques';
+		$scope.instru3.categorie = 'modeles-st';
 		$scope.instru3.images = 'squier-bullet-strat-hss-black.png';
 		$scope.instru3.fabricant = 'Squier';
 		$scope.instru3.prix = 125;
@@ -66,7 +66,7 @@
 	    //Instru 4
 	    $scope.instru4 = new Instrument();
 	    $scope.instru4.nom = 'Fender Telecaster';
-		$scope.instru4.categorie = 'guitares-electriques';
+		$scope.instru4.categorie = 'modeles-st';
 		$scope.instru4.images = 'electric-guitar-tele.jpg';
 		$scope.instru4.fabricant = 'Fender';
 		$scope.instru4.prix = 850;

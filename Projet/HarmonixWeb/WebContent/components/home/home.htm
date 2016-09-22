@@ -1,17 +1,16 @@
 <div class="panel panel-default">
-
-	<!-- Promotions -->
-	<div class="panel-body">
-		<div class="row">
-			<div class="col-md-8">
-				<h2>Promotions</h2>
-			</div>
-			<div class="col-md-4 ctm-seemore">						
-				<button type="button" class="btn btn-success">Voir plus</button>
+	<div ng-controller="instrumentsListController as ctrl">
+		<!-- Promotions -->
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Promotions</h2>
+				</div>
+				<div class="col-md-4 ctm-seemore">						
+					<button type="button" class="btn btn-success">Voir plus</button>
+				</div>	
 			</div>	
-		</div>	
-		<div class="row row-prod">
-			<div ng-controller="instrumentsListController as ctrl">
+			<div class="row row-prod">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
 		        	<h4 class="ctm-pname">
 		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
@@ -36,20 +35,18 @@
 		        </div>
 			</div>
 		</div>
-	</div>
-
-	<!-- Nouveautés -->
-	<div class="panel-body">
-		<div class="row">
-			<div class="col-md-8">
-				<h2>Nouveautés</h2>
+	
+		<!-- Nouveautés -->
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Nouveautés</h2>
+				</div>
+				<div class="col-md-4 ctm-seemore">						
+					<button type="button" class="btn btn-success">Voir plus</button>
+				</div>	
 			</div>
-			<div class="col-md-4 ctm-seemore">						
-				<button type="button" class="btn btn-success">Voir plus</button>
-			</div>	
-		</div>
-		<div class="row row-prod">
-			<div ng-controller="instrumentsListController as ctrl">
+			<div class="row row-prod">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
 		        	<h4 class="ctm-pname">
 		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
@@ -61,33 +58,31 @@
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.images }}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
-			        <div class="col-md-6">
+			        <div class="col-md-9 ctm-specs">
 			        	<ul class="ctm-ul">
-							<li>type : {{ i.type }}</li>
-							<li>poids : {{ i.poids }}</li>
-							<li>id : {{ i.idInstrument }}</li>
+			        		<li ng-repeat="j in [0,1,2]">
+			        			{{ i.caracteristiques[j].nom }} : {{ i.caracteristiques[j].valeur }}
+			        		</li>
 						</ul>
 			        </div>
-			        <div class="col-md-6">
+			        <div class="col-md-3 ctm-price-div">
 			        	<h3 class="ctm-price">{{ i.prix }} €</h3>
 			        </div>
 		        </div>
 			</div>
 		</div>
-	</div>
-
-	<!-- Meilleures ventes -->
-	<div class="panel-body">
-        <div class="row">
-			<div class="col-md-8">
-				<h2>Meilleures ventes</h2>
+	
+		<!-- Meilleures ventes -->
+		<div class="panel-body">
+	        <div class="row">
+				<div class="col-md-8">
+					<h2>Meilleures ventes</h2>
+				</div>
+				<div class="col-md-4 ctm-seemore">						
+					<button type="button" class="btn btn-success">Voir plus</button>
+				</div>	
 			</div>
-			<div class="col-md-4 ctm-seemore">						
-				<button type="button" class="btn btn-success">Voir plus</button>
-			</div>	
-		</div>
-		<div class="row row-prod">
-			<div ng-controller="instrumentsListController as ctrl">
+			<div class="row row-prod">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
 		        	<h4 class="ctm-pname">
 		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
@@ -99,14 +94,14 @@
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ i.images }}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
-			        <div class="col-md-6">
+			        <div class="col-md-9 ctm-specs">
 			        	<ul class="ctm-ul">
-							<li>type : {{ i.type }}</li>
-							<li>poids : {{ i.poids }}</li>
-							<li>id : {{ i.idInstrument }}</li>
+			        		<li ng-repeat="j in [0,1,2]">
+			        			{{ i.caracteristiques[j].nom }} : {{ i.caracteristiques[j].valeur }}
+			        		</li>
 						</ul>
 			        </div>
-					<div class="col-md-6">
+			        <div class="col-md-3 ctm-price-div">
 			        	<h3 class="ctm-price">{{ i.prix }} €</h3>
 			        </div>
 		        </div>
