@@ -9,7 +9,7 @@
 	     			<h2 class=title>{{ ctrl.currentCategory.name }}</h2>
 	   			</div> 
 			</div>
-			<div ng-repeat="c in ctrl.categories[0].subCategories" style='float:left' class=elemListe>
+			<div ng-repeat="c in ctrl.currentCategory.subCategories" style='float:left' class=elemListe>
 				<div class="thumbnail">
 			    	<a href="#{{ c.url }}">
 			        	<img src="https://thumbs4.static-thomann.de/thumb//thumb110x110/pics/prod/{{ c.urlImage }}" alt="Generic placeholder thumbnail" width="110" height="110">
