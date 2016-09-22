@@ -1,0 +1,20 @@
+.title {
+	position: relative;
+	font-size: 38px;
+	color: #ffffff;
+	text-align: center;
+}
+
+.elemListe {
+	margin:20px 20px 0 25px;
+	text-align: center;
+}
+
+.subCategory {
+	text-decoration: none;
+  	color: black;
+}
+
+.subCategory:hover {
+	color:green;
+}

@@ -18,8 +18,14 @@
 			vm.image = product.images;
 			vm.prix = product.prix;			
 			vm.specs = product.caracteristiques;
+			vm.avisList = product.avis;
 			//ajouter la note !
 		});
+		
+		//vm.avis = new Avis();
+		
+		
+		
 	});
 })();
 

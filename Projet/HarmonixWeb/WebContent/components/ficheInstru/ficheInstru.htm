@@ -32,38 +32,55 @@
 				</table>
 		   	</div>
 		   	<div class="col-md-12">
-		   		<div class="ctm-postAvis">
+		   		<div class="ctm-postAvis form-group">
 		   		<h3>Donnez votre avis</h3>
-		   		<div class="row form">
-		   			<div class="stars">
-						  <form action="">
-						    <input class="star star-5" id="star-5" type="radio" name="star"/>
-						    <label class="star star-5" for="star-5"></label>
-						    <input class="star star-4" id="star-4" type="radio" name="star"/>
-						    <label class="star star-4" for="star-4"></label>
-						    <input class="star star-3" id="star-3" type="radio" name="star"/>
-						    <label class="star star-3" for="star-3"></label>
-						    <input class="star star-2" id="star-2" type="radio" name="star"/>
-						    <label class="star star-2" for="star-2"></label>
-						    <input class="star star-1" id="star-1" type="radio" name="star"/>
-						    <label class="star star-1" for="star-1"></label>
-						  </form>
+			   			<div class="stars col-md-12" style="margin-left:-35px;">
+							  <form action="">
+							    <input class="star star-5" id="star-5" type="radio" name="star"/>
+							    <label class="star star-5" for="star-5"></label>
+							    <input class="star star-4" id="star-4" type="radio" name="star"/>
+							    <label class="star star-4" for="star-4"></label>
+							    <input class="star star-3" id="star-3" type="radio" name="star"/>
+							    <label class="star star-3" for="star-3"></label>
+							    <input class="star star-2" id="star-2" type="radio" name="star"/>
+							    <label class="star star-2" for="star-2"></label>
+							    <input class="star star-1" id="star-1" type="radio" name="star"/>
+							    <label class="star star-1" for="star-1"></label>
+							  </form>
+						</div>
+						<div class="ctm-titre-avis col-md-12">
+							<input id="titre-avis" type="text" placeholder="Titre..." ng-model="titre">
+						</div>
 					</div>
-		   			<div class="ctm-input-avis col-md-10">
-		   				 <textarea rows="5" cols="100" placeholder="Entrez votre commentaire...">
-		   				 </textarea>
-		   			</div>
-		   		</div>
-		   		<div class="col-md-offset-9 col-md-3 ">
-		   			<button type="submit">
-		   				Envoyer
-		   			</button>
-		   		</div>
-		   		</div>
-		   		<div class="ctm-allAvis">
-		   		<h3>Avis sur l'instrument</h3>
-		   			<div class="ctm-avis" ng-repeat="a in ctrl.avisList">
-		   			
+<!-- 						<div class="col-md-12">
+						 Ajouter le test si l'utilisateur est connecté
+							<input id="pseudo" type="text" placeholder="Pseudo.." ng-model="">
+						</div> -->
+			   			<div class="ctm-input-avis col-md-8">
+			   				 <textarea class="form-control col-md-12" rows="5" placeholder="Entrez votre avis sur l'instrument ici..." ng-model="ctrl.avis.texte"></textarea>
+			   			</div>
+				   		<div class="col-md-offset-6 col-md-1 ">
+				   			<button type="button" class="btn btn-primary">
+				   				Envoyer
+				   			</button>
+				   		</div>
+		   		<div class="ctm-allAvis col-md-12">
+		   		<h3>Avis des utilisateurs</h3>
+		   			<div class="ctm-avis col-md-10 form-group">
+		   				<div class="thumbnail col-md-12" ng-repeat="a in ctrl.avis">
+		   					<div class="row col-md-3">
+		   						<div class="col-md-12">
+		   							{{a.note}}
+		   						</div>
+		   						<div class="col-md-12">
+		   							{{a.date}}
+		   						</div>	   			
+		   					</div>
+		   					<div class="row col-md-9">
+		   						<span class="form-control col-md-1">{{a.titre}</span>
+		   						<span class="form-control col-md-12">{{a.text}}</span>
+		   					</div>
+		   				</div>
 		   			</div>
 		   		</div>
 		   	</div>
