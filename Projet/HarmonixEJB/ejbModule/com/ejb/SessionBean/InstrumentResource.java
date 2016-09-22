@@ -38,8 +38,15 @@ public class InstrumentResource {
     }
    
 	@SuppressWarnings("unchecked")
-	public List<Instrument> getAllInstruments(Integer startPosition, Integer maxResult) {
-    	Query q = em.createNamedQuery("allInstrument");
+	public List<Instrument> getAllInstruments(Integer startPosition, Integer maxResult, String categorie) {
+    	Query q;
+    	
+    	if (categorie == null) {
+    		q = em.createNamedQuery("allInstrument");
+    	} else {
+    		q = em.createNamedQuery("allInstrumentCategorie");
+    		q.setParameter("categorie", categorie);
+    	}
     	
     	if (startPosition != null) {
     		try {
