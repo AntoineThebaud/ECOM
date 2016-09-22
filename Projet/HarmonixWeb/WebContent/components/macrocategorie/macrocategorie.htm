@@ -3,10 +3,10 @@
 		<div ng-controller="macrocategorieController as ctrl">        
 	        <div style="position:relative; height:178px">
 	  			<div style="position:absolute;z-index:1">
-	    			<img src="https://thumbs4.static-thomann.de/thumb/convert/pics/images/category/{{ ctrl.categories[0].urlImage }}">
+	    			<img src="https://thumbs4.static-thomann.de/thumb/convert/pics/images/category/{{ ctrl.currentCategory.urlImage }}">
 	  			</div>
 	  			<div style="position:absolute;top:30px; width:640px; height:178px; z-index:2;font-size:200%">
-	     			<h2 class=title>{{ ctrl.categories[0].name }}</h2>
+	     			<h2 class=title>{{ ctrl.currentCategory.name }}</h2>
 	   			</div> 
 			</div>
 			<div ng-repeat="c in ctrl.categories[0].subCategories" style='float:left' class=elemListe>

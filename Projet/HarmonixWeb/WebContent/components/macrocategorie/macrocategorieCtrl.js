@@ -5,7 +5,7 @@
 	
 	module.controller('macrocategorieController', function() {
 		var vm = this;
-		
+		vm.tab = { "guitares" : 0, "guitares-electriques" : 1, "guitares-classiques": 2, "guitares-folk": 3 };
 		
 	    vm.categories = [
             {
@@ -15,17 +15,17 @@
                 subCategories: [
 					{
 						name: "Guitares électriques",
-						url: "guitare-electrique",
+						url: "guitares-electriques",
 						urlImage: "124838.jpg"
 					},
 					{	
 						name: "Guitares classiques",
-						url: "guitare-classique",
+						url: "guitares-classiques",
 						urlImage: "130181.jpg"
 					},
                     {
 						name: "Guitares Folk",
-						url: "guitare-folk",
+						url: "guitares-folk",
 						urlImage: "142800.jpg"
                     }
                 ]
@@ -142,6 +142,7 @@
                 ]
             }
         ];
-	    vm.currentCategory = vm.categories[0];
+	    
+	    vm.currentCategory = vm.categories[vm.tab[$routeParams.TYPE]];
 	});
 })();
