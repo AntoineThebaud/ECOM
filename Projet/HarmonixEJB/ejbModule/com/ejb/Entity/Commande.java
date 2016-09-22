@@ -23,7 +23,8 @@ public class Commande {
 	private long idCommande;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date date;
+	@Column(name = "date_commande")
+	private Date dateCommande;
 
 	private int etat;
 	
@@ -42,7 +43,7 @@ public class Commande {
 	public Commande(Date date, int etat, Collection<LigneCommande> ligneCommande, Utilisateur utilisateur) {
 		super();
 
-		this.date = date;
+		this.dateCommande = date;
 		this.etat = etat;
 		this.ligneCommande = ligneCommande;
 		this.utilisateur = utilisateur;
@@ -68,12 +69,12 @@ public class Commande {
 		return idCommande;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getDateCommande() {
+		return dateCommande;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDateCommande(Date date) {
+		this.dateCommande = date;
 	}
 
 	public int getEtat() {
