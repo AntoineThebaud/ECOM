@@ -1,23 +1,25 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 		<div ng-controller="instrumentController as ctrl">
+			<div class="col-md-12">
+				<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{ctrl.marque}}.jpg" class="ctm-brand" alt="[image]">		
+			</div>
 			<div class="col-md-8">
-				<h2><b>{{ ctrl.marque }}</b> {{ ctrl.modele }}</h2>
+				<h2 class="ctm-title">{{ ctrl.modele}}</h2>
 			</div>
-			<div class="col-md-3">						
-				<h2 class="ctm-price">{{ ctrl.prix }} €</h2>
+			<div class="col-md-3">				
+				<h2 class="ctm-price">{{ ctrl.prix }}.00 €</h2>
 			</div>
-			<div class="col-md-1">
-				<h2>
-					<!-- <button class="btn btn-default"> -->
-					<button class="btn btn-default" ng-click=ctrl.panier.addArticle(ctrl.modele,ctrl.prix,ctrl.image,ctrl.id)>
-						<span class="glyphicon glyphicon-shopping-cart"></span>
-					</button>
-				</h2>
+			<div class="col-md-1 ctm-btn-div">				
+				<!-- <button class="btn btn-default"> -->
+				<button class="btn btn-success ctm-btn" ng-click=ctrl.panier.addArticle(ctrl.modele,ctrl.prix,ctrl.image,ctrl.id)>
+					<span class="glyphicon glyphicon-shopping-cart" style="font-size:1.5em;"></span>
+					<span class="glyphicon glyphicon-plus" style="font-size:1.5em;"></span>
+				</button>
 			</div>
 			<div class="col-md-12">		
 				<div class="thumbnail">
-		        	<img ng-src="http://localhost:8080/HarmonixWeb/img/{{ ctrl.image }}" alt="Generic placeholder thumbnail">
+		        	<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{ ctrl.image }}" alt="Generic placeholder thumbnail">
 		   		</div>
 		   		<h3>Spécifications</h3>
 			    <table class="table ctm-table" id="table">
@@ -49,7 +51,7 @@
 						<div class="ctm-titre-avis col-md-12">
 							<input id="titre-avis" type="text" placeholder="Titre..." ng-model="titre">
 						</div>
-					</div>
+					
 <!-- 						<div class="col-md-12">
 						 Ajouter le test si l'utilisateur est connecté
 							<input id="pseudo" type="text" placeholder="Pseudo.." ng-model="">
@@ -62,7 +64,9 @@
 				   				Envoyer
 				   			</button>
 				   		</div>
-		   		<div class="ctm-allAvis col-md-12">
+			   		</div>
+			   	</div>
+		   		<div class="col-md-12">
 		   		<h3>Avis des utilisateurs</h3>
 		   			<div class="ctm-avis col-md-10 form-group">
 		   				<div class="thumbnail col-md-12" ng-repeat="a in ctrl.avis">
@@ -75,13 +79,12 @@
 		   						</div>	   			
 		   					</div>
 		   					<div class="row col-md-9">
-		   						<span class="form-control col-md-1">{{a.titre}</span>
+		   						<span class="form-control col-md-1">{{a.titre}}</span>
 		   						<span class="form-control col-md-12">{{a.text}}</span>
 		   					</div>
 		   				</div>
 		   			</div>
 		   		</div>
-		   	</div>
 		</div>
 	</div>		
 </div>

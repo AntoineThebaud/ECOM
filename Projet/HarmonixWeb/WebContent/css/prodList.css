@@ -14,6 +14,7 @@
 .ctm-price-div {
 	 padding-left: 0px;
 	 padding-right: 0px;
+	 min-height: 85px;
 }
 .ctm-pname {
 	min-height: 40px;
@@ -49,4 +50,19 @@
 }
 .ctm-specs {
 	padding-right: 0px;
+}
+.ctm-brand {
+    max-width: 75px;
+}
+
+.ctm-title-div {
+	/* padding-top: 15px;
+	padding-bottom: 15px; */
+	/* line-height: 20px; */
+	display: flex;  
+    height: 60px;
+}
+.ctm-title-a {
+	font-size: 18px;
+	margin: auto 0px;   
 }
