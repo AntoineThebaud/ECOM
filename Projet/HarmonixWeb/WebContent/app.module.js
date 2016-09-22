@@ -17,6 +17,10 @@
 	  		templateUrl: './components/categorie/categorie.htm',
 	  		controller: 'categorieController'
 	  	})
+	  	.when('/macrocategorie/:TYPE', {
+	  		templateUrl: './components/macrocategorie/macrocategorie.htm',
+	  		controller: 'macrocategorieController'
+	  	})
 	  	.when('/panier', {
 	  		templateUrl: './components/panier/panier.htm',
 	  		controller: 'panierController'
