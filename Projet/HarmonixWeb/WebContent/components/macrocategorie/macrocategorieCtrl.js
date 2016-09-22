@@ -5,7 +5,7 @@
 	
 	module.controller('macrocategorieController', function() {
 		var vm = this;
-		 
+		
 	    vm.categories = [
             {
                 name: "Guitares",
