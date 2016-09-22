@@ -6,6 +6,7 @@
 	module.controller('macrocategorieController', function() {
 		var vm = this;
 		
+		
 	    vm.categories = [
             {
                 name: "Guitares",
@@ -141,5 +142,6 @@
                 ]
             }
         ];
+	    vm.currentCategory = vm.categories[0];
 	});
 })();

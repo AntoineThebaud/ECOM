@@ -1,4 +1,5 @@
 .ctm-price {
+	 margin-top: 5px;
 	 text-align: right;
 	 color: #38761D;
 	 font-weight: bold;
@@ -13,4 +14,21 @@
 	border: 0px;
 	padding-top: 0px;
 	padding-bottom: 5px;
+}
+
+.ctm-brand {
+    max-width: 85px;
+}
+
+.ctm-title {
+	margin-top: 5px;
+}
+
+.ctm-btn {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.ctm-btn-div {
+	padding-left: 8px;
 }
