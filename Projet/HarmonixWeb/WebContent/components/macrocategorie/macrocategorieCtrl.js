@@ -3,7 +3,7 @@
 	
 	var module = angular.module("app"); //retrieve the module named "app"
 	
-	module.controller('macrocategorieController', function() {
+	module.controller('macrocategorieController', function($routeParams) {
 		var vm = this;
 		vm.tab = { "guitares" : 0, "guitares-electriques" : 1, "guitares-classiques": 2, "guitares-folk": 3 };
 		
