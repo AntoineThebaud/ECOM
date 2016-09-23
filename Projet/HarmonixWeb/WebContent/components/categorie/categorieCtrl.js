@@ -9,8 +9,12 @@
 		
 		vm.getCurrentMarques = function() {
 			var tab = [];
+			var brand;
 			for(var i = 0; i < vm.instruments.length; ++i) {
-				tab.push(vm.instruments[i].fabricant);
+				brand = vm.instruments[i].fabricant;
+				if(tab.indexOf(brand) == -1) {
+					tab.push(vm.instruments[i].fabricant);
+				}				
 			}
 			return tab;
 		};
@@ -51,5 +55,9 @@
             "basses-heavy-5-cordes" : "Basses Heavy 5 cordes"
 		}
 		vm.categorie = vm.categoriesFormat[$routeParams.TYPE];
+		
+		vm.sortByBrand = function() {
+			
+		}
 	});
 })();
