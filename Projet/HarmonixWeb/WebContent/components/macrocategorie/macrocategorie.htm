@@ -1,51 +1,32 @@
 <div class="panel panel-default">
 	<div class="panel-body">
-		<div ng-controller="macrocategorieController as ctrl">        
-	        <div style="position:relative; height:178px">
-	  			<div style="position:absolute;z-index:1">
-	    			<img src="https://thumbs4.static-thomann.de/thumb/convert/pics/images/category/{{ ctrl.currentCategory.urlImage }}">
-	  			</div>
-	  			<div style="position:absolute;top:30px; width:640px; height:178px; z-index:2;font-size:200%">
-	     			<h2 class=title>{{ ctrl.currentCategory.name }}</h2>
-	   			</div> 
+		<div ng-controller="macrocategorieController as ctrl">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 ctm-title-div">        
+		    		<img class="ctm-title-img" src="http://localhost:8080/HarmonixWeb/img/categories/{{ctrl.currentCategory.urlImage}}">
+		  			<div class="ctm-title-text">
+		     			{{ctrl.currentCategory.name}}
+		   			</div>
+				</div>
+				<div class="col-md-2"></div>
 			</div>
-			<div ng-repeat="c in ctrl.currentCategory.subCategories" style='float:left' class=elemListe>
-				<div class="thumbnail">
-			    	<a href="#{{ c.url }}">
-			        	<img src="https://thumbs4.static-thomann.de/thumb//thumb110x110/pics/prod/{{ c.urlImage }}" alt="Generic placeholder thumbnail" width="110" height="110">
-			    	</a>         
-		        </div>
-		        <h4>
-		        	<a class="subCategory" href="#{{ c.url }}">
-		        		{{ c.name }}
-		        	</a>
-		        </h4>
-			</div>
-			
-			<!-- <div style='float:left' class=elemListe>
-				<div class="thumbnail">
-			    	<a href="#guitares-classiques">
-			        	<img src="https://thumbs4.static-thomann.de/thumb//thumb110x110/pics/prod/130181.jpg" alt="Generic placeholder thumbnail" width="110" height="110">
-			    	</a>	         
-		        </div>
-		        <h4>
-		        	<a class="subCategory" href="#guitares-classiques">
-		        		Guitares classiques
-		        	</a>
-		        </h4>
-			</div>
-			<div style='float:left' class=elemListe>
-				<div class="thumbnail">
-			    	<a href="#guitares-folk">
-			        	<img src="https://thumbs4.static-thomann.de/thumb//thumb110x110/pics/prod/142800.jpg" alt="Generic placeholder thumbnail" width="110" height="110">
-			    	</a>	         
-		        </div>
-		        <h4>
-		        	<a class="subCategory" href="#guitares-folk">
-		        		Guitares Folk
-		        	</a>
-		        </h4>
-			</div> -->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 ctm-list-cat">
+					<div ng-repeat="c in ctrl.currentCategory.subCategories" style='float:left' class=elemListe>
+						<div class="thumbnail ctm-thumb">
+					    	<a href="#{{ctrl.currentCategory.type_fils}}/{{c.url}}">
+					        	<img src="http://localhost:8080/HarmonixWeb/img/categories/{{c.urlImage}}" alt="Generic placeholder thumbnail">
+					    	</a>         
+				        </div>
+				        <a class="subCategory" href="#{{ctrl.currentCategory.type_fils}}/{{c.url}}">
+			        		{{c.name}}
+			        	</a>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>		
 		</div>
 	</div>
 </div>
