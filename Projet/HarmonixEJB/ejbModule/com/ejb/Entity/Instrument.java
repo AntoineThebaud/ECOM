@@ -65,7 +65,8 @@ public class Instrument {
 	@Column(name = "date_ajout")
 	private Date dateAjout;
 
-	@OneToMany(mappedBy = "instrument", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_instrument", referencedColumnName = "id_instrument")
 	@Fetch(value = FetchMode.SUBSELECT)
 	private List<Avis> avis;
 

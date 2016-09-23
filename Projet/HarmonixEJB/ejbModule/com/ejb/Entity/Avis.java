@@ -33,22 +33,17 @@ public class Avis {
 	@JoinColumn(name = "id_utilisateur")
 	private Utilisateur utilisateur;
 
-	@ManyToOne
-	@JoinColumn(name = "id_instrument")
-	private Instrument instrument;
-
 	public Avis() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Avis(int note, String titre, Date date, String texte, Utilisateur utilisateur, Instrument instrument) {
+	public Avis(int note, String titre, Date date, String texte, Utilisateur utilisateur) {
 		this.note = note;
 		this.titre = titre;
 		this.date = date;
 		this.texte = texte;
 		this.utilisateur = utilisateur;
-		this.instrument = instrument;
 	}
 
 	public Utilisateur getUtilisateur() {
@@ -57,14 +52,6 @@ public class Avis {
 
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
-	}
-
-	public Instrument getInstrument() {
-		return instrument;
-	}
-
-	public void setInstrument(Instrument instrument) {
-		this.instrument = instrument;
 	}
 
 	public long getIdAvis() {
