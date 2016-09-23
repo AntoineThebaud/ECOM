@@ -19,7 +19,6 @@ import javax.ws.rs.core.Response.Status;
 
 import com.ejb.Entity.Instrument;
 import com.ejb.SessionBean.InstrumentResource;
-import com.ejb.Views.View;
 
 @ManagedBean
 @RequestScoped
