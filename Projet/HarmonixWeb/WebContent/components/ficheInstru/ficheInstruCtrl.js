@@ -21,8 +21,33 @@
 			vm.avisList = product.avis;
 			//ajouter la note !
 		});
+		vm.dateAjout=new Date();
+		vm.dateAjout = Date.now();
+		vm.avis = {
+			note: '',
+			titre: '',
+			date: '',
+			texte:'',
+		};
 		
-		//vm.avis = new Avis();
+		vm.range=function(min,max,step){
+			step = step || 1;
+			var input = [];
+		    for (var i = min; i <= max; i += step) {
+		        input.push(i);
+		    }
+		    return input;
+		};
+		
+		vm.ajoutPost = function(){
+			vm.avis.date = vm.dateAjout;
+			console.log('TEST');
+			product.avis.push(vm.avis);
+			console.log('Post ajouté');
+			product.$update({id:vm.id},function() {
+				console.log('maj réussi');
+			});
+		}
 		
 		
 		
