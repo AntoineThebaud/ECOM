@@ -39,11 +39,9 @@ panier.prototype.delArticle = function(nom) {
 
 //modifie la quantité d'un produit
 panier.prototype.modifyQty = function(nom, qty) {
-	if(qty instanceof Number && qty > 0 && qty==Math.abs(parseInt(qty))){
-		this.articles[nom].quantity = qty;
-		//met à jour le panier dans le localstorage
-		this.save();	
-	}
+	this.articles[nom].quantity = qty;
+	//met à jour le panier dans le localstorage
+	this.save();
 }
 
 //calcule le coût total du panier
