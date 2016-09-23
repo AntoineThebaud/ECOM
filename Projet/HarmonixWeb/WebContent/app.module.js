@@ -25,10 +25,6 @@
 	  		templateUrl: './components/panier/panier.htm',
 	  		controller: 'panierController'
 	  	})
-	  	.when('/paiement', {
-	  		templateUrl: './components/paiement/paiement.html',
-	  		controller: 'paiementController'
-	  	})
 //	  	.when('/inscription', {
 //			templateUrl : './formulaire.html',
 //			controller : 'UtilisateurController'
