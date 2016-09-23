@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import com.ejb.Entity.Avis;
 import com.ejb.Entity.Caracteristique;
 import com.ejb.Entity.Instrument;
 
@@ -29,7 +30,9 @@ public class InstrumentResource {
     }
 
     public Instrument create(Instrument instrument){
+    	// On ajoute la date à l'instrument
     	instrument.setDateAjout(new Date());
+    	
     	em.persist(instrument);
     	return instrument;
     }
@@ -114,6 +117,20 @@ public class InstrumentResource {
     }
 	
 	public void updateInstrument (Instrument instrument){
+		// On met à jour la note et le nombre de votes de l'instrument
+		double note = 0.0;
+		int nbVotes = 0;
+		
+		for(Avis v : instrument.getAvis()) {
+			note += v.getNote();
+			nbVotes++;
+		}
+		
+		note /= (double)nbVotes;
+		
+		instrument.setNote(note);
+		instrument.setNbVotes(nbVotes);
+		
 		em.merge(instrument);
 	}
 	
