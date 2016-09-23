@@ -18,7 +18,7 @@ public class Avis {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_avis")
-	private long IdAvis;
+	private long idAvis;
 
 	private int note;
 
@@ -55,7 +55,7 @@ public class Avis {
 	}
 
 	public long getIdAvis() {
-		return IdAvis;
+		return idAvis;
 	}
 
 	public int getNote() {
