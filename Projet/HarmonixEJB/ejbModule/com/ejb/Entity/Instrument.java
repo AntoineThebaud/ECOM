@@ -59,7 +59,11 @@ public class Instrument {
 	private int promo;
 	
 	@JsonView(View.Resume.class)
-	private int note;
+	private double note;
+	
+	@Column(name = "nb_votes")
+	@JsonView(View.Resume.class)
+	private int nbVotes;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "date_ajout")
@@ -165,12 +169,20 @@ public class Instrument {
 		this.promo = promo;
 	}
 
-	public int getNote() {
+	public double getNote() {
 		return note;
 	}
 
-	public void setNote(int note) {
+	public void setNote(double note) {
 		this.note = note;
+	}
+
+	public int getNbVotes() {
+		return nbVotes;
+	}
+
+	public void setNbVotes(int nbVotes) {
+		this.nbVotes = nbVotes;
 	}
 
 	public Date getDateAjout() {
