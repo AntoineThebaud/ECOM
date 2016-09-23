@@ -12,7 +12,7 @@
 		vm.email = "";
 		
 		vm.stockerInfosPaiement = function(){
-			
+
 		}
 		
 	});
