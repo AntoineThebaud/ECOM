@@ -41,7 +41,7 @@
 		
 		vm.ajoutPost = function(){
 			vm.avis.date = vm.dateAjout;
-			console.log('TEST');
+			vm.avis.texte.replace(/\r?\n/g, '<br />');
 			product.avis.push(vm.avis);
 			console.log('Post ajouté');
 			product.$update({id:vm.id},function() {

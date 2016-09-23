@@ -54,3 +54,8 @@ label.star:before {
   content: '\f006';
   font-family: FontAwesome;
 }
+
+.ctm-text-avis{
+	height: auto;
+	max-height: 150px;
+}
