@@ -19,7 +19,7 @@
 					</td>
 					<td><img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{ attributs.image }}" class="ctm-img" alt="[image]">{{ nom }}</td>
 					<td>
-						<input type="number" class="ctm-size" ng-value="{{ attributs.quantity }}" ng-model="maycouy" ng-change="ctrl.panier.modifyQty(nom, maycouy)" >
+						<input type="number" class="ctm-size" ng-value="{{ attributs.quantity }}" ng-model="qty" ng-change="ctrl.panier.modifyQty(nom, qty)" >
 					</td>
 					<td>{{ attributs.prix }} €</td>
 					<td>{{ attributs.quantity * attributs.prix }} €</td>	                    	
