@@ -3,7 +3,7 @@
 	
 	var module = angular.module("app");//retrieve the module named "app"
 	
-	module.controller('categorieController', function(Categorie, $routeParams) {
+	module.controller('categorieController', function(Instrument, $routeParams) {
 		var vm = this;
 		vm.instruments = [];
 		
@@ -19,7 +19,7 @@
 			return tab;
 		};
 
-		var getInstruments = Categorie.query({"categorie": $routeParams.TYPE}, function() {
+		var getInstruments = Instrument.query({categorie: $routeParams.TYPE}, function() {
 			vm.instruments = getInstruments;
 			vm.marques = vm.getCurrentMarques();
 		});

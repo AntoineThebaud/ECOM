@@ -12,7 +12,7 @@
 	  	.when('/ficheInstru/:ID', {
 	  		templateUrl: './components/ficheInstru/ficheInstru.htm',
 	  		controller: 'instrumentController'
-	  	})
+	  	})	  	
 	  	.when('/categorie/:TYPE', {
 	  		templateUrl: './components/categorie/categorie.htm',
 	  		controller: 'categorieController'
@@ -24,6 +24,10 @@
 	  	.when('/panier', {
 	  		templateUrl: './components/panier/panier.htm',
 	  		controller: 'panierController'
+	  	})
+	  	.when('/promotions', {
+	  		templateUrl: './components/promotions/promotions.htm',
+	  		controller: 'promotionsController'
 	  	})
 //	  	.when('/inscription', {
 //			templateUrl : './formulaire.html',

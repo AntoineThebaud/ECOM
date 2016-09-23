@@ -84,3 +84,9 @@
 	text-align: center;
 	min-width: 85px;
 }
+
+.ctm-promo {
+	color: Red !important;
+	font-size: 15px !important;
+	background-color: #222 !important;
+}

@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 	<div class="panel-body">
-		<div ng-controller="categorieController as ctrl">
-	        <h2>{{ctrl.categorie}}</h2>
+		<div ng-controller="promotionsController as ctrl">
+	        <h2>Promotions</h2>
 	        <div class="row ctm-row-filters">
 		        <div class="col-md-4">
 		        	<select class="form-control ctm-select">
@@ -26,16 +26,38 @@
 			</div>
 			<div class="row row-prod">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-		        	<div class="ctm-title-div">        	
-		        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
-		        			{{i.nom}}
-		        		</a>
-	        		</div>
+				
+					<!-- encadré promo à gauche, titre à droite -->
+					<div class="row">
+						<div class="col-md-3 ctm-promo-div">
+							<img class="ctm-promo-img" ng-src="http://localhost:8080/HarmonixWeb/img/autres/promo.png" alt="[image]">
+							<div class="ctm-promo-text">
+				     			{{i.promo}}%
+				   			</div>
+						</div>
+						<div class="col-md-9 ctm-promo-title">       	
+			        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
+			        			{{i.nom}}
+			        		</a>
+			        	</div>
+			        </div>
+			        
+			        <!-- image produit-->
 			      	<div class="thumbnail ctm-img">
 			        	<a ng-href="#ficheInstru/{{i.idInstrument}}">
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
+			        
+			        <!-- note à gauche, prix à droite -->			        
+		        	<div class="col-md-9">
+		        		<i class="fa fa-star" aria-hidden="true" ng-repeat="n in ctrl.range(1,i.note)"></i><i class="fa fa-star-o" aria-hidden="true" ng-repeat="n in ctrl.range(1,5 - i.note)"></i>		   							
+		        	</div>
+		        	<div class="col-md-3 ctm-price-div-2">
+		        		<span class="ctm-promo-strike">{{i.prix}} €</span>
+		        	</div>
+			       			        
+			        <!-- caracs à gauche, marque et nouveau prix à droite -->
 			        <div class="col-md-8 ctm-specs">
 			        	<ul class="ctm-ul">
 			        		<li ng-repeat="j in [0,1,2]">
@@ -44,9 +66,9 @@
 						</ul>
 			        </div>
 			        <div class="col-md-4 ctm-price-div">
-			        	<h3 class="ctm-price">{{i.prix}} €</h3>
+			        	<span class="ctm-promo-newprice">{{i.prix * ((100-i.promo)/100)}} €</span>			        	
 			        	<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
-			        </div>
+			        </div>				     
 		        </div>
 			</div>
 		</div>

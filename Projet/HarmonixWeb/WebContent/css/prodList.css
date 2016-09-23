@@ -1,12 +1,13 @@
 /*borders*/
 .ctm-prod {
 	border: 1px solid;
+	border-color: #BBB;
 }
 .row-prod {
 	border: 1px solid;
+	border-color: #BBB;
 }
 .ctm-price {
-	 text-align: right;
 	 color: #38761D;
 	 font-weight: bold;
 	 margin-top: 0px;
@@ -15,6 +16,11 @@
 	 padding-left: 0px;
 	 padding-right: 0px;
 	 min-height: 85px;
+	 text-align: right;
+}
+.ctm-price-div-2 {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 .ctm-pname {
 	min-height: 40px;
@@ -56,13 +62,65 @@
 }
 
 .ctm-title-div {
-	/* padding-top: 15px;
-	padding-bottom: 15px; */
-	/* line-height: 20px; */
 	display: flex;  
     height: 60px;
 }
 .ctm-title-a {
 	font-size: 18px;
 	margin: auto 0px;   
+}
+
+/* règles pour Promotions */
+
+.ctm-promo-div {
+	padding: 0px;
+}
+
+.ctm-promo-img {
+	width: 85%;
+	height: 85%;
+}
+
+.ctm-promo-text {
+	text-align: center;
+	color: #ffffff;
+	position:absolute;
+	top: 5px;
+	left: 5px;
+	font-size: 18px;
+}
+
+.ctm-promo-title {
+	display: flex;  
+    height: 60px;
+    padding-left: 0px;
+}
+
+.ctm-promo-strike{
+	/*like ctm-price*/
+	text-align: right;
+	color: #38761D;
+	font-weight: bold;
+	margin-top: 0px;
+	
+	font-size: 24px;
+	/*required for strikethrough*/
+    position: relative;
+}
+
+.ctm-promo-strike::after{
+    content: '';
+    border-bottom: 4px solid red;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+}
+
+.ctm-promo-newprice {
+	text-align: right;
+	color: red;
+	font-weight: bold;
+	margin-top: 0px;
+	font-size: 24px;
 }
