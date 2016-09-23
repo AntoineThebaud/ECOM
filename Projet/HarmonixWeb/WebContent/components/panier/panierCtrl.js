@@ -8,5 +8,7 @@
 		
 		//récupère le panier
 		vm.panier = Panier.monPanier;
+		
+		vm.onlyNumbers = /^\d+$/;
 	});
 })();

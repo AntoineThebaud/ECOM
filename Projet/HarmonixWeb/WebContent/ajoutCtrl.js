@@ -22,7 +22,7 @@
 	    //Instru 2	    
 	    $scope.instru2 = new Instrument();
 	    $scope.instru2.nom = 'Fender Precision Bass Special OWT';
-		$scope.instru2.categorie = 'basses-electriques';
+		$scope.instru2.categorie = 'basses-heavy-4-cordes';
 		$scope.instru2.images = 'fender_precision_bass_special_owt.jpg';
 		$scope.instru2.fabricant = 'Fender';
 		$scope.instru2.prix = 1077;

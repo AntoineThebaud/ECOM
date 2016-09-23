@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 		<div ng-controller="categorieController as ctrl">
-	        <h2>{{ ctrl.categorie }}</h2>
+	        <h2>{{ctrl.categorie}}</h2>
 	        <div class="row ctm-row-filters">
 		        <div class="col-md-4">
 		        	<select class="form-control ctm-select">
@@ -26,26 +26,27 @@
 			</div>
 			<div class="row row-prod">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-		        	<h4 class="ctm-pname">
-		        		<a ng-href="#ficheInstru/{{ i.idInstrument }}">
-		        			{{ i.fabricant }} : {{ i.nom }}
+		        	<div class="ctm-title-div">        	
+		        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
+		        			{{i.nom}}
 		        		</a>
-		        	</h4>
+	        		</div>
 			      	<div class="thumbnail ctm-img">
-			        	<a ng-href="#ficheInstru/{{ i.idInstrument }}">
-			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{ i.images }}" alt="Generic placeholder thumbnail">
+			        	<a ng-href="#ficheInstru/{{i.idInstrument}}">
+			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
-			        <div class="col-md-6">
+			        <div class="col-md-9 ctm-specs">
 			        	<ul class="ctm-ul">
-							<li>type : {{ i.type }}</li>
-							<li>poids : {{ i.poids }}</li>
-							<li>id : {{ i.idInstrument }}</li>
+			        		<li ng-repeat="j in [0,1,2]">
+			        			{{i.caracteristiques[j].nom}} : {{i.caracteristiques[j].valeur}}
+			        		</li>
 						</ul>
 			        </div>
-			        <div class="col-md-6">
-			        	<h3 class="ctm-price">{{ i.prix }} €</h3>
-			        </div>		         
+			        <div class="col-md-3 ctm-price-div">
+			        	<h3 class="ctm-price">{{i.prix}} €</h3>
+			        	<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
+			        </div>
 		        </div>
 			</div>
 		</div>
