@@ -21,9 +21,6 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import com.ejb.Views.View;
-import com.fasterxml.jackson.annotation.JsonView;
-
 @Entity
 @NamedQueries(value = {
 	@NamedQuery(name = "allInstrument", query = "SELECT OBJECT(i) FROM Instrument i"),
@@ -37,32 +34,23 @@ public class Instrument {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_instrument")
-	@JsonView(View.Resume.class)
 	private long idInstrument;
 
-	@JsonView(View.Resume.class)
 	private String nom;
 
-	@JsonView(View.Resume.class)
 	private String categorie;
 
-	@JsonView(View.Resume.class)
 	private String images;
 
-	@JsonView(View.Resume.class)
 	private String fabricant;
 
-	@JsonView(View.Resume.class)
 	private float prix;
 	
-	@JsonView(View.Resume.class)
 	private int promo;
 	
-	@JsonView(View.Resume.class)
 	private double note;
 	
 	@Column(name = "nb_votes")
-	@JsonView(View.Resume.class)
 	private int nbVotes;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -77,7 +65,6 @@ public class Instrument {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_instrument", referencedColumnName = "id_instrument")
 	@Fetch(value = FetchMode.SUBSELECT)
-	@JsonView(View.Resume.class)
 	private List<Caracteristique> caracteristiques;
 
 	public Instrument() {
