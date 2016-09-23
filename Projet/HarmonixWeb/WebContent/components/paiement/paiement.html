@@ -109,7 +109,8 @@
 							</div>
 							
 							<div class="form-actions">
-								<button type="submit" class="btn btn-primary">Envoyer</button>
+								<button type="submit" ng-disabled="form.$invalid || vm.dataLoading"
+								class="btn btn-primary">Envoyer</button>
 							</div>
 						</form>
 					</div>
