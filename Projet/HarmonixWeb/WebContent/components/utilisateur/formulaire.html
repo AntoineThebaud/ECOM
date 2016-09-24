@@ -5,29 +5,20 @@
 <meta charset="UTF-8">
 <title>Page d'accueil</title>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-<!--     <link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/bootstrap.min.css"/> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
 <!-- css for header -->
-<link rel="stylesheet" type="text/css"
-	href="http://localhost:8080/HarmonixWeb/css/header.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/header.css" />
 <!-- css for navbar -->
-<link rel="stylesheet" type="text/css"
-	href="http://localhost:8080/HarmonixWeb/css/navbar.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/navbar.css" />
 <!-- css for body  -->
-<link rel="stylesheet" type="text/css"
-	href="http://localhost:8080/HarmonixWeb/css/body.css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/body.css" />
 
 <script src="http://localhost:8080/HarmonixWeb/js/angular.min.js"></script>
-<script
-	src="http://localhost:8080/HarmonixWeb/js/angular-resource.min.js"></script>
+<script src="http://localhost:8080/HarmonixWeb/js/angular-resource.min.js"></script>
 <script src="http://localhost:8080/HarmonixWeb/js/ui-bootstrap.min.js"></script>
-<!--<script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script> -->
 <script src="http://localhost:8080/HarmonixWeb/js/jquery-3.1.0.min.js"></script>
 <script src="http://localhost:8080/HarmonixWeb/js/angular-route.min.js"></script>
-<script src="http://localhost:8080/HarmonixWeb/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
+<script src="http://localhost:8080/HarmonixWeb/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- module -->
 <script src="http://localhost:8080/HarmonixWeb/app.module.js"></script>
@@ -42,18 +33,12 @@
 
 <!--  controllers for partials -->
 
-<script
-	src="http://localhost:8080/HarmonixWeb/shared/header/headerCtrl.js"></script>
-<script
-	src="http://localhost:8080/HarmonixWeb/components/home/homeCtrl.js"></script>
-<script
-	src="http://localhost:8080/HarmonixWeb/components/categorie/categorieCtrl.js"></script>
-<script
-	src="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstruCtrl.js"></script>
-<script
-	src="http://localhost:8080/HarmonixWeb/components/panier/panierCtrl.js"></script>
-<script
-	src="http://localhost:8080/HarmonixWeb/components/utilisateur/utilisateurCtrl.js"></script>
+<script src="http://localhost:8080/HarmonixWeb/shared/header/headerCtrl.js"></script>
+<script src="http://localhost:8080/HarmonixWeb/components/home/homeCtrl.js"></script>
+<script src="http://localhost:8080/HarmonixWeb/components/categorie/categorieCtrl.js"></script>
+<script src="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstruCtrl.js"></script>
+<script src="http://localhost:8080/HarmonixWeb/components/panier/panierCtrl.js"></script>
+<script src="http://localhost:8080/HarmonixWeb/components/utilisateur/utilisateurCtrl.js"></script>
 
 <!-- test : class panier -->
 <script
@@ -105,37 +90,46 @@
 						<h2>Inscription</h2>
 						<form name="form" ng-submit="ctrl.ajoutClient()" role="form">
 							<div class="form-group" novalidate>
-								<label for="nom">nom</label> <input type="text" name="nom"
-									id="nom" class="form-control" ng-model="ctrl.utilisateur.nom"
+								<input type="text" name="nom"
+									id="nom" placeholder="nom" class="form-control input-inscription"  ng-model="ctrl.utilisateur.nom"
 									required ng-minlength="2" ng-maxlength="20" />
 									 <div ng-messages="form.nom.$error" ng-messages-include="erreurs.html">
 
 							</div>
 							<div class="form-group">
-								<label for="prenom">prenom</label> <input type="text"
-									name="prenom" id="prenom" class="form-control"
+								<input type="text"
+									name="prenom" id="prenom" placeholder="prenom" class="form-control input-inscription"
 									ng-model="ctrl.utilisateur.prenom" required ng-minlength="2" ng-maxlength="20" />
 									 <div ng-messages="form.prenom.$error" ng-messages-include="erreurs.html">
 
 							</div>
+							
 							<div class="form-group">
-								<label for="mail">mail</label> <input type="email" name="mail" ng-blur="ctrl.verifMail(this)"
-									id="mail" class="form-control" ng-model="ctrl.utilisateur.mail"
-									required />
-									<div ng-messages="form.mail.$error" ng-messages-include="erreurs.html">
-
-							</div>
-							<div class="form-group">
-								<label for="age">age</label> <input type="number" name="age"
-									id="age" class="form-control" ng-model="ctrl.utilisateur.age"
+								<input type="number" name="age"
+									id="age" placeholder="age" class="form-control input-inscription" ng-model="ctrl.utilisateur.age"
 									required />
 									<div ng-messages="form.age.$error" ng-messages-include="erreurs.html">
+							</div>
+							
+							<div class="form-group">
+								<input type="motDePasse"
+									name="adresse" id="adresse" placeholder="adresse postale" class="form-control input-inscription"
+									ng-model="ctrl.utilisateur.adresse" required />
+									<div ng-messages="form.adresse.$error" ng-messages-include="erreurs.html">
 
 							</div>
+							
 							<div class="form-group">
-								<label for="motDePasse">mot de passe</label> <input
-									type="password" name="motDePasse" id="motDePasse"
-									class="form-control" ng-model="ctrl.utilisateur.motDePasse"
+								<input type="email" name="mail"
+									id="mail" placeholder="adresse mail" class="form-control input-inscription" ng-model="ctrl.utilisateur.mail"
+									required />
+									<div ng-messages="form.mail.$error" ng-messages-include="erreurs.html">
+							</div>
+					
+							<div class="form-group">
+								 <input
+									type="password" name="motDePasse" id="motDePasse" placeholder="mot de passe"
+									class="form-control input-inscription" ng-model="ctrl.utilisateur.motDePasse"
 									required />
 									<div ng-messages="form.motDePasse.$error" ng-messages-include="erreurs.html">
 								<!--	
@@ -148,17 +142,10 @@
 
 							</div>
 							-->
-							<div class="form-group">
-								<label for="adresse">adresse</label> <input type="motDePasse"
-									name="adresse" id="adresse" class="form-control"
-									ng-model="ctrl.utilisateur.adresse" required />
-									<div ng-messages="form.adresse.$error" ng-messages-include="erreurs.html">
-
-							</div>
 							<div class="form-actions">
 								<button type="submit"
 									ng-disabled="form.$invalid " 
-									class="btn btn-primary">Register</button>
+									class="btn btn-primary">valider</button>
 
 							</div>
 						</form>

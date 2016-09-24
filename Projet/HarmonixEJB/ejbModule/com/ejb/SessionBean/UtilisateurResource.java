@@ -23,9 +23,9 @@ public class UtilisateurResource {
 
 	@PersistenceContext(unitName="mysql")
 	private EntityManager em;
-	private static final String SELECT_PAR_EMAIL = "SELECT u FROM Utilisateur u WHERE u.email=:email";
-	private static final String AUTHENTIFICATION = "SELECT u FROM Utilisateur u WHERE u.email=:email AND u.mdp=:mdp";
-	private static final String PARAM_EMAIL           = "email";
+	private static final String SELECT_PAR_EMAIL = "SELECT u FROM Utilisateur u WHERE u.mail=:mail";
+	private static final String AUTHENTIFICATION = "SELECT u FROM Utilisateur u WHERE u.mail=:mail AND u.motDePasse=:mdp";
+	private static final String PARAM_EMAIL           = "mail";
 	private static final String PARAM_MDP           = "mdp";
 	private byte[] r ;
 	private Random random ;
