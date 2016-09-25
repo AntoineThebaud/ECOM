@@ -11,17 +11,30 @@
 		vm.getCurrentMarques = function() {
 			var tab = [];
 			var brand;
-			for(var i = 0; i < vm.instruments.length; ++i) {
-				brand = vm.instruments[i].fabricant;
+			for(var i = 0; i < vm.allInstruments.length; ++i) {
+				brand = vm.allInstruments[i].fabricant;
 				if(tab.indexOf(brand) == -1) {
-					tab.push(vm.instruments[i].fabricant);
+					tab.push(brand);
 				}				
 			}
 			return tab;
 		};
+		
+		vm.displayBrand = function(selected_brand) {
+			//réinitialisation du tableau avant traitement
+			vm.displayedInstruments = vm.allInstruments.slice();
+			if(selected_brand == "Toutes les marques") return;	
+			for(var i = 0; i < vm.displayedInstruments.length; i++) {
+				if(vm.displayedInstruments[i].fabricant != selected_brand) {
+					vm.displayedInstruments.splice(i,1);
+					--i;
+				}
+			}
+		}
 
 		var getInstruments = Instrument.query({categorie: $routeParams.TYPE}, function() {
-			vm.instruments = getInstruments;
+			vm.allInstruments = getInstruments;
+			vm.displayedInstruments = vm.allInstruments.slice();
 			vm.marques = vm.getCurrentMarques();
 		});
 		
