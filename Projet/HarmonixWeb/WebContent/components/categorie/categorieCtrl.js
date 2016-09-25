@@ -56,8 +56,14 @@
 		}
 		vm.categorie = vm.categoriesFormat[$routeParams.TYPE];
 		
-		vm.sortByBrand = function() {
-			
-		}
+		//fonction pour affichage etoiles //TODO : code duppliqué (promos, catégorie, ficheProduit)
+		vm.range=function(min,max,step){
+			step = step || 1;
+			var input = [];
+		    for (var i = min; i <= max; i += step) {
+		        input.push(i);
+		    }
+		    return input;
+		};
 	});
 })();

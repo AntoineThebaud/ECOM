@@ -24,6 +24,7 @@
 					</select>
 				</div>
 			</div>
+			<!-- liste d'articles -->
 			<div class="row row-prod">
 				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
 				
@@ -50,8 +51,9 @@
 			        </div>
 			        
 			        <!-- note à gauche, prix à droite -->			        
-		        	<div class="col-md-9">
-		        		<i class="fa fa-star" aria-hidden="true" ng-repeat="n in ctrl.range(1,i.note)"></i><i class="fa fa-star-o" aria-hidden="true" ng-repeat="n in ctrl.range(1,5 - i.note)"></i>		   							
+		        	<div class="col-md-9 ctm-stars-div">
+		        		<i class="fa fa-star ctm-stars-y" aria-hidden="true" ng-repeat="n in ctrl.range(1,i.note)"></i><i class="fa fa-star ctm-stars-n" aria-hidden="true" ng-repeat="n in ctrl.range(1,5 - i.note)"></i>		   							
+		        		<span class="ctm-nbvotes">({{i.nbVotes}} votes)</span>
 		        	</div>
 		        	<div class="col-md-3 ctm-price-div-2">
 		        		<span class="ctm-promo-strike">{{i.prix}} €</span>
@@ -66,7 +68,7 @@
 						</ul>
 			        </div>
 			        <div class="col-md-4 ctm-price-div">
-			        	<span class="ctm-promo-newprice">{{i.prix * ((100-i.promo)/100)}} €</span>			        	
+			        	<div class="ctm-promo-newprice">{{i.prix * ((100-i.promo)/100)}} €</div>			        	
 			        	<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
 			        </div>				     
 		        </div>

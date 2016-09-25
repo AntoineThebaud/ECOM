@@ -9,18 +9,19 @@
 }
 .ctm-price {
 	 color: #38761D;
+	 font-size: 24px;
 	 font-weight: bold;
 	 margin-top: 0px;
 }
 .ctm-price-div {
 	 padding-left: 0px;
 	 padding-right: 0px;
-	 min-height: 85px;
 	 text-align: right;
 }
 .ctm-price-div-2 {
 	padding-left: 0px;
 	padding-right: 0px;
+	text-align: right;
 }
 .ctm-pname {
 	min-height: 40px;
@@ -74,11 +75,12 @@
 
 .ctm-promo-div {
 	padding: 0px;
+	width: 60px;
 }
 
 .ctm-promo-img {
-	width: 85%;
-	height: 85%;
+	width: 100%;
+	height: 100%;
 }
 
 .ctm-promo-text {
@@ -87,7 +89,8 @@
 	position:absolute;
 	top: 5px;
 	left: 5px;
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .ctm-promo-title {
@@ -98,7 +101,6 @@
 
 .ctm-promo-strike{
 	/*like ctm-price*/
-	text-align: right;
 	color: #38761D;
 	font-weight: bold;
 	margin-top: 0px;
@@ -123,4 +125,27 @@
 	font-weight: bold;
 	margin-top: 0px;
 	font-size: 24px;
+	min-height: 35px;
+}
+
+.ctm-promo-none {
+	min-height: 35px;
+}
+
+.ctm-nbvotes {
+	color: #666;
+	font-size:12px;
+}
+
+.ctm-stars-div {
+	padding-left: 0px;
+}
+
+.ctm-stars-y {
+	color: #FFC600;
+	font-size: 18px;
+}
+.ctm-stars-n {
+	color: #666;
+	font-size: 18px;
 }
