@@ -68,5 +68,29 @@ label.star:before {
 }
 .input-inscription{
 	padding : 20 px;
+}
 
+.ctm-cat-title-h2 {
+	display: inline;
+	background-color: #666;
+	color: white;
+	padding: 5px 8px 5px 8px;
+	border-radius: 5px;
+}
+.ctm-cat-title-div {
+	padding-bottom: 10px;
+}
+
+.ctm-seemore {
+	margin-bottom: 7px;
+}
+
+.ctm-welcome {
+	background-color: #DDD;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.ctm-welcome-title {
+	font-weight: bold;
 }

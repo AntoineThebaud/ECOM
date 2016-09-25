@@ -29,6 +29,10 @@
 	  		templateUrl: './components/promotions/promotions.htm',
 	  		controller: 'promotionsController'
 	  	})
+	  	.when('/nouveautes', {
+	  		templateUrl: './components/nouveautes/nouveautes.htm',
+	  		controller: 'nouveautesController'
+	  	})
 //	  	.when('/inscription', {
 //			templateUrl : './formulaire.html',
 //			controller : 'UtilisateurController'

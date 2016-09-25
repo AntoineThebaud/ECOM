@@ -1,73 +1,150 @@
 <div class="panel panel-default">
 	<div ng-controller="instrumentsListController as ctrl">
-		<!-- Promotions -->
+	
+		<!-- Welcome -->
+		
 		<div class="panel-body">
 			<div class="row">
-				<div class="col-md-8">
-					<h2>Promotions</h2>
+			<div class="col-md-2"></div>
+				<div class="col-md-8 ctm-welcome">
+					<h1 class="ctm-welcome-title">Bienvenue sur Harmonix !</h1>
+					<p>Harmonix est le n°1 des distributeurs d'instruments de musique sur le litoral autrichien.</p>
+					<p>Vous trouverez chez nous tous les instruments de musique de toutes les plus grandes marques !</p>
+				</div>				
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	
+		<!-- Promotions -->
+		
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-12 ctm-cat-title-div">
+					<h2 class="ctm-cat-title-h2">
+						Promotions
+						<a href="#promotions" class="btn btn-success ctm-seemore">Voir plus</a>
+					</h2>
 				</div>
-				<div class="col-md-4 ctm-seemore">						
-					<button type="button" class="btn btn-success">Voir plus</button>
-				</div>	
 			</div>	
 			<div class="row row-prod">
-				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-		        	<div class="ctm-title-div">        	
-		        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
-		        			{{i.nom}}
-		        		</a>
-	        		</div>
+				<div ng-repeat="i in ctrl.promotions" class="col-md-4 ctm-prod">		        	
+					<!-- encadré promo à gauche, titre à droite -->
+					<div class="row">
+						<div class="col-md-3 ctm-promo-div">
+							<img class="ctm-promo-img" ng-src="http://localhost:8080/HarmonixWeb/img/autres/promo.png" alt="[image]">
+							<div class="ctm-promo-text">
+				     			-{{i.promo}}%
+				   			</div>
+						</div>
+						<div class="col-md-9 ctm-promo-title">       	
+			        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
+			        			{{i.nom}}
+			        		</a>
+			        	</div>
+			        </div>
+			        
+			        <!-- image produit-->
 			      	<div class="thumbnail ctm-img">
 			        	<a ng-href="#ficheInstru/{{i.idInstrument}}">
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
-			        <div class="col-md-9 ctm-specs">
+			        
+			        <!-- note à gauche, prix à droite -->			        
+		        	<div class="col-md-9 ctm-stars-div">
+		        		<i class="fa fa-star ctm-stars-y" aria-hidden="true" ng-repeat="n in ctrl.range(1,i.note)"></i><i class="fa fa-star ctm-stars-n" aria-hidden="true" ng-repeat="n in ctrl.range(1,5 - i.note)"></i>		   							
+		        		<span class="ctm-nbvotes">({{i.nbVotes}} votes)</span>
+		        	</div>
+		        	<div class="col-md-3 ctm-price-div-2">
+		        		<span class="ctm-promo-strike">{{i.prix}} €</span>
+		        	</div>
+			       			        
+			        <!-- caracs à gauche, marque et nouveau prix à droite -->
+			        <div class="col-md-8 ctm-specs">
 			        	<ul class="ctm-ul">
 			        		<li ng-repeat="j in [0,1,2]">
 			        			{{i.caracteristiques[j].nom}} : {{i.caracteristiques[j].valeur}}
 			        		</li>
 						</ul>
 			        </div>
-			        <div class="col-md-3 ctm-price-div">
-			        	<h3 class="ctm-price">{{i.prix}} €</h3>
+			        <div class="col-md-4 ctm-price-div">
+			        	<div class="ctm-promo-newprice">{{i.prix * ((100-i.promo)/100)}} €</div>			        	
 			        	<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
-			        </div>
+			        </div>			
 		        </div>
 			</div>
 		</div>
 	
 		<!-- Nouveautés -->
+		
 		<div class="panel-body">
 			<div class="row">
-				<div class="col-md-8">
-					<h2>Nouveautés</h2>
+				<div class="col-md-12 ctm-cat-title-div">
+					<h2 class="ctm-cat-title-h2">
+						Nouveautés
+						<a href="#nouveautes" class="btn btn-success ctm-seemore">Voir plus</a>
+					</h2>
 				</div>
-				<div class="col-md-4 ctm-seemore">						
-					<button type="button" class="btn btn-success">Voir plus</button>
-				</div>	
 			</div>
 			<div class="row row-prod">
-				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-		        	<div class="ctm-title-div">        	
-		        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
-		        			{{i.nom}}
-		        		</a>
-	        		</div>  
+				<div ng-repeat="i in ctrl.nouveautes" class="col-md-4 ctm-prod">
+					<!-- if article en promo : -->
+					<div class="row" ng-if="i.promo != 0">
+						<div class="col-md-3 ctm-promo-div">
+							<img class="ctm-promo-img" ng-src="http://localhost:8080/HarmonixWeb/img/autres/promo.png" alt="[image]">
+							<div class="ctm-promo-text">
+				     			-{{i.promo}}%
+				   			</div>
+						</div>
+						<div class="col-md-9 ctm-promo-title">       	
+			        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
+			        			{{i.nom}}
+			        		</a>
+			        	</div>
+			        </div>
+			        <!-- else -->
+			        <div class="row" ng-if="i.promo == 0">
+			        	<div class="col-md-12 ctm-title-div">        	
+			        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
+			        			{{i.nom}}
+			        		</a>
+		        		</div>
+			        </div>
+		        	
+			      	<!-- image produit-->
 			      	<div class="thumbnail ctm-img">
-			        	<a ng-href="#ficheInstru/{{i.idInstrument }}">
+			        	<a ng-href="#ficheInstru/{{i.idInstrument}}">
 			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
-			        <div class="col-md-9 ctm-specs">
+			        
+			        <!-- note à gauche, prix à droite -->			        
+		        	<div class="col-md-9 ctm-stars-div">
+		        		<i class="fa fa-star ctm-stars-y" aria-hidden="true" ng-repeat="n in ctrl.range(1,i.note)"></i><i class="fa fa-star ctm-stars-n" aria-hidden="true" ng-repeat="n in ctrl.range(1,5 - i.note)"></i>		   							
+		        		<span class="ctm-nbvotes">({{i.nbVotes}} votes)</span>
+		        	</div>
+		        	<!-- if article en promo : -->
+		        	<div class="col-md-3 ctm-price-div-2" ng-if="i.promo != 0">
+		        		<span class="ctm-promo-strike">{{i.prix}} €</span>
+		        	</div>
+		        	<!-- else -->
+		        	<div class="col-md-3 ctm-price-div" ng-if="i.promo == 0">
+		        		<span class="ctm-price">{{i.prix}} €</span>
+		        	</div>
+			        
+			        <!-- caracs à gauche, marque et prix promo à droite (si promo) -->
+			        <div class="col-md-8 ctm-specs">
 			        	<ul class="ctm-ul">
 			        		<li ng-repeat="j in [0,1,2]">
-			        			{{i.caracteristiques[j].nom }} : {{i.caracteristiques[j].valeur}}
+			        			{{i.caracteristiques[j].nom}} : {{i.caracteristiques[j].valeur}}
 			        		</li>
 						</ul>
 			        </div>
-			        <div class="col-md-3 ctm-price-div">
-			        	<h3 class="ctm-price">{{i.prix}} €</h3>
+			        <div class="col-md-4 ctm-price-div">
+			        	<div class="ctm-promo-newprice" ng-if="i.promo != 0">
+			        		{{i.prix * ((100-i.promo)/100)}} €
+			        	</div>			        
+			        	<div class="ctm-promo-none" ng-if="i.promo == 0"></div>	
 			        	<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
 			        </div>
 		        </div>
@@ -77,37 +154,15 @@
 		<!-- Meilleures ventes -->
 		<div class="panel-body">
 	        <div class="row">
-				<div class="col-md-8">
-					<h2>Meilleures ventes</h2>
+				<div class="col-md-12 ctm-cat-title-div">
+					<h2 class="ctm-cat-title-h2">
+						Meilleures ventes
+						<a href="#todo" class="btn btn-success ctm-seemore">Voir plus</a>
+					</h2>
 				</div>
-				<div class="col-md-4 ctm-seemore">						
-					<button type="button" class="btn btn-success">Voir plus</button>
-				</div>	
 			</div>
 			<div class="row row-prod">
-				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
-					<div class="ctm-title-div">        	
-		        		<a class="ctm-title-a" ng-href="#ficheInstru/{{i.idInstrument}}">
-		        			{{i.nom}}
-		        		</a>
-	        		</div>       	
-			      	<div class="thumbnail ctm-img">
-			        	<a ng-href="#ficheInstru/{{i.idInstrument}}">
-			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
-			        	</a>
-			        </div>
-			        <div class="col-md-9 ctm-specs">
-			        	<ul class="ctm-ul">
-			        		<li ng-repeat="j in [0,1,2]">
-			        			{{i.caracteristiques[j].nom}} : {{i.caracteristiques[j].valeur}}
-			        		</li>
-						</ul>
-			        </div>
-			        <div class="col-md-3 ctm-price-div">
-			        	<h3 class="ctm-price">{{i.prix}} €</h3>
-			        	<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
-			        </div>
-		        </div>
+				TODO
 			</div>
 		</div>
 	</div>

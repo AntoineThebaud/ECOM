@@ -51,15 +51,12 @@
 	background-color: #DDD;
 	border-radius: 10px;
 }
-.ctm-seemore {
-	text-align: right;	
-	margin-top: 15px;
-}
 .ctm-specs {
 	padding-right: 0px;
 }
 .ctm-brand {
     max-width: 75px;
+    max-height: 28px;
 }
 
 .ctm-title-div {
@@ -88,7 +85,7 @@
 	color: #ffffff;
 	position:absolute;
 	top: 5px;
-	left: 5px;
+	left: 3px;
 	font-size: 16px;
 	font-weight: bold;
 }

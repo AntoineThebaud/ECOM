@@ -7,6 +7,7 @@
 		var vm = this;
 		vm.instruments = [];
 		
+		//génerère le contenu du filtre par marque //TODO : code duppliqué (catégorie, promos)
 		vm.getCurrentMarques = function() {
 			var tab = [];
 			var brand;
