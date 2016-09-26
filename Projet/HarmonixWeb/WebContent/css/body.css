@@ -1,5 +1,5 @@
 body {
-    background-image: url("http://localhost:8080/HarmonixWeb/img/autres/background_guitar.jpg");
+    background-image: url("../img/autres/background_guitar.jpg");
     background-attachment: fixed;
     background-size : 100% 100%;
 }
@@ -55,18 +55,81 @@ label.star:before {
   font-family: FontAwesome;
 }
 
+.yellow-stars{
+	color: #FFC600;
+	font-size: 18px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
+}
+
+.empty-stars {
+	color: #666;
+	font-size: 18px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
+}
+
+.ctm-one-avis{
+	border: solid 1px;
+	color: #999;
+	-moz-box-shadow: 3px 3px 10px 0px #656565;
+	-webkit-box-shadow: 3px 3px 10px 0px #656565;
+	-o-box-shadow: 3px 3px 10px 0px #656565;
+	box-shadow: 3px 3px 10px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=135, Strength=10);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.ctm-title-avis{
+	font-weight: bold;
+	border:none;
+}
+
 .ctm-text-avis{
+	font-family: sans-serif;
 	height: auto;
 	max-height: 150px;
+	background-color: #EEE;
 }
 
 .button-cart{
 	font-size:3.5em;
 	text-decoration:none;
-	color:#333;
+	color:#fff;
 	padding-top:4px
 }
 .input-inscription{
 	padding : 20 px;
+}
 
+.ctm-cat-title-h2 {
+	display: inline;
+	background-color: #666;
+	color: white;
+	padding: 5px 8px 5px 8px;
+	border-radius: 5px;
+}
+.ctm-cat-title-div {
+	padding-bottom: 10px;
+}
+
+.ctm-seemore {
+	margin-bottom: 7px;
+}
+
+.ctm-welcome {
+	background-color: #DDD;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.ctm-welcome-title {
+	font-weight: bold;
 }

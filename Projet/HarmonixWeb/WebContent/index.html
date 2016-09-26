@@ -8,55 +8,56 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <!--     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet"> -->
-<!--     <link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/bootstrap.min.css"/> -->
+<!--     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/> -->
 	<!-- css for header -->
-	<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/header.css" />
+	<link rel="stylesheet" type="text/css" href="./css/header.css" />
 	<!-- css for navbar -->
-	<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/navbar.css" />
+	<link rel="stylesheet" type="text/css" href="./css/navbar.css" />
 	<!-- css for body  -->
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/body.css" />
+    <link rel="stylesheet" type="text/css" href="./css/body.css" />
 	
-    <script src="http://localhost:8080/HarmonixWeb/js/angular.min.js"></script>
-    <script src="http://localhost:8080/HarmonixWeb/js/angular-resource.min.js"></script>
-    <script src="http://localhost:8080/HarmonixWeb/js/ui-bootstrap.min.js"></script>
-<!--<script src="http://localhost:8080/HarmonixWeb/js/angular-ui-router.min.js"></script> -->
-	<script src="http://localhost:8080/HarmonixWeb/js/jquery-3.1.0.min.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/js/angular-route.min.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/angular-resource.min.js"></script>
+    <script src="./js/ui-bootstrap.min.js"></script>
+<!--<script src="./js/angular-ui-router.min.js"></script> -->
+	<script src="./js/jquery-3.1.0.min.js"></script>
+	<script src="./js/angular-route.min.js"></script>
+	<script src="./js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
 	<!-- module -->
     <script src="app.module.js"></script>
     <!-- routeur (disabled) -->
     <!--<script src="route.config.js"></script> -->
 	<!-- factory for instruments -->
-	<script src="http://localhost:8080/HarmonixWeb/shared/instrument/instrumentFact.js"></script>
+	<script src="./shared/instrument/instrumentFact.js"></script>
 	<!-- factory for utilisateurs -->
-	<script src="http://localhost:8080/HarmonixWeb/shared/utilisateur/utilisateurFact.js"></script>
+	<script src="./shared/utilisateur/utilisateurFact.js"></script>
 	
 	<!--  controllers for partials -->
    
-	<script src="http://localhost:8080/HarmonixWeb/shared/header/headerCtrl.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/shared/navbar/navbarCtrl.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/components/home/homeCtrl.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/components/categorie/categorieCtrl.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/components/macrocategorie/macrocategorieCtrl.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstruCtrl.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/components/panier/panierCtrl.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/components/utilisateur/utilisateurCtrl.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/components/promotions/promotionsCtrl.js"></script>
+	<script src="./shared/header/headerCtrl.js"></script>
+	<script src="./shared/navbar/navbarCtrl.js"></script>
+	<script src="./components/home/homeCtrl.js"></script>
+	<script src="./components/categorie/categorieCtrl.js"></script>
+	<script src="./components/macrocategorie/macrocategorieCtrl.js"></script>
+	<script src="./components/ficheInstru/ficheInstruCtrl.js"></script>
+	<script src="./components/panier/panierCtrl.js"></script>
+	<script src="./components/utilisateur/utilisateurCtrl.js"></script>
+	<script src="./components/promotions/promotionsCtrl.js"></script>
+	<script src="./components/nouveautes/nouveautesCtrl.js"></script>
 	
 	<!-- test : class panier -->
-	<script src="http://localhost:8080/HarmonixWeb/shared/panier/panierFact.js"></script>
-	<script src="http://localhost:8080/HarmonixWeb/js/panier.js"></script>
+	<script src="./shared/panier/panierFact.js"></script>
+	<script src="./js/panier.js"></script>
   </head>
   <body ng-app="app">
 
   		<!-- header -->
-  		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/header/header.htm'"></div>
+  		<div ng-include="'./shared/header/header.htm'"></div>
 <!--   	<div ui-view="header"></div> -->
 
 		<!--menu (ruban)-->
-		<div ng-include="'http://localhost:8080/HarmonixWeb/shared/navbar/navbar.htm'"></div>
+		<div ng-include="'./shared/navbar/navbar.htm'"></div>
 <!-- 	<div ui-view="menu"></div> -->
 
 		<!-- main content -->

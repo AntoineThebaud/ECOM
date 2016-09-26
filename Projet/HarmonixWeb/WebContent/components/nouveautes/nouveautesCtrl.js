@@ -3,10 +3,9 @@
 	
 	var module = angular.module("app");//retrieve the module named "app"
 	
-	module.controller('promotionsController', function(Instrument, $scope, $routeParams) {
+	module.controller('nouveautesController', function(Instrument, $scope, $routeParams) {
 		var vm = this;
 		vm.instruments = [];
-		vm.displayedInstruments = [];
 		
 		//Filtre par marque : génerère le contenu du select //TODO : code duppliqué (catégorie, promos)
 		vm.getCurrentMarques = function() {
@@ -15,7 +14,7 @@
 			for(var i = 0; i < vm.instruments.length; ++i) {
 				brand = vm.instruments[i].fabricant;
 				if(tab.indexOf(brand) == -1) {
-					tab.push(brand);
+					tab.push(vm.instruments[i].fabricant);
 				}				
 			}
 			return tab;
@@ -34,8 +33,8 @@
 			}
 		}
 
-		var getPromotions = Instrument.query({id: "promotions"}, function() {
-			vm.instruments = getPromotions;
+		var getNouveautes = Instrument.query({id: "nouveautes"}, function() {
+			vm.instruments = getNouveautes;
 			vm.displayedInstruments = vm.instruments.slice();
 			//init filtre marque
 			vm.marques = vm.getCurrentMarques();

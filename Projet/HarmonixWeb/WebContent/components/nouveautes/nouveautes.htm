@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 	<div class="panel-body">
-		<div ng-controller="categorieController as ctrl">
-	        <h2>{{ctrl.categorie}}</h2>
+		<div ng-controller="nouveautesController as ctrl">
+	        <h2>Nouveautés</h2>
 	        <div class="row ctm-row-filters">
 		        <div class="col-md-4">
 		        	<select class="form-control ctm-select">
@@ -27,7 +27,7 @@
 			<!-- liste d'articles -->
 			<div class="row row-prod">
 				<div ng-repeat="i in ctrl.displayedInstruments" class="col-md-4 ctm-prod">
-				
+					
 					<!-- if article en promo : -->
 					<div class="row" ng-if="i.promo != 0">
 						<div class="col-md-3 ctm-promo-div">
@@ -86,7 +86,7 @@
 			        	</div>			        
 			        	<div class="ctm-promo-none" ng-if="i.promo == 0"></div>	
 			        	<img ng-src="./img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
-			        </div>
+			        </div>		     
 		        </div>
 			</div>
 		</div>

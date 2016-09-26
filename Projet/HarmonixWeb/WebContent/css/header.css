@@ -1,7 +1,6 @@
-.ctm-logo {
-    max-width: 275px;
-	margin-top: 50px;
-	margin-bottom: 50px;
+.ctm-header-cont {
+	padding-top: 25px;
+	padding-bottom: 70px;
 }
 .ctm-header-row {
 	border: 0px;
@@ -11,6 +10,10 @@
 .ctm-header-col {
 	padding-right: 0px;
 	padding-left: 0px;
+}
+.ctm-logo {
+    max-width: 90%;
+	padding-top: 5px;
 }
 .ctm-form {
 	margin-top: 5px;
@@ -24,14 +27,27 @@
 .ctm-p-inline {
 	display: inline;
 }
-
-.ctm-btn-w {
-	min-width: 100px;
-}
-.ctm-btn-h {
-	min-height: 73px;
-}
-
-.ctm-centered {
+.ctm-total {
+	background-color: #333;
+	border-radius: 0px 0px 5px 5px;
 	text-align: center;
+}
+
+.ctm-btn-panier {
+	min-height: 73px;
+	min-width: 100px;
+	border-radius: 10px 10px 0px 0px;
+	background-color: #449D44;
+	border-color: #449D44;
+}
+
+.ctm-btn-panier:focus {
+	background-color: #377E37;
+}
+.ctm-btn-panier:hover {
+	background-color: #377E37;
+}
+
+.ctm-btn-log {
+	min-width: 100px;
 }

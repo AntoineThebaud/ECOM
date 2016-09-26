@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8 ctm-title-div">        
-		    		<img class="ctm-title-img" ng-src="http://localhost:8080/HarmonixWeb/img/categories/{{ctrl.currentCategory.urlImage}}">
+		    		<img class="ctm-title-img" ng-src="./img/categories/{{ctrl.currentCategory.urlImage}}">
 		  			<div class="ctm-title-text">
 		     			{{ctrl.currentCategory.name}}
 		   			</div>
@@ -17,7 +17,7 @@
 					<div ng-repeat="c in ctrl.currentCategory.subCategories" style='float:left' class=elemListe>
 						<div class="thumbnail ctm-thumb">
 					    	<a href="#{{ctrl.currentCategory.type_fils}}/{{c.url}}">
-					        	<img ng-src="http://localhost:8080/HarmonixWeb/img/categories/{{c.urlImage}}" alt="Generic placeholder thumbnail">
+					        	<img ng-src="./img/categories/{{c.urlImage}}" alt="Generic placeholder thumbnail">
 					    	</a>         
 				        </div>
 				        <a class="subCategory" ng-href="#{{ctrl.currentCategory.type_fils}}/{{c.url}}">
@@ -32,4 +32,4 @@
 </div>
 
 <!-- css for category list -->
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/categoryList.css" />
+<link rel="stylesheet" type="text/css" href="./css/categoryList.css" />

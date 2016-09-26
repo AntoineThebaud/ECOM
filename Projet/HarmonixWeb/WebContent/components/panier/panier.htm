@@ -17,7 +17,7 @@
 							<span class="glyphicon glyphicon-remove"></span>
 						</button>
 					</td>
-					<td><img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{ attributs.image }}" class="ctm-img" alt="[image]">{{ nom }}</td>
+					<td><img ng-src="./img/produits/{{ attributs.image }}" class="ctm-img" alt="[image]">{{ nom }}</td>
 					<td>
 						<input type="number" min="1" step="1" class="ctm-size" ng-value="{{ attributs.quantity }}" ng-model="qty" ng-change="ctrl.panier.modifyQty(nom, qty)" ng-pattern="onlyNumbers">
 					</td>
@@ -50,4 +50,4 @@
 </div>
 
 <!-- css for panier -->
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/panier.css" />
+<link rel="stylesheet" type="text/css" href="./css/panier.css" />

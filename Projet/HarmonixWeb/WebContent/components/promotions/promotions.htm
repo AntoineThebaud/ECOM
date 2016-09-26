@@ -18,22 +18,22 @@
 					</select>
 				</div>
 				<div class="col-md-4">
-		        	<select align="center" class="form-control ctm-select">
-						<option selected disabled hidden>Filtrer par marque</option>     	 
+		        	<select class="form-control ctm-select" ng-model="selected_brand" ng-change="ctrl.displayBrand(selected_brand)">
+						<option selected>Toutes les marques</option>  
 						<option ng-repeat="marque in ctrl.marques">{{marque}}</option>
 					</select>
 				</div>
 			</div>
 			<!-- liste d'articles -->
 			<div class="row row-prod">
-				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
+				<div ng-repeat="i in ctrl.displayedInstruments" class="col-md-4 ctm-prod">
 				
 					<!-- encadré promo à gauche, titre à droite -->
 					<div class="row">
 						<div class="col-md-3 ctm-promo-div">
-							<img class="ctm-promo-img" ng-src="http://localhost:8080/HarmonixWeb/img/autres/promo.png" alt="[image]">
+							<img class="ctm-promo-img" ng-src="./img/autres/promo.png" alt="[image]">
 							<div class="ctm-promo-text">
-				     			{{i.promo}}%
+				     			-{{i.promo}}%
 				   			</div>
 						</div>
 						<div class="col-md-9 ctm-promo-title">       	
@@ -46,7 +46,7 @@
 			        <!-- image produit-->
 			      	<div class="thumbnail ctm-img">
 			        	<a ng-href="#ficheInstru/{{i.idInstrument}}">
-			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
+			        		<img ng-src="./img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
 			        
@@ -69,7 +69,7 @@
 			        </div>
 			        <div class="col-md-4 ctm-price-div">
 			        	<div class="ctm-promo-newprice">{{i.prix * ((100-i.promo)/100)}} €</div>			        	
-			        	<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
+			        	<img ng-src="./img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
 			        </div>				     
 		        </div>
 			</div>
@@ -78,4 +78,4 @@
 </div>
 
 <!-- css for instruments list -->
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/prodList.css" />
+<link rel="stylesheet" type="text/css" href="./css/prodList.css" />
