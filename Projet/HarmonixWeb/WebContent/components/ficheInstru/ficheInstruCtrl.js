@@ -13,15 +13,11 @@
 		vm.panier = Panier.monPanier;
 		
 		var product = Instrument.get({"id": $routeParams.ID}, function() {
-			vm.modele = product.nom;			
-			vm.marque = product.fabricant;
-			vm.image = product.images;
-			vm.prix = product.prix;			
-			vm.specs = product.caracteristiques;
-			vm.avisList = product.avis;
-			//ajouter la note !
+			vm.instrument = product;
+			vm.prixfinal = vm.instrument.prix * ((100-vm.instrument.promo)/100);
 		});
-		vm.dateAjout=new Date();
+		
+		vm.dateAjout = new Date(); //useless ?
 		vm.dateAjout = Date.now();
 		vm.avis = {
 			note: '',
@@ -47,15 +43,6 @@
 			product.$update({id:vm.id},function() {
 				console.log('maj réussi');
 			});
-		}
-		
-		
-		
+		}		
 	});
 })();
-
-// Récupère l'instrument en question
-//var getInstru = Instrument.get(158, function(data) {
-//	//TODO
-//	$scope.instruments = getinstru;
-//});
