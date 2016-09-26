@@ -2,7 +2,7 @@
 	<div class="panel-body">
 		<div ng-controller="instrumentController as ctrl">
 			<div class="col-md-12">
-				<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{ctrl.instrument.fabricant}}.jpg" class="ctm-brand" alt="[image]">		
+				<img ng-src="./img/marques/{{ctrl.instrument.fabricant}}.jpg" class="ctm-brand" alt="[image]">		
 			</div>
 			<div class="col-md-8">
 				<h2 class="ctm-title">{{ctrl.instrument.nom}}</h2>
@@ -24,7 +24,7 @@
 			</div>
 			<div class="col-md-12">		
 				<div class="thumbnail">
-		        	<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{ctrl.instrument.images}}" alt="Generic placeholder thumbnail">
+		        	<img ng-src="./img/produits/{{ctrl.instrument.images}}" alt="Generic placeholder thumbnail">
 		   		</div>
 		   		<h3>Spécifications</h3>
 			    <table class="table ctm-table" id="table">
@@ -95,5 +95,5 @@
 </div>
 
 <!-- css for ficheInstru -->
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/prodDetail.css" />
+<link rel="stylesheet" type="text/css" href="./css/prodDetail.css" />
 

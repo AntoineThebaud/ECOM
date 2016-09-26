@@ -31,7 +31,7 @@
 					<!-- if article en promo : -->
 					<div class="row" ng-if="i.promo != 0">
 						<div class="col-md-3 ctm-promo-div">
-							<img class="ctm-promo-img" ng-src="http://localhost:8080/HarmonixWeb/img/autres/promo.png" alt="[image]">
+							<img class="ctm-promo-img" ng-src="./img/autres/promo.png" alt="[image]">
 							<div class="ctm-promo-text">
 				     			-{{i.promo}}%
 				   			</div>
@@ -54,7 +54,7 @@
 			      	<!-- image produit-->
 			      	<div class="thumbnail ctm-img">
 			        	<a ng-href="#ficheInstru/{{i.idInstrument}}">
-			        		<img ng-src="http://localhost:8080/HarmonixWeb/img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
+			        		<img ng-src="./img/produits/{{i.images}}" alt="Generic placeholder thumbnail">
 			        	</a>
 			        </div>
 			        
@@ -85,7 +85,7 @@
 			        		{{i.prix * ((100-i.promo)/100)}} €
 			        	</div>			        
 			        	<div class="ctm-promo-none" ng-if="i.promo == 0"></div>	
-			        	<img ng-src="http://localhost:8080/HarmonixWeb/img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
+			        	<img ng-src="./img/marques/{{i.fabricant}}.jpg" class="ctm-brand" alt="[image]">
 			        </div>
 		        </div>
 			</div>
@@ -94,4 +94,4 @@
 </div>
 
 <!-- css for instruments list -->
-<link rel="stylesheet" type="text/css" href="http://localhost:8080/HarmonixWeb/css/prodList.css" />
+<link rel="stylesheet" type="text/css" href="./css/prodList.css" />
