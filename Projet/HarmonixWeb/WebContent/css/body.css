@@ -55,9 +55,48 @@ label.star:before {
   font-family: FontAwesome;
 }
 
+.yellow-stars{
+	color: #FFC600;
+	font-size: 18px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
+}
+
+.empty-stars {
+	color: #666;
+	font-size: 18px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
+}
+
+.ctm-one-avis{
+	border: solid 1px;
+	color: #999;
+	-moz-box-shadow: 3px 3px 10px 0px #656565;
+	-webkit-box-shadow: 3px 3px 10px 0px #656565;
+	-o-box-shadow: 3px 3px 10px 0px #656565;
+	box-shadow: 3px 3px 10px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=135, Strength=10);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.ctm-title-avis{
+	font-weight: bold;
+	border:none;
+}
+
 .ctm-text-avis{
+	font-family: sans-serif;
 	height: auto;
 	max-height: 150px;
+	background-color: #EEE;
 }
 
 .button-cart{

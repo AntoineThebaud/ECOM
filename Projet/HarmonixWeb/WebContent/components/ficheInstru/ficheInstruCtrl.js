@@ -3,7 +3,7 @@
 	
 	var module = angular.module("app");//retrieve the module named "app"
 	
-	module.controller('instrumentController', function($routeParams, Instrument, Panier) {
+	module.controller('instrumentController', function($routeParams, Instrument, Panier, $route) {
 		
 		//console.log($routeParams);
 		var vm = this;
@@ -42,6 +42,7 @@
 			console.log('Post ajouté');
 			product.$update({id:vm.id},function() {
 				console.log('maj réussi');
+				$route.reload();
 			});
 		}		
 	});

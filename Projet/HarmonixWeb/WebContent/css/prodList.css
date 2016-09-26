@@ -139,10 +139,22 @@
 }
 
 .ctm-stars-y {
+	padding-right: 2px;
 	color: #FFC600;
 	font-size: 18px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
 }
 .ctm-stars-n {
+	padding-right: 2px;
 	color: #666;
 	font-size: 18px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
 }
