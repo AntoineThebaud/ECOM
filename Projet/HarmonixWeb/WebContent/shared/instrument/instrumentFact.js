@@ -4,7 +4,7 @@
 	var module = angular.module("app");//retrieve the module named "app"
 	
 	module.factory('Instrument', function ($resource) {
-		return $resource('http://localhost:8080/HarmonixWeb/rest/instruments/:id', { id: '@_id' }, {
+		return $resource('rest/instruments/:id', { id: '@_id' }, {
 			update: {
 				method: 'PUT' // this method issues a PUT request
 			}

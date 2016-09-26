@@ -1,5 +1,5 @@
 body {
-    background-image: url("http://localhost:8080/HarmonixWeb/img/autres/background_guitar.jpg");
+    background-image: url("../img/autres/background_guitar.jpg");
     background-attachment: fixed;
     background-size : 100% 100%;
 }
