@@ -3,16 +3,17 @@
 	
 	var module = angular.module("app");//retrieve the module named "app"
 	
-	module.controller('categorieController', function(Instrument, $routeParams) {
+	module.controller('categorieController', function(Instrument, $scope, $routeParams) {
 		var vm = this;
 		vm.instruments = [];
+		vm.displayedInstruments = [];
 		
-		//génerère le contenu du filtre par marque //TODO : code duppliqué (catégorie, promos)
+		//Filtre par marque : génerère le contenu du select //TODO : code duppliqué (catégorie, promos)
 		vm.getCurrentMarques = function() {
 			var tab = [];
 			var brand;
-			for(var i = 0; i < vm.allInstruments.length; ++i) {
-				brand = vm.allInstruments[i].fabricant;
+			for(var i = 0; i < vm.instruments.length; ++i) {
+				brand = vm.instruments[i].fabricant;
 				if(tab.indexOf(brand) == -1) {
 					tab.push(brand);
 				}				
@@ -20,9 +21,10 @@
 			return tab;
 		};
 		
+		//Filtre par marque : afficher seulement les instruments qui correspondent au filtre
 		vm.displayBrand = function(selected_brand) {
 			//réinitialisation du tableau avant traitement
-			vm.displayedInstruments = vm.allInstruments.slice();
+			vm.displayedInstruments = vm.instruments.slice();
 			if(selected_brand == "Toutes les marques") return;	
 			for(var i = 0; i < vm.displayedInstruments.length; i++) {
 				if(vm.displayedInstruments[i].fabricant != selected_brand) {
@@ -33,9 +35,11 @@
 		}
 
 		var getInstruments = Instrument.query({categorie: $routeParams.TYPE}, function() {
-			vm.allInstruments = getInstruments;
-			vm.displayedInstruments = vm.allInstruments.slice();
+			vm.instruments = getInstruments;
+			vm.displayedInstruments = vm.instruments.slice();
+			//init filtre marque
 			vm.marques = vm.getCurrentMarques();
+			$scope.selected_brand = "Toutes les marques";
 		});
 		
 		vm.categoriesFormat = {

@@ -18,15 +18,15 @@
 					</select>
 				</div>
 				<div class="col-md-4">
-		        	<select align="center" class="form-control ctm-select">
-						<option selected disabled hidden>Filtrer par marque</option>     	 
+		        	<select class="form-control ctm-select" ng-model="selected_brand" ng-change="ctrl.displayBrand(selected_brand)">
+						<option selected>Toutes les marques</option>  
 						<option ng-repeat="marque in ctrl.marques">{{marque}}</option>
 					</select>
 				</div>
 			</div>
 			<!-- liste d'articles -->
 			<div class="row row-prod">
-				<div ng-repeat="i in ctrl.instruments" class="col-md-4 ctm-prod">
+				<div ng-repeat="i in ctrl.displayedInstruments" class="col-md-4 ctm-prod">
 					
 					<!-- if article en promo : -->
 					<div class="row" ng-if="i.promo != 0">

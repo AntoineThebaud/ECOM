@@ -19,8 +19,7 @@
 				</div>
 				<div class="col-md-4">
 		        	<select class="form-control ctm-select" ng-model="selected_brand" ng-change="ctrl.displayBrand(selected_brand)">
-						<option selected disabled hidden>Filtrer par marque</option>
-						<option>Toutes les marques</option>  	 
+						<option selected>Toutes les marques</option>  
 						<option ng-repeat="marque in ctrl.marques">{{marque}}</option>
 					</select>
 				</div>
