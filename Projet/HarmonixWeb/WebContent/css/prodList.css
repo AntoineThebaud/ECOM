@@ -158,3 +158,26 @@
 	#000 -1px -1px 1px,
 	#000 1px -1px 1px; 
 }
+
+.ctm-stars-y-left{
+	position:relative;
+	padding-right: 0px;
+	margin-right:-2px;
+	color: #FFC600;
+	font-size: 18px;
+	z-index:2;
+}
+
+.ctm-stars-y-right{
+	position:relative;
+	padding-right: 0px;
+	color: #666;
+	font-size: 18px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
+	margin-left:-7px;
+	z-index:1;
+}

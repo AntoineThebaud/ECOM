@@ -39,3 +39,54 @@
 .ctm-btn-div {
 	padding-left: 8px;
 }
+
+
+.ctm-bigstars-div {
+	padding-left: 0px;
+	margin-bottom:10px;
+	margin-left: 20px;
+}
+
+.ctm-bigstars-y {
+	padding-right: 2px;
+	color: #FFC600;
+	font-size: 20px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
+}
+.ctm-bigstars-n {
+	padding-right: 2px;
+	color: #666;
+	font-size: 20px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
+}
+
+.ctm-bigstars-y-left{
+	position:relative;
+	padding-right: 0px;
+	margin-right:-2px;
+	color: #FFC600;
+	font-size: 20px;
+	z-index:2;
+}
+
+.ctm-bigstars-y-right{
+	position:relative;
+	padding-right: 0px;
+	color: #666;
+	font-size: 20px;
+	text-shadow:
+	#000 1px 1px 1px,
+	#000 -1px 1px 1px,
+	#000 -1px -1px 1px,
+	#000 1px -1px 1px; 
+	margin-left:-8px;
+	z-index:1;
+}

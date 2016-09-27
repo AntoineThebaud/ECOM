@@ -87,6 +87,14 @@ label.star:before {
 	-webkit-border-radius: 10px;
 }
 
+.ctm-note-avis{
+	color:#444;
+}
+
+.ctm-date-avis{
+	color:#444;
+}
+
 .ctm-title-avis{
 	font-weight: bold;
 	border:none;
