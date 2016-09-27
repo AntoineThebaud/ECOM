@@ -66,7 +66,12 @@ public class InstrumentService {
 	@Produces("application/json")
 	public List<Instrument> listAllPromotions(@QueryParam("start") final Integer startPosition,
 			@QueryParam("max") final Integer maxResult) {
-		final List<Instrument> instruments = ir.getAllInstrumentsPromotions(startPosition, maxResult);
+		List<Instrument> instruments = ir.getAllInstrumentsType(0, startPosition, maxResult);
+		
+		for (Instrument i : instruments) {
+			i.setAvis(null);
+		}
+		
 		return instruments;
 	}
 
@@ -75,7 +80,26 @@ public class InstrumentService {
 	@Produces("application/json")
 	public List<Instrument> listAllNouveautes(@QueryParam("start") final Integer startPosition,
 			@QueryParam("max") final Integer maxResult) {
-		final List<Instrument> instruments = ir.getAllInstrumentsNouveautes(startPosition, maxResult);
+		List<Instrument> instruments = ir.getAllInstrumentsType(1, startPosition, maxResult);
+		
+		for (Instrument i : instruments) {
+			i.setAvis(null);
+		}
+		
+		return instruments;
+	}
+	
+	@GET
+	@Path("meilleures-ventes")
+	@Produces("application/json")
+	public List<Instrument> listAllMeilleuresVentes(@QueryParam("start") final Integer startPosition,
+			@QueryParam("max") final Integer maxResult) {
+		List<Instrument> instruments = ir.getAllInstrumentsType(2, startPosition, maxResult);
+		
+		for (Instrument i : instruments) {
+			i.setAvis(null);
+		}
+		
 		return instruments;
 	}
 
