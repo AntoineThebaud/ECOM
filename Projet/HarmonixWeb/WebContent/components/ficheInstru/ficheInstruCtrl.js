@@ -35,6 +35,15 @@
 		    return input;
 		};
 		
+		vm.hasHalfStar = function(note){
+			var d = note - Math.trunc(note);
+			if(d >= 0.5)
+				return 1;
+			else if(d > 0 && d < 0.5)
+				return 2;
+			return 0;
+		};
+		
 		vm.ajoutPost = function(){
 			vm.avis.date = vm.dateAjout;
 			vm.avis.texte.replace(/\r?\n/g, '<br />');
