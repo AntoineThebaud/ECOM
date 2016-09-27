@@ -3,8 +3,10 @@ package com.ejb.Entity;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +15,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 public class Commande {
@@ -28,33 +33,22 @@ public class Commande {
 
 	private int etat;
 	
-	@OneToMany(mappedBy = "commande")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_commande", referencedColumnName = "id_commande")
+	@Fetch(value = FetchMode.SUBSELECT)
 	private Collection<LigneCommande> ligneCommande;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_utilisateur")
-	private Utilisateur utilisateur;
 
 	public Commande() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Commande(Date date, int etat, Collection<LigneCommande> ligneCommande, Utilisateur utilisateur) {
+	public Commande(Date date, int etat, Collection<LigneCommande> ligneCommande) {
 		super();
 
 		this.dateCommande = date;
 		this.etat = etat;
 		this.ligneCommande = ligneCommande;
-		this.utilisateur = utilisateur;
-	}
-
-	public Utilisateur getUtilisateur() {
-		return utilisateur;
-	}
-
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
 	}
 
 	public Collection<LigneCommande> getLigneCommande() {

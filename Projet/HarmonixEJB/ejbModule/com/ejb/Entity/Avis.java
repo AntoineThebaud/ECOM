@@ -29,29 +29,16 @@ public class Avis {
 
 	private String texte;
 
-	@ManyToOne
-	@JoinColumn(name = "id_utilisateur")
-	private Utilisateur utilisateur;
-
 	public Avis() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Avis(int note, String titre, Date date, String texte, Utilisateur utilisateur) {
+	public Avis(int note, String titre, Date date, String texte) {
 		this.note = note;
 		this.titre = titre;
 		this.date = date;
 		this.texte = texte;
-		this.utilisateur = utilisateur;
-	}
-
-	public Utilisateur getUtilisateur() {
-		return utilisateur;
-	}
-
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
 	}
 
 	public long getIdAvis() {

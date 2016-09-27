@@ -1,28 +1,26 @@
 package com.ejb.Entity;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 
 @Entity
-
 public class LigneCommande {
-
-	@EmbeddedId
-	LigneCommandePK pk;
-
-	@ManyToOne
-	@MapsId("idCommande") // reference vers le champs identifiant de la classe
-							// commande
-	@JoinColumn(name = "id_commande")
-	private Commande commande;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_ligne_commande")
+	private long idLigneCommande;
 
 	@ManyToOne
-	@MapsId("idInstrument")
 	@JoinColumn(name = "id_instrument")
-	private Instrument intsrument;
+	private Instrument instrument;
 
 	private int quantite;
 
@@ -31,28 +29,19 @@ public class LigneCommande {
 		// TODO Auto-generated constructor stub
 	}
 
-	public LigneCommande(Commande commande, Instrument intsrument, int quantite) {
+	public LigneCommande(Instrument instrument, int quantite) {
 		super();
 
-		this.commande = commande;
-		this.intsrument = intsrument;
+		this.instrument = instrument;
 		this.quantite = quantite;
 	}
 
-	public Commande getCommande() {
-		return commande;
+	public Instrument getInstrument() {
+		return instrument;
 	}
 
-	public void setCommande(Commande commande) {
-		this.commande = commande;
-	}
-
-	public Instrument getIntsrument() {
-		return intsrument;
-	}
-
-	public void setIntsrument(Instrument intsrument) {
-		this.intsrument = intsrument;
+	public void setInstrument(Instrument instrument) {
+		this.instrument = instrument;
 	}
 
 	public int getQuantite() {

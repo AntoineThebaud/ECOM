@@ -2,13 +2,19 @@ package com.ejb.Entity;
 
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @NamedQuery(name = "allUtilisateur", query = "select OBJECT(i) from Utilisateur i")
@@ -34,10 +40,14 @@ public class Utilisateur {
 	@Column(unique = true)
 	private String mail;
 
-	@OneToMany(mappedBy = "utilisateur")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_utilisateur", referencedColumnName = "id_utilisateur")
+	@Fetch(value = FetchMode.SUBSELECT)
 	private Collection<Avis> avis;
 
-	@OneToMany(mappedBy = "utilisateur")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_utilisateur", referencedColumnName = "id_utilisateur")
+	@Fetch(value = FetchMode.SUBSELECT)
 	private Collection<Commande> commandes;
 
 	public Utilisateur() {
