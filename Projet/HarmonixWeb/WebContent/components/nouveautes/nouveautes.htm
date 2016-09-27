@@ -60,8 +60,8 @@
 			        
 			        <!-- note à gauche, prix à droite -->			        
 		        	<div class="col-md-9 ctm-stars-div">
-		        		<i class="fa fa-star ctm-stars-y" aria-hidden="true" ng-repeat="n in ctrl.range(1,i.note)"></i><i class="fa fa-star ctm-stars-n" aria-hidden="true" ng-repeat="n in ctrl.range(1,5 - i.note)"></i>		   							
-		        		<span class="ctm-nbvotes">({{i.nbVotes}} votes)</span>
+		        		<i class="fa fa-star ctm-stars-y" aria-hidden="true" ng-repeat="n in ctrl.range(1,i.note)"></i><i class="fa fa-star-half ctm-stars-y-left" aria-hidden="true" ng-if="ctrl.hasHalfStar(i.note) == 1"></i><i class="fa fa-star ctm-stars-y-right" aria-hidden="true" ng-if="ctrl.hasHalfStar(i.note) == 1"></i><i class="fa fa-star ctm-stars-n" aria-hidden="true" ng-if="ctrl.hasHalfStar(i.note) == 2"></i><i class="fa fa-star ctm-stars-n" aria-hidden="true" ng-repeat="n in ctrl.range(1,5 - i.note)"></i>		   							
+		        		<span class="ctm-nbvotes"><b>({{i.note}}/5, {{i.nbVotes}} avis)</b></span>
 		        	</div>
 		        	<!-- if article en promo : -->
 		        	<div class="col-md-3 ctm-price-div-2" ng-if="i.promo != 0">
