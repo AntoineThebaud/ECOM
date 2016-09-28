@@ -1,7 +1,5 @@
 TODO : 
 
-	- possibilité de retour sur la page précédente dans la consultation du panier
-	- un peu de css (dans ce monde de brutes) sur le formulaire d'inscription
 	- validations de champs (avec du jquery ou js à voir)
 	- redirection vers une mini-page "Paiement enregistré" une fois commande validée
 	- gestion stocks
