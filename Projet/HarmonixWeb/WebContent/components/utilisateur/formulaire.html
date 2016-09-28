@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <title>Page d'accueil</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
 <!-- css for header -->
 <link rel="stylesheet" type="text/css" href="../../css/header.css" />
 <!-- css for navbar -->
@@ -18,29 +19,22 @@
 <script src="../../js/ui-bootstrap.min.js"></script>
 <script src="../../js/jquery-3.1.0.min.js"></script>
 <script src="../../js/angular-route.min.js"></script>
-<script src="../../js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
 
 <!-- module -->
 <script src="../../app.module.js"></script>
 <!-- routeur (disabled) -->
 <!--<script src="route.config.js"></script> -->
 <!-- factory for instruments -->
-<script
-	src="../../shared/instrument/instrumentFact.js"></script>
+<script src="../../shared/instrument/instrumentFact.js"></script>
 <!-- factory for utilisateurs -->
-<script
-	src="../../shared/utilisateur/utilisateurFact.js"></script>
+<script src="../../shared/utilisateur/utilisateurFact.js"></script>
 
 <!--  controllers for partials -->
 
-<<<<<<< HEAD
-<script src="http://localhost:8080/HarmonixWeb/shared/header/headerCtrl.js"></script>
-<script src="http://localhost:8080/HarmonixWeb/components/home/homeCtrl.js"></script>
-<script src="http://localhost:8080/HarmonixWeb/components/categorie/categorieCtrl.js"></script>
-<script src="http://localhost:8080/HarmonixWeb/components/ficheInstru/ficheInstruCtrl.js"></script>
-<script src="http://localhost:8080/HarmonixWeb/components/panier/panierCtrl.js"></script>
-<script src="http://localhost:8080/HarmonixWeb/components/utilisateur/utilisateurCtrl.js"></script>
-=======
+
 <script src="../../shared/header/headerCtrl.js"></script>
 <script src="../../components/home/homeCtrl.js"></script>
 <script src="../../components/categorie/categorieCtrl.js"></script>
@@ -48,45 +42,19 @@
 <script src="../../components/panier/panierCtrl.js"></script>
 <script src="../../components/utilisateur/utilisateurCtrl.js"></script>
 
->>>>>>> origin/master
+
 <!-- test : class panier -->
-<script
-	src="../../shared/panier/panierFact.js"></script>
+<script src="../../shared/panier/panierFact.js"></script>
 <script src="../../js/panier.js"></script>
 </head>
 <body ng-app="app">
 
-		<div class="container ctm-header-cont">
+	<div class="container ctm-header-cont">
 		<div class="row ctm-header-row">
 			<div ng-controller="headerController as ctrl">
 				<div class="col-md-4 ctm-header-col">
-					<a href="../../#/"><img src="../../img/autres/Logo.png" class="ctm-logo"></a>
-				</div>
-				<div class="col-md-6 ctm-header-col">
-				
-					<form name="form" class="form-inline ctm-form" ng-submit="ctrl.auth()" role="form">
-						<input type="email" class="form-control" id="email" placeholder="adresse mail" ng-model="ctrl.mail">
-						<input type="password" class="form-control" id="password" placeholder=" mot de passe" ng-model="ctrl.motDePasse">
-						<input class="btn btn-primary ctm-btn-log" value="Connexion" type="submit">
-					</form>
-					<br><br>
-					<form class="form-inline ctm-form">
-					<a href="../utilisateur/formulaire.html">
-						<p class="ctm-p ctm-p-inline">Pas encore membre ?</p>
-						<input class="btn btn-primary ctm-btn-log" value="Inscription" type="button">
-					</a>
-					</form>
-				</div>
-				<!-- bouton panier -->
-				<div class="col-md-2 ctm-header-col">
-					<form class="ctm-form">			
-						<a href="../../#/panier/">			
-							<div class="btn btn-success ctm-btn-panier">
-							    <span style="font-size:3.5em;" class="button-cart glyphicon glyphicon-shopping-cart"></span>
-							</div>		
-						</a>			
-						<p class="ctm-p ctm-total">Total : {{ ctrl.panier.getTotal() }} €</p>
-					</form>				
+					<a href="../../#/"><img src="../../img/autres/Logo.png"
+						class="ctm-logo"></a>
 				</div>
 			</div>
 		</div>
@@ -100,64 +68,58 @@
 						<h2>Inscription</h2>
 						<form name="form" ng-submit="ctrl.ajoutClient()" role="form">
 							<div class="form-group" novalidate>
-								<input type="text" name="nom"
-									id="nom" placeholder="nom" class="form-control input-inscription"  ng-model="ctrl.utilisateur.nom"
-									required ng-minlength="2" ng-maxlength="20" />
-									 <div ng-messages="form.nom.$error" ng-messages-include="erreurs.html">
+								<input type="text" name="nom" id="nom" placeholder="nom"
+									class="form-control margin-bottom"
+									ng-model="ctrl.utilisateur.nom" required ng-minlength="2"
+									ng-maxlength="20" />
+								<div ng-messages="form.nom.$error"
+									ng-messages-include="erreurs.html"></div>
+								<div class="form-group">
+									<input type="text" name="prenom" id="prenom"
+										placeholder="prenom" class="form-control margin-bottom"
+										ng-model="ctrl.utilisateur.prenom" required ng-minlength="2"
+										ng-maxlength="20" />
+									<div ng-messages="form.prenom.$error"
+										ng-messages-include="erreurs.html"></div>
 
-							</div>
-							<div class="form-group">
-								<input type="text"
-									name="prenom" id="prenom" placeholder="prenom" class="form-control input-inscription"
-									ng-model="ctrl.utilisateur.prenom" required ng-minlength="2" ng-maxlength="20" />
-									 <div ng-messages="form.prenom.$error" ng-messages-include="erreurs.html">
+									<div class="form-group">
+										<input type="number" name="age" id="age" placeholder="age"
+											class="form-control margin-bottom"
+											ng-model="ctrl.utilisateur.age" required />
+										<div ng-messages="form.age.$error"
+											ng-messages-include="erreurs.html"></div>
 
-							</div>
-							
-							<div class="form-group">
-								<input type="number" name="age"
-									id="age" placeholder="age" class="form-control input-inscription" ng-model="ctrl.utilisateur.age"
-									required />
-									<div ng-messages="form.age.$error" ng-messages-include="erreurs.html">
-							</div>
-							
-							<div class="form-group">
-								<input type="motDePasse"
-									name="adresse" id="adresse" placeholder="adresse postale" class="form-control input-inscription"
-									ng-model="ctrl.utilisateur.adresse" required />
-									<div ng-messages="form.adresse.$error" ng-messages-include="erreurs.html">
+										<div class="form-group">
+											<input type="motDePasse" name="adresse" id="adresse"
+												placeholder="adresse postale"
+												class="form-control margin-bottom"
+												ng-model="ctrl.utilisateur.adresse" required />
+											<div ng-messages="form.adresse.$error"
+												ng-messages-include="erreurs.html"></div>
 
-							</div>
-							
-							<div class="form-group">
-								<input type="email" name="mail"
-									id="mail" placeholder="adresse mail" class="form-control input-inscription" ng-model="ctrl.utilisateur.mail"
-									required />
-									<div ng-messages="form.mail.$error" ng-messages-include="erreurs.html">
-							</div>
-					
-							<div class="form-group">
-								 <input
-									type="password" name="motDePasse" id="motDePasse" placeholder="mot de passe"
-									class="form-control input-inscription" ng-model="ctrl.motDePasse"
-									required />
-									<div ng-messages="form.motDePasse.$error" ng-messages-include="erreurs.html">
-								<!--	
-							<div class="form-group">
-								<label for="motDePasse"> confirmation mot de passe</label> <input
-									type="password" name="confirmationMotDePasse" id="confirmationMotDePasse"
-									class="form-control" 
-									required />
-									<div ng-messages="form.confirmationMotDePasse.$error" ng-messages-include="erreurs.html">
+											<div class="form-group">
+												<input type="email" name="mail" id="mail"
+													placeholder="adresse mail"
+													class="form-control margin-bottom"
+													ng-model="ctrl.utilisateur.mail" required />
+												<div ng-messages="form.mail.$error"
+													ng-messages-include="erreurs.html"></div>
 
-							</div>
-							-->
-							<div class="form-actions">
-								<button type="submit"
-									ng-disabled="form.$invalid " 
-									class="btn btn-primary">valider</button>
+												<div class="form-group">
+													<input type="password" name="motDePasse" id="motDePasse"
+														placeholder="mot de passe"
+														class="form-control margin-bottom"
+														ng-model="ctrl.motDePasse" required />
+													<div ng-messages="form.motDePasse.$error"
+														ng-messages-include="erreurs.html">
 
-							</div>
+														<div class="form-actions">
+															<button type="submit" ng-disabled="form.$invalid "
+																class="btn btn-primary">
+																<a  class = "white-text" href="../../#/">valider </a>
+															</button>
+
+														</div>
 						</form>
 					</div>
 				</div>

@@ -7,14 +7,14 @@
 			<div class="col-md-6 ctm-header-col">
 				
 				<form name="form" class="form-inline ctm-form" ng-submit="ctrl.auth()" role="form">
-					<input type="email" class="form-control" id="email" placeholder="adresse mail" ng-model="ctrl.mail" >
+					<input type="email" class="form-control" id="email" placeholder="adresse mail" ng-model="ctrl.mail"  >
 					<input type="password" class="form-control" id="password" placeholder=" mot de passe" ng-model="ctrl.motDePasse">
 					<input class="btn btn-primary ctm-btn-log" value="Connexion" type="submit">		
 				</form>				
 				<br><br>				
 				<form class="form-inline ctm-form">
 					<a href="./components/utilisateur/formulaire.html">
-					<p class="ctm-p ctm-p-inline">Pas encore membre ?</p>
+					<p class="ctm-p ctm-p-inline"> {{ctrl.messageUtilisateur}} </p>
 					<input class="btn btn-primary ctm-btn-log" value="Inscription" type="button">	
 				</form>
 			</div>
