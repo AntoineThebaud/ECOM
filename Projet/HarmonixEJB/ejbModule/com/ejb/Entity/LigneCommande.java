@@ -18,9 +18,7 @@ public class LigneCommande {
 	@Column(name = "id_ligne_commande")
 	private long idLigneCommande;
 
-	@ManyToOne
-	@JoinColumn(name = "id_instrument")
-	private Instrument instrument;
+	private long id_instrument;
 
 	private int quantite;
 
@@ -29,19 +27,19 @@ public class LigneCommande {
 		// TODO Auto-generated constructor stub
 	}
 
-	public LigneCommande(Instrument instrument, int quantite) {
+	public LigneCommande(long id_instrument, int quantite) {
 		super();
 
-		this.instrument = instrument;
+		this.id_instrument = id_instrument;
 		this.quantite = quantite;
 	}
 
-	public Instrument getInstrument() {
-		return instrument;
+	public long getInstrument() {
+		return id_instrument;
 	}
 
-	public void setInstrument(Instrument instrument) {
-		this.instrument = instrument;
+	public void setInstrument(long id_instrument) {
+		this.id_instrument = id_instrument;
 	}
 
 	public int getQuantite() {

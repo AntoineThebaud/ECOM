@@ -26,7 +26,7 @@ import org.hibernate.annotations.FetchMode;
 	@NamedQuery(name = "allInstrument", query = "SELECT OBJECT(i) FROM Instrument i"),
 	@NamedQuery(name = "allInstrumentCategorie", query = "SELECT OBJECT(i) FROM Instrument i WHERE i.categorie = :categorie"),
 	@NamedQuery(name = "allInstrumentPromotions", query = "SELECT OBJECT(i) FROM Instrument i WHERE i.promo <> 0 ORDER BY i.promo DESC"),
-	@NamedQuery(name = "allInstrumentMeilleuresVentes", query = "SELECT sum(c.quantite) AS somme FROM LigneCommande c GROUP BY c.instrument ORDER BY somme DESC"),
+	@NamedQuery(name = "allInstrumentMeilleuresVentes", query = "SELECT sum(c.quantite) AS somme FROM LigneCommande c GROUP BY c.id_instrument ORDER BY somme DESC"),
 	@NamedQuery(name = "allInstrumentNouveautes", query = "SELECT OBJECT(i) FROM Instrument i ORDER BY i.dateAjout DESC")
 })
 public class Instrument {
@@ -49,6 +49,8 @@ public class Instrument {
 	private int promo;
 	
 	private double note;
+	
+	private int stock;
 	
 	@Column(name = "nb_votes")
 	private int nbVotes;
@@ -73,7 +75,7 @@ public class Instrument {
 	}
 
 	public Instrument(String nom, String categorie, String images, String fabricant, float prix, int promo,
-			int note, Date dateAjout, List<Avis> avis, List<Caracteristique> caracteristiques) {
+			int note, int stock, Date dateAjout, List<Avis> avis, List<Caracteristique> caracteristiques) {
 
 		this.nom = nom;
 		this.images = images;
@@ -82,6 +84,7 @@ public class Instrument {
 		this.promo = promo;
 		this.categorie = categorie;
 		this.note = note;
+		this.stock = stock;
 		this.dateAjout = dateAjout;
 		this.avis = avis;
 		this.caracteristiques = caracteristiques;
@@ -170,6 +173,14 @@ public class Instrument {
 
 	public void setNbVotes(int nbVotes) {
 		this.nbVotes = nbVotes;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 
 	public Date getDateAjout() {
