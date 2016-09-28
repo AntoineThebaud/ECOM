@@ -10,6 +10,7 @@
 		$scope.instru1.fabricant = 'Gibson';
 		$scope.instru1.prix = 990;
 		$scope.instru1.promo = 0;
+		$scope.instru1.stock = 12;
 		$scope.instru1.caracteristiques = [
  		    {nom:"Bois", valeur:"Acajou"},
  		    {nom:"Largeur du sillet", valeur:"46 mm"},
@@ -27,6 +28,7 @@
 		$scope.instru2.fabricant = 'Fender';
 		$scope.instru2.prix = 1077;
 		$scope.instru2.promo = 25;
+		$scope.instru2.stock = 120;
 		$scope.instru2.caracteristiques = [
  		    {nom:"Nombre de cordes", valeur:"4"},
  		    {nom:"Corps", valeur:"Aulne"},
@@ -44,6 +46,7 @@
 		$scope.instru3.fabricant = 'Squier';
 		$scope.instru3.prix = 125;
 		$scope.instru3.promo = 0;
+		$scope.instru3.stock = 6;
 		$scope.instru3.caracteristiques = [
 			{nom:"Série", valeur:"Bullet"},
 			{nom:"Corps", valeur:"Tilleul"},
@@ -70,6 +73,7 @@
 		$scope.instru4.fabricant = 'Fender';
 		$scope.instru4.prix = 850;
 		$scope.instru4.promo = 10;
+		$scope.instru4.stock = 9;
 		$scope.instru4.caracteristiques = [
 			{nom:"Corps", valeur:"Frêne"},
 			{nom:"Manche", valeur:"Erable"},

@@ -11,6 +11,7 @@ function panier(nom) {
 //ajoute un nouveau produit au panier
 panier.prototype.addArticle = function(nom, prix, image, id) {
 	
+	console.log("id = " + id);
 	//article déjà dans le panier : on augmente la quantité de 1
 	if (this.articles[nom] != null) {
 		this.articles[nom].quantity++;
