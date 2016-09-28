@@ -2,16 +2,16 @@
 	<div class="panel-body">
 		<div ng-controller="promotionsController as ctrl">
 	        <h2>Promotions</h2>
-	        <div class="row ctm-row-filters">
+	        	        <div class="row ctm-row-filters">
 		        <div class="col-md-4">
-		        	<select class="form-control ctm-select">
+		        	<select class="form-control ctm-select"  ng-model="selected_sort_price" ng_change="ctrl.displayByPrice(selected_sort_price)">
 						<option selected disabled hidden>Filtrer par prix</option>     	 
 						<option>Du moins cher au plus cher.</option>
 						<option>Du plus cher au moins cher.</option>
 					</select>
 		        </div>
 		        <div class="col-md-4">
-		        	<select class="form-control ctm-select">
+		        	<select class="form-control ctm-select" ng-model="selected_sort_note" ng-change="ctrl.displayByNote(selected_sort_note)">
 						<option selected disabled hidden>Filtrer par note</option>     	 
 						<option>Du mieux noté au moins bien noté.</option>
 						<option>Du moins bien noté au mieux noté.</option>
@@ -19,7 +19,8 @@
 				</div>
 				<div class="col-md-4">
 		        	<select class="form-control ctm-select" ng-model="selected_brand" ng-change="ctrl.displayBrand(selected_brand)">
-						<option selected>Toutes les marques</option>  
+						<option selected disabled hidden>Filtrer par marque</option> 
+						<option>Toutes les marques</option>  
 						<option ng-repeat="marque in ctrl.marques">{{marque}}</option>
 					</select>
 				</div>
