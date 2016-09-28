@@ -18,7 +18,8 @@ public class LigneCommande {
 	@Column(name = "id_ligne_commande")
 	private long idLigneCommande;
 
-	private long id_instrument;
+	@Column(name = "id_instrument")
+	private long idInstrument;
 
 	private int quantite;
 
@@ -27,19 +28,19 @@ public class LigneCommande {
 		// TODO Auto-generated constructor stub
 	}
 
-	public LigneCommande(long id_instrument, int quantite) {
+	public LigneCommande(long idInstrument, int quantite) {
 		super();
 
-		this.id_instrument = id_instrument;
+		this.idInstrument = idInstrument;
 		this.quantite = quantite;
 	}
 
-	public long getInstrument() {
-		return id_instrument;
+	public long getIdInstrument() {
+		return idInstrument;
 	}
 
-	public void setInstrument(long id_instrument) {
-		this.id_instrument = id_instrument;
+	public void setIdInstrument(long idInstrument) {
+		this.idInstrument = idInstrument;
 	}
 
 	public int getQuantite() {

@@ -31,8 +31,12 @@ public class CommandeService {
 
 	@POST
 	@Consumes("application/json")
-	public Commande create(final Commande commande) {
-		return cr.create(commande);
+	@Produces("application/json")
+	public Response create(final Commande commande) {
+		if (commande.getLigneCommande().isEmpty()) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		return Response.ok(cr.create(commande)).build();
 	}
 
 	@GET
