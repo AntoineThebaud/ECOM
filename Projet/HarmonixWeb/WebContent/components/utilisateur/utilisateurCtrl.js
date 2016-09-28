@@ -22,8 +22,7 @@
 			vm.utilisateur.motDePasse = MD5(vm.motDePasse);
 			console.log(vm.utilisateur.motDePasse);
 			Utilisateur.save(vm.utilisateur, function() {
-				console.log('ajout réussi')
-				// data saved. $scope.entry is sent as the post body.
+				alert("inscription réussie !");	 
 			});
 
 		}

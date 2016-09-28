@@ -31,7 +31,7 @@
 			console.log('authentification en cours ! ');
 			vm.utilisateurConnecte=  Auth.get({ mail: vm.mail , password: vm.motDePasseHache }, function() {
 				console.log('identification réussi ! ');
-				vm.messageUtilisateur = 'bonjour ' + vm.utilisateurConnecte.nom + ' ' + vm.utilisateurConnecte.prenom ;
+				vm.messageUtilisateur = 'Bonjour ' + vm.utilisateurConnecte.prenom + ' ' + vm.utilisateurConnecte.nom ;
 			});
 			
 			
