@@ -64,6 +64,7 @@
 	<div class="container">
 		<div class="panel panel-default">
 			<div class="panel-body">
+			<h1> Interface Administrateur</h1>
 				<div class="col-md-6 col-md-offset-3">
 					<div ng-controller="adminController as ctrl">
 						<div class="col-md-12">
@@ -75,15 +76,33 @@
 									  <select class="form-control margin-bottom" id="categorie" class="form-control margin-bottom" ng-model="ctrl.categorie">
 									    <option ng-repeat="c in ctrl.categories">{{c}}</option>
 									  </select>
-								  	<input type="text" name="images" id="images" class="form-control row-md-2 margin-bottom" ng-value="ctrl.instrument.images"/>
+									<label for="images">Sélectionner une image</label>
+								  	<input type="file" name="images" placeholder="Images..." id="images" class="upload-file margin-bottom"/>
+								  	<!-- <button type="button" ng-click="ctrl.ajoutImages()">Charger l'image</button> -->
+								  	<label for="caracteristiques">Caractéristiques</label>
+								  	<input type="text" name="caracNom" id="caracNom" placeholder="Nom de la caractéristique" class="form-control margin-bottom"/><input type="text" name="caracValeur" id="caracValeur" placeholder="Valeur de la caractéristique" class="form-control margin-bottom"/>
+								  	<button type="button" class="margin-bottom" ng-click="ctrl.ajoutCarac()">Ajouter une caractéristique</button>
+								  	<br>
+								  	<label for="listCarac">Table des caractéristiques ajoutées</label>
+								  	<table class="ctm-carac-table table table-striped table-bordered">
+								  	<tr class="ctm-carac-headers">
+								  		<th class="ctm-carac-th">Nom</th>
+								  		<th class="ctm-carac-th">Valeur</th>
+								  	</tr>
+								  	<tr class="ctm-carac-row" ng-repeat="carac in ctrl.caracteristiques">
+								  		<td class="ctm-carac-td">{{carac.nom}}</td>
+										<td class="ctm-carac-td">{{carac.valeur}}</td>
+								  	</tr>
+								  	</table>
 									<input type="text" name="fabricant" placeholder="Nom du fabricant" class="form-control margin-bottom" id="fabricant" ng-model="ctrl.instrument.fabricant"/>
-									<input type="number" name="prix" placeholder="prix" class="form-control margin-bottom" id="prix" ng-model="ctrl.instrument.prix"/>
-									<input type="number" name="promo" placeholder="promo" class="form-control margin-bottom" id="promo" ng-model="ctrl.instrument.promo"/>
+									<input type="number" name="prix" placeholder="Prix" class="form-control margin-bottom" id="prix" ng-model="ctrl.instrument.prix"/>
+									<input type="number" name="promo" placeholder="Promo" class="form-control margin-bottom" id="promo" ng-model="ctrl.instrument.promo"/>
+									<input type="number" name="stock" placeholder="Stock" class="form-control margin-bottom" id="stock" ng-model="ctrl.instrument.stock"/>
 									<!--  Caractéristiques ??? -->
 								</div>
 								<div class="form-actions">
 									<button type="submit"
-										class="btn btn-primary">
+										class="btn btn-primary" ng-click="ctrl.ajoutImages()">
 										Ajouter
 									</button>
 								</div>
@@ -91,6 +110,7 @@
 						</div>
 						<div class="col-md-12">
 							<h2>Modification d'instruments</h2>
+							A venir...
 						</div>
 					</div>
 				</div>

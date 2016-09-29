@@ -147,3 +147,15 @@ label.star:before {
 }
 .margin-bottom {
 margin-bottom:15px;}
+
+.upload-file{
+	height: 50px;
+}
+
+.ctm-carac-table{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	margin-bottom:15px;
+	padding: 15px;
+	border-radius: 5px;
+}

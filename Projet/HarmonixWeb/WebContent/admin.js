@@ -73,23 +73,33 @@
  		vm.instrument = {
 			nom : '',
 			categorie : '',
+			caracteristiques: [],
 			images : '',
 			fabricant : '',
 			prix: '',
 			promo: ''
  		};
+		vm.caracteristiques = [];
+		
+		vm.ajoutCarac = function(){
+			var caracNom = document.getElementById('caracNom').value;
+			var caracValeur = document.getElementById('caracValeur').value;
+			vm.caracteristiques.push({'nom':caracNom, 'valeur':caracValeur});
+			document.getElementById('caracNom').value = "";
+			document.getElementById('caracValeur').value = "";
+		};
 		
  		vm.ajoutImages = function(){
  			 vm.instrument.images=document.getElementById('images').value;
  		}
 		vm.ajoutInstru = function(){
 			vm.instrument.categorie = vm.categoriesFormat[vm.categorie];
-			console.log(vm.instrument.images);
+			vm.instrument.caracteristiques = vm.caracteristiques;
 		    Instrument.save(vm.instrument, function() {
 		    	console.log('ajout réussi');
+				location.reload();
 		    });
-				console.log('maj réussi');
-				$route.reload();
+				
 		};
 		
 			
