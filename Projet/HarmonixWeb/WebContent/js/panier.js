@@ -55,6 +55,12 @@ panier.prototype.getTotal = function() {
 	return total;
 }
 
+//vide le panier
+panier.prototype.reset = function() {
+	this.articles = {};
+	this.save();
+}
+
 //récupère le panier sauvegardé dans le localstorage
 panier.prototype.load = function() {
 	if (localStorage[this.nom] != null) {

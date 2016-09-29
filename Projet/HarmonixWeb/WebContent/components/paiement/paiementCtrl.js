@@ -2,7 +2,7 @@
 	"use strict";
 
 	var module = angular.module("app");
-	module.controller('paiementController',  function($routeParams, Panier, Commande) {
+	module.controller('paiementController',  function($routeParams, $window, Panier, Commande) {
 		var vm = this;
 		
 		//récupère le panier
@@ -22,7 +22,9 @@
 										quantite: 		vm.panier.articles[ligne].quantity} );
 			}
 			c.$save(function() {
-				alert("commande réussie ! état=" + c.etat);	    		
+				alert("commande réussie ! état=" + c.etat);
+				$window.location.href = '../../#/';
+				vm.panier.reset();
 	    	}, function() {
 	    		alert("échec de la commande !");
 	    	});

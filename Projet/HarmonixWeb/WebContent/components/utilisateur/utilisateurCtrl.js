@@ -2,7 +2,7 @@
 	"use strict";
 
 	var module = angular.module("app");
-	module.controller('UtilisateurController', function(Utilisateur) {
+	module.controller('UtilisateurController', function($window, Utilisateur) {
 		var vm = this;
 		var utilisateur = new Utilisateur();
 		// fonction de hachage prise du forum Stack over flow
@@ -22,9 +22,11 @@
 			vm.utilisateur.motDePasse = MD5(vm.motDePasse);
 			console.log(vm.utilisateur.motDePasse);
 			Utilisateur.save(vm.utilisateur, function() {
-				alert("inscription réussie !");	 
-			});
-
+				alert("inscription réussie !");	
+				$window.location.href = '../../#/';
+			}, function() {
+	    		alert("échec de l'inscription");
+	    	});
 		}
 		
 		
