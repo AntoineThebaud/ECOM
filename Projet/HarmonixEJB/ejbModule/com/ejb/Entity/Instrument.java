@@ -26,7 +26,6 @@ import org.hibernate.annotations.FetchMode;
 	@NamedQuery(name = "allInstrument", query = "SELECT OBJECT(i) FROM Instrument i"),
 	@NamedQuery(name = "allInstrumentCategorie", query = "SELECT OBJECT(i) FROM Instrument i WHERE i.categorie = :categorie"),
 	@NamedQuery(name = "allInstrumentPromotions", query = "SELECT OBJECT(i) FROM Instrument i WHERE i.promo <> 0 ORDER BY i.promo DESC"),
-	@NamedQuery(name = "allInstrumentMeilleuresVentes", query = "SELECT OBJECT(i), sum(c.quantite) as somme FROM Instrument i, LigneCommande c WHERE i.idInstrument=c.idInstrument GROUP BY c.idInstrument ORDER BY somme DESC"),
 	@NamedQuery(name = "allInstrumentNouveautes", query = "SELECT OBJECT(i) FROM Instrument i ORDER BY i.dateAjout DESC")
 })
 public class Instrument {
