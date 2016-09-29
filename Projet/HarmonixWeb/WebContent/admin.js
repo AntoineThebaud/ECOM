@@ -80,6 +80,28 @@
 			promo: ''
  		};
 		vm.caracteristiques = [];
+		vm.instruments = [];
+		var data = Instrument.query(function(){
+			vm.instruments = data;
+		});
+		var id_instru;
+		vm.instrumentModif;
+		vm.modifOK = 0;
+		vm.initModif = function(){
+			vm.modifOK = 1;
+			id_instru = document.getElementById('instruments').value;
+			vm.instrumentModif = Instrument.get({id:parseInt(id_instru)}, function(){
+				document.getElementById('nomModif').value = vm.instrumentModif.nom;
+				document.getElementById('categorieModif').value = vm.instrumentModif.categorie;
+				//document.getElementById('imagesModif').value = vm.instrumentModif.images;
+				vm.caracteristiquesModif = vm.instrumentModif.caracteristiques;
+				document.getElementById('fabricantModif').value = vm.instrumentModif.fabricant;
+				document.getElementById('prixModif').value = vm.instrumentModif.prix;
+				document.getElementById('promoModif').value = vm.instrumentModif.promo;
+				document.getElementById('stockModif').value = vm.instrumentModif.stock;
+				
+			});
+		}
 		
 		vm.ajoutCarac = function(){
 			var caracNom = document.getElementById('caracNom').value;
@@ -91,7 +113,8 @@
 		
  		vm.ajoutImages = function(){
  			 vm.instrument.images=document.getElementById('images').value;
- 		}
+ 		};
+ 		
 		vm.ajoutInstru = function(){
 			vm.instrument.categorie = vm.categoriesFormat[vm.categorie];
 			vm.instrument.caracteristiques = vm.caracteristiques;
@@ -100,6 +123,24 @@
 				location.reload();
 		    });
 				
+		};
+		
+		
+		vm.ajoutCaracModif = function(){
+			var caracNom = document.getElementById('caracNomModif').value;
+			var caracValeur = document.getElementById('caracValeurModif').value;
+			vm.caracteristiquesModif.push({'nom':caracNom, 'valeur':caracValeur});
+			document.getElementById('caracNomModif').value = "";
+			document.getElementById('caracValeurModif').value = "";
+		};
+		
+		vm.modifInstru = function(){
+			vm.instrumentModif.categorie = vm.categoriesFormat[vm.categorie];
+			vm.instrumentModif.caracteristiquesModif = vm.caracteristiquesModif;
+			Instrument.save(vm.instrumentModif, function(){
+				console.log('modif réussie');
+				location.reload();
+			});
 		};
 		
 			

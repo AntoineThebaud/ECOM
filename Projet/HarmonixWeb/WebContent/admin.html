@@ -110,7 +110,51 @@
 						</div>
 						<div class="col-md-12">
 							<h2>Modification d'instruments</h2>
-							A venir...
+							<form name="form" ng-submit="ctrl.modifInstru()" role="form">
+								<div class="form-group" novalidate>
+									<label for="instruments">Sélectionner un instrument</label>
+									  <select class="form-control margin-bottom" id="instruments" class="form-control margin-bottom">
+									    <option ng-repeat="i in ctrl.instruments" value="{{i.idInstrument}}">{{i.nom}}</option>
+									  </select>
+								  	<button type="button" class="margin-bottom" ng-click="ctrl.initModif()">Choisir</button>
+								  	<div ng-if="ctrl.modifOK == 1">
+										<input type="text" name="nomModif" id="nomModif" placeholder="Nom de l'instrument" class="form-control margin-bottom" ng-model="ctrl.instrumentModif.nom"/>
+										 <label for="categorieModif">Sélectionner une catégorie</label>
+										  <select class="form-control margin-bottom" id="categorieModif" class="form-control margin-bottom" ng-model="ctrl.categorieModif">
+										    <option ng-repeat="c in ctrl.categories">{{c}}</option>
+										  </select>
+										<label for="imagesModif">Sélectionner une image</label>
+									  	<input type="file" name="imagesModif" placeholder="Images..." id="imagesModif" class="upload-file margin-bottom"/>
+									  	<!-- <button type="button" ng-click="ctrl.ajoutImages()">Charger l'image</button> -->
+									  	<label for="caracteristiques">Caractéristiques</label>
+									  	<input type="text" name="caracNomModif" id="caracNomModif" placeholder="Nom de la caractéristique" class="form-control margin-bottom"/><input type="text" name="caracValeurModif" id="caracValeurModif" placeholder="Valeur de la caractéristique" class="form-control margin-bottom"/>
+									  	<button type="button" class="margin-bottom" ng-click="ctrl.ajoutCaracModif()">Ajouter une caractéristique</button>
+									  	<br>
+									  	<label for="listCaracModif">Table des caractéristiques ajoutées</label>
+									  	<table class="ctm-carac-table table table-striped table-bordered">
+									  	<tr class="ctm-carac-headers">
+									  		<th class="ctm-carac-th">Nom</th>
+									  		<th class="ctm-carac-th">Valeur</th>
+									  	</tr>
+									  	<tr class="ctm-carac-row" ng-repeat="carac in ctrl.caracteristiquesModif">
+									  		<td class="ctm-carac-td">{{carac.nom}}</td>
+											<td class="ctm-carac-td">{{carac.valeur}}</td>
+									  	</tr>
+									  	</table>
+										<input type="text" name="fabricantModif" placeholder="Nom du fabricant" class="form-control margin-bottom" id="fabricantModif" ng-model="ctrl.instrumentModif.fabricant"/>
+										<input type="number" name="prixModif" placeholder="Prix" class="form-control margin-bottom" id="prixModif" ng-model="ctrl.instrumentModif.prix"/>
+										<input type="number" name="promoModif" placeholder="Promo" class="form-control margin-bottom" id="promoModif" ng-model="ctrl.instrumentModif.promo"/>
+										<input type="number" name="stockModif" placeholder="Stock" class="form-control margin-bottom" id="stockModif" ng-model="ctrl.instrumentModif.stock"/>
+										<!--  Caractéristiques ??? -->
+									</div>
+									<div class="form-actions">
+										<button type="submit"
+											class="btn btn-primary" ng-click="ctrl.ajoutImagesModif()">
+											Modifier
+										</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
