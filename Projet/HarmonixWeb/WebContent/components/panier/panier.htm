@@ -19,7 +19,7 @@
 					</td>
 					<td><img ng-src="./img/produits/{{ attributs.image }}" class="ctm-img" alt="[image]">{{ nom }}</td>
 					<td>
-						<input type="number" min="1" step="1" class="ctm-size" ng-value="{{ attributs.quantity }}" ng-model="qty" ng-change="ctrl.panier.modifyQty(nom, qty)" ng-pattern="onlyNumbers">
+						<input onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" min="1" step="1" class="ctm-size" ng-value="{{ attributs.quantity }}" ng-model="qty" ng-change="ctrl.panier.modifyQty(nom, qty)" ng-pattern="onlyNumbers">
 					</td>
 					<td>{{ attributs.prix }} €</td>
 					<td>{{ attributs.quantity * attributs.prix }} €</td>	                    	
