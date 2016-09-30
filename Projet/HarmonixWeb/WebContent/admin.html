@@ -71,6 +71,7 @@
 							<h2>Ajout d'instruments</h2>
 							<form name="form" ng-submit="ctrl.ajoutInstru()" role="form">
 								<div class="form-group" novalidate>
+									<label for="nom">Nom de l'instrument</label>
 									<input type="text" name="nom" id="nom" placeholder="Nom de l'instrument" class="form-control margin-bottom" ng-model="ctrl.instrument.nom"/>
 									 <label for="categorie">Sélectionner une catégorie</label>
 									  <select class="form-control margin-bottom" id="categorie" class="form-control margin-bottom" ng-model="ctrl.categorie">
@@ -88,15 +89,21 @@
 								  	<tr class="ctm-carac-headers">
 								  		<th class="ctm-carac-th">Nom</th>
 								  		<th class="ctm-carac-th">Valeur</th>
+								  		<th class="ctm-carac-th"></th>
 								  	</tr>
 								  	<tr class="ctm-carac-row" ng-repeat="carac in ctrl.caracteristiques">
 								  		<td class="ctm-carac-td">{{carac.nom}}</td>
 										<td class="ctm-carac-td">{{carac.valeur}}</td>
+										<td class="ctm-carac-td ctm-td-button"><button type="button" ng-click="ctrl.removeCarac(carac.nom, carac.valeur)" class="glyphicon glyphicon-remove remove-button"></button></td>
 								  	</tr>
 								  	</table>
+									<label for="fabricant">Fabricant</label>
 									<input type="text" name="fabricant" placeholder="Nom du fabricant" class="form-control margin-bottom" id="fabricant" ng-model="ctrl.instrument.fabricant"/>
+									<label for="prix">Prix</label>
 									<input type="number" name="prix" placeholder="Prix" class="form-control margin-bottom" id="prix" ng-model="ctrl.instrument.prix"/>
+									<label for="promo">Promo</label>
 									<input type="number" name="promo" placeholder="Promo" class="form-control margin-bottom" id="promo" ng-model="ctrl.instrument.promo"/>
+									<label for="stock">Stock</label>
 									<input type="number" name="stock" placeholder="Stock" class="form-control margin-bottom" id="stock" ng-model="ctrl.instrument.stock"/>
 									<!--  Caractéristiques ??? -->
 								</div>
@@ -118,6 +125,7 @@
 									  </select>
 								  	<button type="button" class="margin-bottom" ng-click="ctrl.initModif()">Choisir</button>
 								  	<div ng-if="ctrl.modifOK == 1">
+								  		<label for="nomModif">Nom de l'instrument</label>
 										<input type="text" name="nomModif" id="nomModif" placeholder="Nom de l'instrument" class="form-control margin-bottom" ng-model="ctrl.instrumentModif.nom"/>
 										 <label for="categorieModif">Sélectionner une catégorie</label>
 										  <select class="form-control margin-bottom" id="categorieModif" class="form-control margin-bottom" ng-model="ctrl.categorieModif">
@@ -135,20 +143,26 @@
 									  	<tr class="ctm-carac-headers">
 									  		<th class="ctm-carac-th">Nom</th>
 									  		<th class="ctm-carac-th">Valeur</th>
+									  		<th class="ctm-carac-th"></th>
 									  	</tr>
 									  	<tr class="ctm-carac-row" ng-repeat="carac in ctrl.caracteristiquesModif">
 									  		<td class="ctm-carac-td">{{carac.nom}}</td>
 											<td class="ctm-carac-td">{{carac.valeur}}</td>
+											<td class="ctm-carac-td ctm-td-button"><button type="button" ng-click="ctrl.removeCaracModif(carac.nom, carac.valeur)" class="glyphicon glyphicon-remove remove-button"></button></td>
 									  	</tr>
 									  	</table>
+									  	<label for="fabricantModif">Fabricant</label>
 										<input type="text" name="fabricantModif" placeholder="Nom du fabricant" class="form-control margin-bottom" id="fabricantModif" ng-model="ctrl.instrumentModif.fabricant"/>
+										<label for="prixModif">Prix</label>
 										<input type="number" name="prixModif" placeholder="Prix" class="form-control margin-bottom" id="prixModif" ng-model="ctrl.instrumentModif.prix"/>
+										<label for="promoModif">Promo</label>
 										<input type="number" name="promoModif" placeholder="Promo" class="form-control margin-bottom" id="promoModif" ng-model="ctrl.instrumentModif.promo"/>
+										<label for="stockModif">Stock</label>
 										<input type="number" name="stockModif" placeholder="Stock" class="form-control margin-bottom" id="stockModif" ng-model="ctrl.instrumentModif.stock"/>
 										<!--  Caractéristiques ??? -->
 									</div>
 									<div class="form-actions">
-										<button type="submit"
+										<button type="submit" disabled
 											class="btn btn-primary" ng-click="ctrl.ajoutImagesModif()">
 											Modifier
 										</button>
