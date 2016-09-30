@@ -8,6 +8,7 @@
 		var vm = this;
 		vm.promotions = [];
 		vm.nouveautes = [];
+		vm.bestSellers = [];
 		
 		var getPromotions = Instrument.query({id: "promotions", max: "3"}, function() {
 			vm.promotions = getPromotions;
@@ -15,6 +16,10 @@
 		
 		var getNouveautes = Instrument.query({id: "nouveautes", max: "3"}, function() {
 			vm.nouveautes = getNouveautes;
+		});
+		
+		var getBestSellers = Instrument.query({id: "meilleures-ventes", max: "3"}, function() {
+			vm.bestSellers = getBestSellers;
 		});
 		
 		//fonction pour affichage etoiles //TODO : code duppliqué (promos, catégorie, ficheProduit)

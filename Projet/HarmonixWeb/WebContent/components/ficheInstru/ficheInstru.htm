@@ -7,7 +7,7 @@
 			<div class="col-md-8">
 				<h2 class="ctm-title">{{ctrl.instrument.nom}}</h2>
 			</div>
-			<div class="col-md-3">		
+			<div class="col-md-3">
 				<h2 class="ctm-price" ng-if="ctrl.instrument.promo == 0">
 					{{ctrl.prixfinal}} €
 				</h2>
@@ -30,6 +30,12 @@
 				<div class="thumbnail">
 		        	<img ng-src="./img/produits/{{ctrl.instrument.images}}" alt="Generic placeholder thumbnail">
 		   		</div>
+		   		<h4 class="ctm-price-promo" ng-if="ctrl.instrument.stock == 0">
+					Indisponible
+				</h4>
+				<h4 class="ctm-price" ng-if="ctrl.instrument.stock != 0">
+					Disponible
+				</h4>
 		   		<h3>Spécifications</h3>
 			    <table class="table ctm-table" id="table">
 			    	<tbody>

@@ -52,8 +52,8 @@ public class InstrumentService {
 		List<Instrument> instruments = ir.getAllInstruments(startPosition, maxResult, categorie);
 
 		// TRAITEMENT BARBARE: JsonView ne marchant pas (pas encore)
-		// On enlève les informations inutiles à l'affichage de la liste
-		// c-à-d les avis, et on ne laisse que 3 caractéristiques.
+		// On enlï¿½ve les informations inutiles ï¿½ l'affichage de la liste
+		// c-ï¿½-d les avis, et on ne laisse que 3 caractï¿½ristiques.
 		for (Instrument i : instruments) {
 			i.setAvis(null);
 		}
@@ -96,9 +96,9 @@ public class InstrumentService {
 			@QueryParam("max") final Integer maxResult) {
 		List<Instrument> instruments = ir.getAllInstrumentsType(2, startPosition, maxResult);
 		
-		for (Instrument i : instruments) {
-			i.setAvis(null);
-		}
+//		for (Instrument i : instruments) {
+//			i.setAvis(null);
+//		}
 		
 		return instruments;
 	}

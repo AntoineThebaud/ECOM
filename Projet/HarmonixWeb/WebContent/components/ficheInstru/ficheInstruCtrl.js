@@ -15,6 +15,8 @@
 		var product = Instrument.get({"id": $routeParams.ID}, function() {
 			vm.instrument = product;
 			vm.prixfinal = vm.instrument.prix * ((100-vm.instrument.promo)/100);
+			console.log("vm.instrument");
+			console.log(vm.instrument);
 		});
 		
 		vm.dateAjout = new Date(); //useless ?
