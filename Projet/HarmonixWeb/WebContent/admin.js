@@ -69,6 +69,37 @@
 		 	            "Basses Heavy 5 cordes" : "basses-heavy-5-cordes"
 		 			};
 		 		
+		 		vm.categoriesFormatInv = {
+		 				"modeles-st" : "Modèles ST",
+		 				"modeles-t" : "Modèles T",
+		 				"modeles-single-cut" : "Modèles Single Cut",
+		 				"modeles-double-cut" : "Modèles Double Cut",
+		 				"guitares-metal" : "Guitares Metal", 
+		 				"guitares-7-cordes" : "Guitares 7 Cordes",
+		 				"guitares-8-cordes" : "Guitares 8 Cordes", 
+		 				"guitares-classiques-1-4" : "Guitares classiques 1/4",
+		 				"guitares-classiques-1-2" : "Guitares classiques 1/2",
+		 				"guitares-classiques-3-4" : "Guitares classiques 3/4",
+		 				"guitares-classiques-7-8" : "Guitares classiques 7/8",
+		 				"guitares-classiques-4-4" : "Guitares classiques 4/4",
+		 				"guitares-classiques-electro-acoustiques" : "Guitares classiques électro-acoustiques",
+		 				"guitares-dreadnought" : "Guitares Dreadnought",
+		 				"guitares-dreadnought-electro-acoustiques" : "Guitares Dreadnought électro-acoustiques",
+		 				"guitares-jumbo" : "Guitares Jumbo",
+		 				"guitares-jumbo-electro-acoustiques" : "Guitares Jumbo électro-acoustiques",
+		 				"guitares-000" : "Guitares 000",
+		 				"guitares-000-electro-acoustiques" : "Guitares 000 électro-acoustiques",
+		 				"basses-acoustiques-4-cordes" : "Basses acoustiques 4 cordes",
+		 				"basses-acoustiques-5-cordes" : "Basses acoustiques 5 cordes",
+		 				"basses-acoustiques-fretless" : "Basses acoustiques Fretless",
+		 				"basses-jazz-4-cordes" : "Basses Jazz 4 cordes",
+		 	            "basses-jazz-5-cordes" : "Basses Jazz 5 cordes",
+		 	            "basses-precision-4-cordes" : "Basses Precision 4 cordes",
+		 	            "basses-precision-5-cordes" : "Basses Precision 5 cordes",
+		 	            "basses-heavy-4-cordes" : "Basses Heavy 4 cordes",
+		 	            "basses-heavy-5-cordes" : "Basses Heavy 5 cordes"
+		 			}
+		 		
  		vm.instrument = new Instrument();
  		vm.instrument = {
 			nom : '',
@@ -92,7 +123,7 @@
 			id_instru = document.getElementById('instruments').value;
 			vm.instrumentModif = Instrument.get({id:parseInt(id_instru)}, function(){
 				document.getElementById('nomModif').value = vm.instrumentModif.nom;
-				document.getElementById('categorieModif').value = vm.instrumentModif.categorie;
+				document.getElementById('categorieModif').value = vm.categoriesFormatInv[vm.instrumentModif.categorie];
 				//document.getElementById('imagesModif').value = vm.instrumentModif.images;
 				vm.caracteristiquesModif = vm.instrumentModif.caracteristiques;
 				document.getElementById('fabricantModif').value = vm.instrumentModif.fabricant;
@@ -111,6 +142,14 @@
 			document.getElementById('caracValeur').value = "";
 		};
 		
+		vm.removeCarac = function(nomCarac, valeurCarac){
+			var index = vm.caracteristiques.indexOf({'nom':nomCarac, 'valeur':valeurCarac});
+			if(index > -1){
+				caracteristiques.splice(index,1);
+			}
+		};
+		
+		
  		vm.ajoutImages = function(){
  			 vm.instrument.images=document.getElementById('images').value;
  		};
@@ -125,6 +164,10 @@
 				
 		};
 		
+		vm.ajoutImagesModif=function(){
+			vm.instrumentModif.images=document.getElementById('imagesModif').value;
+		};
+		
 		
 		vm.ajoutCaracModif = function(){
 			var caracNom = document.getElementById('caracNomModif').value;
@@ -134,9 +177,19 @@
 			document.getElementById('caracValeurModif').value = "";
 		};
 		
+		vm.removeCaracModif = function(nomCarac, valeurCarac){
+			vm.caracteristiquesModif.forEach(function(result, index){
+				if(result[nomCarac] === valeurCarac){
+					// Remove from array
+					vm.caracteristiquesModif.splice(index,1);
+				}
+			});
+		};
+		
 		vm.modifInstru = function(){
+			
 			vm.instrumentModif.categorie = vm.categoriesFormat[vm.categorie];
-			vm.instrumentModif.caracteristiquesModif = vm.caracteristiquesModif;
+			vm.instrumentModif.caracteristiques = vm.caracteristiquesModif;
 			Instrument.save(vm.instrumentModif, function(){
 				console.log('modif réussie');
 				location.reload();
