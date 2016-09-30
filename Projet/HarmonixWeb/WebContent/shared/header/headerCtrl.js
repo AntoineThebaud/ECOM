@@ -25,12 +25,9 @@
 		
 		vm.auth = function() {
 			vm.motDePasseHache = MD5(vm.motDePasse); 
-			console.log(vm.mail);
-			console.log(vm.motDePasse);
-			console.log(vm.motDePasseHache);
-			console.log('authentification en cours ! ');
+			console.log('identification en cours ! ');
 			vm.utilisateurConnecte=  Auth.get({ mail: vm.mail , password: vm.motDePasseHache }, function() {
-				console.log('identification réussi ! ');
+				console.log('identification réussie ! ');
 				vm.messageUtilisateur = 'Bonjour ' + vm.utilisateurConnecte.prenom + ' ' + vm.utilisateurConnecte.nom ;
 			});
 			
